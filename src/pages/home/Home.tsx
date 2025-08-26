@@ -1,7 +1,7 @@
-import React from "react";
 import FirstHeroSection from "../../components/home/FirstHeroSection";
-import SmartConsentForms from "../../components/home/SmartConsentForms";
 import ReasonsWhyUsePmu from "../../components/home/ReasonsWhyUsePmu";
+import SetUpInFourSteps from "../../components/home/SetUpInFourSteps";
+import SmartConsentForms from "../../components/home/SmartConsentForms";
 
 const Home = () => {
   return (
@@ -13,6 +13,7 @@ const Home = () => {
       <FirstHeroSection />
       <SmartConsentForms />
       <ReasonsWhyUsePmu />
+      <SetUpInFourSteps />
     </div>
   );
 };

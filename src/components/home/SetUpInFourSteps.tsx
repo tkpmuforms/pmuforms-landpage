@@ -9,45 +9,70 @@ const SetUpInFourSteps = () => {
   const steps = [
     {
       id: 1,
-      title: "Download The Pmu Form App",
-      description: "Create your account and set up your profile.",
+      title: "Download the PMU Forms App",
+      description: "Find it on the App Store and install in seconds.",
       buttonSvg: <AppleButtonSvg />,
-      buttonText: "Get Started",
-      image: <img src={step1} alt="Step 1" />,
+      buttonText: "Download on iOS",
+      image: <img src={step1 || "/placeholder.svg"} alt="Step 1" />,
     },
     {
       id: 2,
-      title: "Customize Forms",
-      description: "Tailor the consent forms to fit your services.",
+      title: "Choose Your Services",
+      description: "Access 30+ ready-made forms or tailor your own.",
       buttonSvg: <WatchADemoSvg />,
       buttonText: "Watch a Demo",
-      image: <img src={step2} alt="Step 2" />,
+      image: <img src={step2 || "/placeholder.svg"} alt="Step 2" />,
     },
     {
       id: 3,
-      title: "Integrate with Your Practice",
-      description: "Connect PMU Forms with your existing tools.",
+      title: "Send to Clients",
+      description:
+        "Clients fill and sign digitally — no printing, no scanning.",
       buttonSvg: <WatchADemoSvg />,
       buttonText: "Watch a Demo",
-      image: <img src={step3} alt="Step 3" />,
+      image: <img src={step3 || "/placeholder.svg"} alt="Step 3" />,
     },
     {
       id: 4,
-      title: "Start Using PMU Forms",
-      description: "Begin collecting client information seamlessly.",
+      title: "Manage With Ease",
+      description:
+        "Track client notes, store signatures, and keep all records organized securely.",
       buttonSvg: <WatchADemoSvg />,
-      buttonText: "Watch a Demo  ",
-      image: <img src={step4} alt="Step 4" />,
+      buttonText: "Watch a Demo",
+      image: <img src={step4 || "/placeholder.svg"} alt="Step 4" />,
     },
   ];
+
   return (
-    <div>
-      <h5>Set Up in 4 Easy Steps </h5>
-      <p>
-        Get started with PMU Forms for easy client intake, business protection,
-        and a more professional studio.
-      </p>
-    </div>
+    <section className="setup-steps">
+      <div className="setup-steps__container">
+        <div className="setup-steps__header">
+          <h2 className="setup-steps__title">Set Up in 4 Easy Steps</h2>
+          <p className="setup-steps__subtitle">
+            Get started with PMU Forms for easy client intake, business
+            protection, and a more professional studio.
+          </p>
+        </div>
+
+        <div className="setup-steps__grid">
+          {steps.map((step) => (
+            <div key={step.id} className="setup-steps__card">
+              <div className="setup-steps__card-content">
+                <h3 className="setup-steps__card-title">{step.title}</h3>
+                <p className="setup-steps__card-description">
+                  {step.description}
+                </p>
+                <button className="setup-steps__card-button">
+                  {step.buttonSvg}
+                  {step.buttonText}
+                </button>
+              </div>
+              <div className="setup-steps__card-image">{step.image}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
