@@ -1,0 +1,80 @@
+:root {
+  --pmu-primary: #8e2d8e;
+  --pmu-grey-text: #6a5e77;
+  --pmu-primary-light: #c158c1;
+  --pmu-primary-button: #b817b6;
+  --pmu-primary-dark: #370037;
+  --pmu-orange: #ff9500;
+  --pmu-grey-text: #707070;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 2px;
+  background-color: transparent !important;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c158c1 !important;
+  border-radius: 8px;
+}
+
+@font-face {
+  font-family: "Bariol Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Bariol Regular"),
+    url("/src/assets/fonts/bariol-cufonfonts-webfont/bariol_regular-webfont.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Bariol Thin";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Bariol Thin"),
+    url("/src/assets/fonts/bariol-cufonfonts-webfont/bariol_thin-webfont.woff")
+      format("woff");
+}
+@font-face {
+  font-family: "Bariol Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Bariol Bold"),
+    url("/src/assets/fonts/bariol-cufonfonts-webfont/bariol_bold-webfont.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "Bariol Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Bariol Light"),
+    url("/src/assets/fonts/bariol-cufonfonts-webfont/bariol_light-webfont.woff")
+      format("woff");
+}
+
+* {
+  font-family: "Bariol Regular";
+}
+p {
+  color: var(--pmu-grey-text);
+}
