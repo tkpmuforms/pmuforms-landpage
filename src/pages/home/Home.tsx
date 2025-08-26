@@ -1,3 +1,4 @@
+import EverythingYouNeed from "../../components/home/EverthingYouNeed";
 import FirstHeroSection from "../../components/home/FirstHeroSection";
 import ReasonsWhyUsePmu from "../../components/home/ReasonsWhyUsePmu";
 import SetUpInFourSteps from "../../components/home/SetUpInFourSteps";
@@ -14,6 +15,7 @@ const Home = () => {
       <SmartConsentForms />
       <ReasonsWhyUsePmu />
       <SetUpInFourSteps />
+      <EverythingYouNeed />
     </div>
   );
 };
