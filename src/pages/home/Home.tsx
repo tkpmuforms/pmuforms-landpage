@@ -3,6 +3,8 @@ import FirstHeroSection from "../../components/home/FirstHeroSection";
 import ReasonsWhyUsePmu from "../../components/home/ReasonsWhyUsePmu";
 import SetUpInFourSteps from "../../components/home/SetUpInFourSteps";
 import SmartConsentForms from "../../components/home/SmartConsentForms";
+import TipsandTrends from "../../components/home/TipsandTrends";
+import TrustedByLeadingArtist from "../../components/home/TrustedByLeadingArtist";
 
 const Home = () => {
   return (
@@ -16,6 +18,8 @@ const Home = () => {
       <ReasonsWhyUsePmu />
       <SetUpInFourSteps />
       <EverythingYouNeed />
+      <TrustedByLeadingArtist />
+      <TipsandTrends />
     </div>
   );
 };

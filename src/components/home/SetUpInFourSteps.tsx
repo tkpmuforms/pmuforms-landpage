@@ -3,6 +3,7 @@ import step2 from "../../assets/images/step2.png";
 import step3 from "../../assets/images/step3.png";
 import step4 from "../../assets/images/step4.png";
 import { AppleButtonSvg, WatchADemoSvg } from "../../assets/svgs/Svg";
+import Button from "../shared/Button";
 import "./setupinfoursteps.scss";
 
 const SetUpInFourSteps = () => {
@@ -62,10 +63,15 @@ const SetUpInFourSteps = () => {
                 <p className="setup-steps__card-description">
                   {step.description}
                 </p>
-                <button className="setup-steps__card-button">
-                  {step.buttonSvg}
+                <Button
+                  onClick={() => console.log("Downloading iOS app...")}
+                  icon={step.buttonSvg}
+                  variant="primary"
+                  size="small"
+                  className="smart-consent-forms__download-btn"
+                >
                   {step.buttonText}
-                </button>
+                </Button>
               </div>
               <div className="setup-steps__card-image">{step.image}</div>
             </div>
