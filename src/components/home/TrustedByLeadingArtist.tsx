@@ -79,7 +79,7 @@ const TrustedByLeadingArtist = () => {
   };
 
   return (
-    <div className="trusted-by-leading-artist">
+    <div className="trusted-by-leading-artist" id="review">
       <h2 className="trusted-title">Trusted by Leading PMU Artists</h2>
 
       <div className="carousel-container">

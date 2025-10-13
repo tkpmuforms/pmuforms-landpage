@@ -32,6 +32,19 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ): void => {
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <div className="navbar">
       <div onClick={() => navigate("/")} className="logo">
@@ -55,10 +68,14 @@ const Navbar = () => {
             <Link to="/pricing">Pricing</Link>
           </li>
           <li>
-            <Link to="/review">Review</Link>
+            <Link to="/#review" onClick={(e) => handleAnchorClick(e, "review")}>
+              Review
+            </Link>
           </li>
           <li>
-            <Link to="/faq">FAQ</Link>
+            <Link to="/#faq" onClick={(e) => handleAnchorClick(e, "faq")}>
+              FAQ
+            </Link>
           </li>
         </ul>
       </div>
