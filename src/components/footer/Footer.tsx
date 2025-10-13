@@ -29,7 +29,7 @@ const Footer = () => {
       </nav>
 
       <div className="footer__secondary-links">
-        <a href="#contact">Contact</a>
+        <a href="contact">Contact</a>
         <span>|</span>
         <a href="#support">Support</a>
         <span>|</span>
