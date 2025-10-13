@@ -74,9 +74,105 @@ const LegallyProtect = () => {
           <ul>
             <li>An allergic reaction</li>
             <li>An unexpected outcome</li>
-            <li>Client dissatisfaction with results</li>
-            <li>Future claims against your work</li>
+            <li>A client who files a complaint after healing</li>
+            <li>A dispute over the final results or appearance</li>
           </ul>
+
+          <p>
+            Your forms should also provide a model release so that photos you
+            take of the client's results can be portfolio or social media ready.
+          </p>
+
+          <h3>Why Most Consent Forms Offer No Legal Protection</h3>
+
+          <p>
+            Many forms are just downloaded or photocopied — and they're harder
+            to track. Digital forms win this contest.
+          </p>
+
+          <ul>
+            <li>Paper crumples in the cloud (with backup)</li>
+            <li>Lack the time-stamped digital signature</li>
+            <li>Lack other aspects of security (text and dates)</li>
+            <li>
+              Risks you run by using generic templates if there's ever a
+              complaint or legal concern
+            </li>
+          </ul>
+
+          <p>
+            And because PMU Forms is HIPAA-compliant, we're also checking the
+            box for data privacy laws — which is especially important if you're
+            handling medical history or client information.
+          </p>
+
+          <h2>Our Top Form Legal Protections</h2>
+
+          <p>Here are a few extras we recommend for complete protection:</p>
+
+          <ul>
+            <li>
+              Always ensure clients fill the form out before the appointment
+              (PMU Forms makes this easy via text or email)
+            </li>
+            <li>Keep records for at least 5 years</li>
+            <li>
+              Include a refund policy to avoid disputes, chargebacks or
+              complications
+            </li>
+            <li>
+              Time and date of signature — make sure clients can't leave
+              contradicting items unchecked
+            </li>
+            <li>Automated reminder of specific services</li>
+          </ul>
+
+          <h2>Final Thoughts</h2>
+
+          <p>
+            Legal issues in the beauty industry often stem from miscommunication
+            and client expectations. A well-written and properly enforced form —
+            stored securely and implemented digitally — can make all the
+            difference.
+          </p>
+
+          <p>
+            With PMU Forms, everything you need is already in place, designed
+            specifically for beauty professionals like you.
+          </p>
+        </div>
+
+        <div className="section related-blogs">
+          <h2>Other Related Blogs</h2>
+          <div className="blog-grid">
+            {[1, 2, 3].map((index) => (
+              <div key={index} className="blog-card">
+                <div className="blog-image">
+                  <img src={FacialImage} alt="PMU Blog" />
+                </div>
+                <div className="blog-content">
+                  <div className="blog-meta">
+                    <span className="date">April 2, 2025</span>
+                    <span className="meta-divider">|</span>
+                    <span className="author">PMU Forms Team</span>
+                  </div>
+                  <h3 className="blog-title">
+                    Why Consent Forms Are More Than Just Paperwork
+                  </h3>
+                  <p className="blog-excerpt">
+                    As a PMU (Permanent Makeup) artist, you're not just an
+                    artist — you're also a service provider operating in a
+                    highly regulated beauty and aesthetics space. That means
+                    protecting yourself legally is just as important as
+                    delivering flawless brows, lips, or SMP work.
+                  </p>
+                  <a href="#" className="read-more">
+                    Read more
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
