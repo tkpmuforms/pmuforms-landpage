@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { LogoSvg } from "../../assets/svgs/Svg";
+import { Link, useNavigate } from "react-router-dom";
+import { AppleButtonSvg, LogoSvg, WatchADemoSvg } from "../../assets/svgs/Svg";
 import "./navbar.scss";
+import Button from "../shared/Button";
 
 const Navbar = () => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+  const navigate = useNavigate();
   const mobileMenuRef = useRef(null);
 
   const toggleMobileMenu = () => {
@@ -30,23 +32,34 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ): void => {
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <div className="navbar">
-      <div onClick={() => {}} className="logo">
+      <div onClick={() => navigate("/")} className="logo">
         <LogoSvg />
       </div>
-
       <div className="hamburger-menu" onClick={toggleMobileMenu}>
         &#9776;
       </div>
-
       <div
         ref={mobileMenuRef}
         className={`links ${mobileMenuVisible ? "visible" : ""}`}
       >
         <ul>
           <li>
-            <Link to="/privacy-policy">How It Works</Link>
+            <Link to="/how-it-works">How It Works</Link>
           </li>
           <li>
             <Link to="/features">Features</Link>
@@ -55,19 +68,37 @@ const Navbar = () => {
             <Link to="/pricing">Pricing</Link>
           </li>
           <li>
-            <Link to="/review">Review</Link>
+            <Link to="/#review" onClick={(e) => handleAnchorClick(e, "review")}>
+              Review
+            </Link>
           </li>
           <li>
-            <Link to="/faq">FAQ</Link>
+            <Link to="/#faq" onClick={(e) => handleAnchorClick(e, "faq")}>
+              FAQ
+            </Link>
           </li>
         </ul>
       </div>
 
-      {/* Buttons (Hidden in Mobile) */}
       <div className="buttons">
-        <button onClick={() => {}} className="download-app">
-          Download App
-        </button>
+        <Button
+          onClick={() => console.log("Downloading iOS app...")}
+          icon={<AppleButtonSvg />}
+          variant="primary"
+          size="small"
+          className=""
+        >
+          Download on iOS
+        </Button>
+        <Button
+          onClick={() => console.log("Watching demo...")}
+          icon={<WatchADemoSvg />}
+          variant="secondary"
+          size="small"
+          className=""
+        >
+          Watch a Demo
+        </Button>
       </div>
     </div>
   );
