@@ -50,8 +50,16 @@ const Navbar = () => {
       <div onClick={() => navigate("/")} className="logo">
         <LogoSvg />
       </div>
-      <div className="hamburger-menu" onClick={toggleMobileMenu}>
-        &#9776;
+      <div
+        className="hamburger-menu"
+        onClick={toggleMobileMenu}
+        aria-label="Toggle mobile menu"
+      >
+        <span className="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </div>
       <div
         ref={mobileMenuRef}
@@ -107,7 +115,7 @@ const Navbar = () => {
           icon={<WatchADemoSvg />}
           variant="secondary"
           size="small"
-          className=""
+          className="try-free-button"
         >
           Try For Free
         </Button>

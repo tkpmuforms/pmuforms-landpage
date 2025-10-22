@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./faq.scss";
+import Button from "../shared/Button";
+import { useNavigate } from "react-router-dom";
 
 interface FAQItem {
   question: string;
@@ -7,6 +9,7 @@ interface FAQItem {
 }
 
 const FAQ = () => {
+  const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -127,9 +130,15 @@ const FAQ = () => {
             Can't find the answer you're looking for? Please reach out to our
             friendly team.
           </p>
-          <a href="/contact" className="faq__contact-button">
+
+          <Button
+            onClick={() => navigate("/contact")}
+            className=""
+            variant="primary"
+            size="small"
+          >
             Contact Us
-          </a>
+          </Button>
         </div>
       </div>
     </section>

@@ -1,6 +1,5 @@
-import React from "react";
+import FacialImage from "../../../assets/images/africanwoman.png";
 import "./legallyProtect.scss";
-import FacialImage from "../../assets/images/attractive-african-woman-enjoying-face-massage-spa-salon 1@2x.png";
 
 const LegallyProtect = () => {
   return (

@@ -1,8 +1,8 @@
 import TattooImage from "../../assets/images/ArtistWorking.jpg";
-import BlogHero from "../../components/howitWorks/HowItWorksHeroSection";
-import RelatedBlogs from "../../components/howitWorks/blogs/RelatedBlog";
+import BlogHero from "./HowItWorksHeroSection";
+import RelatedBlogs from "./blogs/RelatedBlog";
 
-const HowItWorks = () => {
+const BlogsList = () => {
   const blogPosts = [
     {
       id: 1,
@@ -74,4 +74,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default BlogsList;

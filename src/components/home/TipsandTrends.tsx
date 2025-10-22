@@ -1,5 +1,5 @@
 import "./tipsandtrends.scss";
-import image1 from "../../assets/images/attractive-african-woman-enjoying-face-massage-spa-salon 1@2x.png";
+import image1 from "../../assets/images/africanwoman.png";
 import image2 from "../../assets/images/happy-black-woman-wearing-golden-eye-mask 1.png";
 import image3 from "../../assets/images/professional-tattoo-artist-his-customer-workshop 1.png";
 import { ArrowIconTipsandTrendSvg } from "../../assets/svgs/Svg";
@@ -11,7 +11,7 @@ const TipsandTrends = () => {
         <h2 className="tips-trends__title">
           Tips, Trends & Tutorials for Artists
         </h2>
-        <a href="#" className="tips-trends__view-all">
+        <a href="/blogs" className="tips-trends__view-all">
           View All
         </a>
       </div>
