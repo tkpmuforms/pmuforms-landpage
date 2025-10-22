@@ -6,7 +6,7 @@ import { ArrowIconTipsandTrendSvg } from "../../assets/svgs/Svg";
 
 const TipsandTrends = () => {
   return (
-    <section className="tips-trends">
+    <section className="tips-trends" id="blogs">
       <div className="tips-trends__header">
         <h2 className="tips-trends__title">
           Tips, Trends & Tutorials for Artists

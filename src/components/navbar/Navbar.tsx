@@ -59,17 +59,29 @@ const Navbar = () => {
       >
         <ul>
           <li>
-            <Link to="/how-it-works">How It Works</Link>
+            <Link
+              to="/#howItWorks"
+              onClick={(e) => handleAnchorClick(e, "howItWorks")}
+            >
+              How It Works
+            </Link>
           </li>
           <li>
-            <Link to="/features">Features</Link>
-          </li>
-          <li>
-            <Link to="/pricing">Pricing</Link>
+            <Link
+              to="/#features"
+              onClick={(e) => handleAnchorClick(e, "features")}
+            >
+              Features
+            </Link>
           </li>
           <li>
             <Link to="/#review" onClick={(e) => handleAnchorClick(e, "review")}>
               Review
+            </Link>
+          </li>
+          <li>
+            <Link to="/#blogs" onClick={(e) => handleAnchorClick(e, "blogs")}>
+              Blogs
             </Link>
           </li>
           <li>
@@ -97,7 +109,7 @@ const Navbar = () => {
           size="small"
           className=""
         >
-          Watch a Demo
+          Try For Free
         </Button>
       </div>
     </div>

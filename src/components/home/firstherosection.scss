@@ -1,7 +1,7 @@
 .hero-container {
-  min-height: 100vh;
+  // min-height: 100vh;
   background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
-  padding: 80px 20px 60px;
+  // padding: 20px 20px 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,6 +73,20 @@
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
         }
+
+        span {
+          font-size: 1rem;
+        }
+      }
+      .try-button {
+        padding: 16px 32px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
 
         span {
           font-size: 1rem;
