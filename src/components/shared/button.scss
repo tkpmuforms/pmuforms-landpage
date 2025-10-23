@@ -47,14 +47,15 @@
   }
 
   &.btn-secondary {
-    background: transparent;
+    background: white;
     color: #370037;
-    border: 2px solid #370037;
+    border: none;
     box-shadow: none;
 
     &:hover:not(:disabled) {
-      background: #370037;
-      color: white;
+      background: #f8f9ff;
+      color: #370037;
+      border-color: #2d002d;
       transform: translateY(-1px);
     }
 

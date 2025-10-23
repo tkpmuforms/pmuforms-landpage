@@ -45,7 +45,7 @@ const SetUpInFourSteps = () => {
   ];
 
   return (
-    <section className="setup-steps">
+    <section className="setup-steps" id="howItWorks">
       <div className="setup-steps__container">
         <div className="setup-steps__header">
           <h2 className="setup-steps__title">Set Up in 4 Easy Steps</h2>

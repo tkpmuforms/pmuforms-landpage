@@ -1,4 +1,5 @@
 import EverythingYouNeed from "../../components/home/EverthingYouNeed";
+import FAQ from "../../components/home/FAQ";
 import FirstHeroSection from "../../components/home/FirstHeroSection";
 import ReasonsWhyUsePmu from "../../components/home/ReasonsWhyUsePmu";
 import SetUpInFourSteps from "../../components/home/SetUpInFourSteps";
@@ -20,6 +21,7 @@ const Home = () => {
       <EverythingYouNeed />
       <TrustedByLeadingArtist />
       <TipsandTrends />
+      <FAQ />
     </div>
   );
 };

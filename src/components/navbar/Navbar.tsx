@@ -50,8 +50,16 @@ const Navbar = () => {
       <div onClick={() => navigate("/")} className="logo">
         <LogoSvg />
       </div>
-      <div className="hamburger-menu" onClick={toggleMobileMenu}>
-        &#9776;
+      <div
+        className="hamburger-menu"
+        onClick={toggleMobileMenu}
+        aria-label="Toggle mobile menu"
+      >
+        <span className="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </div>
       <div
         ref={mobileMenuRef}
@@ -59,17 +67,29 @@ const Navbar = () => {
       >
         <ul>
           <li>
-            <Link to="/how-it-works">How It Works</Link>
+            <Link
+              to="/#howItWorks"
+              onClick={(e) => handleAnchorClick(e, "howItWorks")}
+            >
+              How It Works
+            </Link>
           </li>
           <li>
-            <Link to="/features">Features</Link>
-          </li>
-          <li>
-            <Link to="/pricing">Pricing</Link>
+            <Link
+              to="/#features"
+              onClick={(e) => handleAnchorClick(e, "features")}
+            >
+              Features
+            </Link>
           </li>
           <li>
             <Link to="/#review" onClick={(e) => handleAnchorClick(e, "review")}>
               Review
+            </Link>
+          </li>
+          <li>
+            <Link to="/#blogs" onClick={(e) => handleAnchorClick(e, "blogs")}>
+              Blogs
             </Link>
           </li>
           <li>
@@ -95,9 +115,9 @@ const Navbar = () => {
           icon={<WatchADemoSvg />}
           variant="secondary"
           size="small"
-          className=""
+          className="try-free-button"
         >
-          Watch a Demo
+          Try For Free
         </Button>
       </div>
     </div>

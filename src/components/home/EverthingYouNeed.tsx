@@ -85,7 +85,7 @@ const EverythingYouNeed: React.FC = () => {
   );
 
   return (
-    <section className="everything-you-need">
+    <section className="everything-you-need" id="features">
       <div className="everything-you-need__container">
         <div className="everything-you-need__header">
           <h2 className="everything-you-need__title">

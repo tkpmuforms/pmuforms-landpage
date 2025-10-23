@@ -3,6 +3,7 @@ import {
   CloudBasedSvg,
   HippaSvg,
   SecureDigitalSvg,
+  WatchADemoSvg,
 } from "../../assets/svgs/Svg";
 
 import iphone1 from "../../assets/images/iPhone1.png";
@@ -13,7 +14,7 @@ import "./firstherosection.scss";
 
 const FirstHeroSection = () => {
   const handleDownload = () => {
-    // Add your download logic here
+    // Add your download logic her
     console.log("Downloading app...");
     // You could redirect to App Store, trigger download, etc.
   };
@@ -23,7 +24,8 @@ const FirstHeroSection = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            Secure digital consent forms for PMU artists, ready in minutes.
+            Secure digital consent <br />
+            forms for PMU artists, ready <br /> in minutes.
           </h1>
           <p className="hero-description">
             Collect signatures, manage clients, and protect your business with{" "}
@@ -39,6 +41,15 @@ const FirstHeroSection = () => {
             size="small"
           >
             Download on iOS
+          </Button>
+          <Button
+            onClick={() => console.log("Watching demo...")}
+            icon={<WatchADemoSvg />}
+            variant="secondary"
+            size="small"
+            className="try-button"
+          >
+            Try For Free
           </Button>
         </div>
 

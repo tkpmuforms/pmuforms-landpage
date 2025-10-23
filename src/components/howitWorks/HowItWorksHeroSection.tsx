@@ -1,7 +1,9 @@
 import "./howItWorksHeroSection.scss";
 import TipsImages from "../../assets/images/tipsTrendTutorial.jpg";
+import { useNavigate } from "react-router-dom";
 
 const BlogHero = () => {
+  const navigate = useNavigate();
   return (
     <section className="blog-hero-section">
       <div className="hero-content">
@@ -31,7 +33,10 @@ const BlogHero = () => {
                     <span className="meta-divider">|</span>
                     <span className="feature-author">by Michael Reed</span>
                   </div>
-                  <button className="btn-watch-demo">
+                  <button
+                    className="btn-watch-demo"
+                    onClick={() => navigate("/blogs/legally-protect")}
+                  >
                     <span className="demo-icon">
                       <svg
                         width="20"
@@ -43,7 +48,7 @@ const BlogHero = () => {
                         <path d="M8 6l6 4-6 4V6z" fill="white" />
                       </svg>
                     </span>
-                    Watch a Demo
+                    Read Blog
                   </button>
                 </div>
               </div>
