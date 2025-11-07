@@ -63,8 +63,12 @@ const SetUpInFourSteps = () => {
         </div>
 
         <div className="setup-steps__grid">
-          {steps.map((step) => (
-            <div key={step.id} className="setup-steps__card">
+          {steps.map((step, index) => (
+            <div
+              key={step.id}
+              className="setup-steps__card"
+              style={{ "--card-index": index } as React.CSSProperties}
+            >
               <div className="setup-steps__card-content">
                 <h3 className="setup-steps__card-title">{step.title}</h3>
                 <p className="setup-steps__card-description">
@@ -76,7 +80,11 @@ const SetUpInFourSteps = () => {
                   icon={step.buttonSvg}
                   variant="primary"
                   size="small"
-                  className="smart-consent-forms__download-btn"
+                  className={`smart-consent-forms__download-btn ${
+                    step.buttonText === "Watch a Demo"
+                      ? "smart-consent-forms__download-btn--demo"
+                      : ""
+                  }`}
                 >
                   {step.buttonText}
                 </Button>

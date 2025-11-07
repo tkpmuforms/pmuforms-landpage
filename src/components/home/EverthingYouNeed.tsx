@@ -47,7 +47,7 @@ const EverythingYouNeed: React.FC = () => {
     },
     {
       id: 6,
-      title: "30+ ready-made PMU & beauty forms",
+      title: "30+ ready PMU & beauty forms",
       icon: <ThirtyMadeReadySvg />,
       position: "right",
     },
@@ -97,8 +97,12 @@ const EverythingYouNeed: React.FC = () => {
 
         <div className="everything-you-need__content">
           <div className="everything-you-need__features everything-you-need__features--left">
-            {leftFeatures.map((feature) => (
-              <div key={feature.id} className="everything-you-need__feature">
+            {leftFeatures.map((feature, index) => (
+              <div
+                key={feature.id}
+                className="everything-you-need__feature"
+                style={{ "--feature-index": index } as React.CSSProperties}
+              >
                 <div className="everything-you-need__feature-icon">
                   {feature.icon}
                 </div>
@@ -118,8 +122,12 @@ const EverythingYouNeed: React.FC = () => {
           </div>
 
           <div className="everything-you-need__features everything-you-need__features--right">
-            {rightFeatures.map((feature) => (
-              <div key={feature.id} className="everything-you-need__feature">
+            {rightFeatures.map((feature, index) => (
+              <div
+                key={feature.id}
+                className="everything-you-need__feature"
+                style={{ "--feature-index": index } as React.CSSProperties}
+              >
                 <div className="everything-you-need__feature-icon">
                   {feature.icon}
                 </div>

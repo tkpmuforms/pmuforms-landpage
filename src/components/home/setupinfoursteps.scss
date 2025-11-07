@@ -1,5 +1,27 @@
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .setup-steps {
-  padding: 80px 20px;
+  padding: 20px 20px;
   // background-color: #e9e9e9;
 
   &__container {
@@ -10,6 +32,7 @@
   &__header {
     text-align: center;
     margin-bottom: 60px;
+    animation: slideUp 0.8s ease-out;
   }
 
   &__title {
@@ -57,6 +80,8 @@
     // align-items: center;
     // text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: scaleIn 0.6s ease-out forwards;
+    animation-delay: calc(var(--card-index) * 0.15s);
 
     &:hover {
       transform: translateY(-4px);
@@ -125,6 +150,20 @@
       max-width: 100%;
       height: auto;
       border-radius: 12px;
+    }
+  }
+}
+
+.smart-consent-forms__download-btn {
+  width: fit-content !important;
+
+  &--demo {
+    background-color: #faf2fa !important;
+    color: #370037 !important;
+    box-shadow: none !important;
+
+    &:hover:not(:disabled) {
+      background-color: #f5e6f5 !important;
     }
   }
 }
