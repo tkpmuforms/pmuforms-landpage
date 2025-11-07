@@ -102,7 +102,8 @@ const Navbar = () => {
 
       <div className="buttons">
         <Button
-          onClick={() => console.log("Downloading iOS app...")}
+          href="https://apps.apple.com/ng/app/pmu-forms/id1497270923"
+          target="_blank"
           icon={<AppleButtonSvg />}
           variant="primary"
           size="small"
@@ -111,7 +112,8 @@ const Navbar = () => {
           Download on iOS
         </Button>
         <Button
-          onClick={() => console.log("Watching demo...")}
+          href={videolink}
+          target="_blank"
           icon={<WatchADemoSvg />}
           variant="secondary"
           size="small"

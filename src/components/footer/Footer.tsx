@@ -48,7 +48,8 @@ const Footer = () => {
 
       <div className="footer__buttons">
         <Button
-          onClick={() => console.log("Downloading iOS app...")}
+          href="https://apps.apple.com/ng/app/pmu-forms/id1497270923"
+          target="_blank"
           icon={<AppleButtonSvg />}
           variant="primary"
           size="small"
@@ -57,7 +58,8 @@ const Footer = () => {
           Download on iOS
         </Button>
         <Button
-          onClick={() => console.log("Watching demo...")}
+          href="https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms"
+          target="_blank"
           icon={<WatchADemoSvg />}
           variant="secondary"
           size="small"

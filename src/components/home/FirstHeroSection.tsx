@@ -13,11 +13,8 @@ import Button from "../shared/Button";
 import "./firstherosection.scss";
 
 const FirstHeroSection = () => {
-  const handleDownload = () => {
-    // Add your download logic her
-    console.log("Downloading app...");
-    // You could redirect to App Store, trigger download, etc.
-  };
+  const videolink =
+    "https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms";
 
   return (
     <div className="hero-container">
@@ -34,7 +31,8 @@ const FirstHeroSection = () => {
           </p>
 
           <Button
-            onClick={handleDownload}
+            href="https://apps.apple.com/ng/app/pmu-forms/id1497270923"
+            target="_blank"
             className="download-button"
             icon={<AppleButtonSvg />}
             variant="custom"
@@ -43,7 +41,8 @@ const FirstHeroSection = () => {
             Download on iOS
           </Button>
           <Button
-            onClick={() => console.log("Watching demo...")}
+            href={videolink}
+            target="_blank"
             icon={<WatchADemoSvg />}
             variant="secondary"
             size="small"

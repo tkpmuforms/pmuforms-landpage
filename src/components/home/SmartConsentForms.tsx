@@ -5,6 +5,9 @@ import Button from "../shared/Button";
 import "./smartconsentforms.scss";
 
 const SmartConsentForms = () => {
+  const videolink =
+    "https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms";
+
   return (
     <section className="smart-consent-forms">
       <div className="smart-consent-forms__container">
@@ -20,7 +23,8 @@ const SmartConsentForms = () => {
         </p>
         <div className="smart-consent-forms__buttons">
           <Button
-            onClick={() => console.log("Downloading iOS app...")}
+            href="https://apps.apple.com/ng/app/pmu-forms/id1497270923"
+            target="_blank"
             icon={<AppleButtonSvg />}
             variant="primary"
             size="small"
@@ -29,7 +33,8 @@ const SmartConsentForms = () => {
             Download on iOS
           </Button>
           <Button
-            onClick={() => console.log("Watching demo...")}
+            href={videolink}
+            target="_blank"
             icon={<WatchADemoSvg />}
             variant="secondary"
             size="small"
