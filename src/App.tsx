@@ -6,6 +6,8 @@ import Navbar from "./components/navbar/Navbar";
 import ContactUs from "./pages/contact/ContactUs";
 import Home from "./pages/home/Home";
 import LegallyProtect from "./components/howitWorks/features/LegallyProtect";
+import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
+import TermsAndConditions from "./pages/termsandconditions/TermsAndConditions";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/blogs" element={<BlogsList />} />
           <Route path="/blogs/legally-protect" element={<LegallyProtect />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
         </Routes>
         <Footer />
       </div>
