@@ -1,9 +1,24 @@
 import FacialImage from "../../../assets/images/africanwoman.png";
+import Seo from "../../seo/Seo";
 import "./legallyProtect.scss";
 
 const LegallyProtect = () => {
   return (
-    <div className="legally-protect-container">
+    <>
+      <Seo
+        title="How to Legally Protect Your PMU Business with Consent Forms"
+        description="Learn how to protect your PMU business legally with proper consent forms. Expert guide on PMU consent requirements, liability protection, and compliance."
+        keywords="PMU consent forms, legal protection, PMU liability, consent form requirements, permanent makeup business"
+        canonical="https://pmuforms.com/blogs/legally-protect"
+        ogTitle="How to Legally Protect Your PMU Business with Consent Forms"
+        ogDescription="Expert guide on PMU consent forms and legal protection for permanent makeup artists"
+        ogUrl="https://pmuforms.com/blogs/legally-protect"
+        type="article"
+        author="Michael Reed"
+        publishedDate="2025-06-01"
+        modifiedDate="2025-06-01"
+      />
+      <div className="legally-protect-container">
       <div className="article-header">
         <h1>How to Legally Protect Your PMU Business with Consent Forms</h1>
         <div className="article-meta">
@@ -174,7 +189,8 @@ const LegallyProtect = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

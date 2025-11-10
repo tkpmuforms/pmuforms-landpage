@@ -1,6 +1,7 @@
 import TattooImage from "../../assets/images/ArtistWorking.jpg";
 import BlogHero from "./HowItWorksHeroSection";
 import RelatedBlogs from "./blogs/RelatedBlog";
+import Seo from "../seo/Seo";
 
 const BlogsList = () => {
   const blogPosts = [
@@ -68,6 +69,15 @@ const BlogsList = () => {
 
   return (
     <div>
+      <Seo
+        title="PMU Forms Blog - Tips, Trends & Industry Insights"
+        description="Read the latest PMU Forms blog posts about permanent makeup consent forms, aftercare tips, industry trends, and best practices for PMU artists."
+        keywords="PMU blog, permanent makeup tips, consent forms, aftercare, PMU trends, beauty industry"
+        canonical="https://pmuforms.com/blogs"
+        ogTitle="PMU Forms Blog"
+        ogDescription="Industry insights and tips for permanent makeup artists"
+        ogUrl="https://pmuforms.com/blogs"
+      />
       <BlogHero />
       <RelatedBlogs posts={blogPosts} />
     </div>

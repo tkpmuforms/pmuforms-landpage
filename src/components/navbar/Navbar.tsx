@@ -22,9 +22,6 @@ const Navbar = () => {
     }
   };
 
-  const videolink =
-    "https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms";
-
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -112,7 +109,7 @@ const Navbar = () => {
           Download on iOS
         </Button>
         <Button
-          href={videolink}
+          href="https://www.pmuforms.com/"
           target="_blank"
           icon={<WatchADemoSvg />}
           variant="secondary"

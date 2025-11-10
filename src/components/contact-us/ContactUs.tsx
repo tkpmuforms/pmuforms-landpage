@@ -121,11 +121,11 @@ const ContactForm = () => {
               <ul className="contact-list">
                 <li>
                   <span className="contact-icon">📧</span>
-                  Email: support@pmuforms.com
+                  Email: contact@pmuforms.com
                 </li>
                 <li>
                   <span className="contact-icon">📱</span>
-                  Text Support: 857-222-5582 (Mon-Fri, 9am-5pm EST)
+                  Text Support: 5125211052 (Mon-Fri, 9am-5pm EST)
                 </li>
               </ul>
             </div>
@@ -133,10 +133,7 @@ const ContactForm = () => {
 
           <div className="contact-form-wrapper">
             {notification.type && (
-              <div
-                className={`notification ${notification.type}`}
-                role="alert"
-              >
+              <div className={`notification ${notification.type}`} role="alert">
                 <span className="notification-icon">
                   {notification.type === "success" ? "✓" : "✗"}
                 </span>
@@ -194,6 +191,7 @@ const ContactForm = () => {
                   <option value="support">Technical Support</option>
                   <option value="billing">Billing Question</option>
                   <option value="general">General Inquiry</option>
+                  <option value="feedback">Feedback</option>
                 </select>
               </div>
 
@@ -213,11 +211,7 @@ const ContactForm = () => {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="submit-btn"
-                disabled={isLoading}
-              >
+              <button type="submit" className="submit-btn" disabled={isLoading}>
                 {isLoading ? "Sending..." : "Send Message"}
               </button>
             </form>

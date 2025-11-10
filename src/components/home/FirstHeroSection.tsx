@@ -13,9 +13,6 @@ import Button from "../shared/Button";
 import "./firstherosection.scss";
 
 const FirstHeroSection = () => {
-  const videolink =
-    "https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms";
-
   return (
     <div className="hero-container">
       <div className="hero-content">
@@ -41,7 +38,7 @@ const FirstHeroSection = () => {
             Download on iOS
           </Button>
           <Button
-            href={videolink}
+            href="https://www.pmuforms.com/"
             target="_blank"
             icon={<WatchADemoSvg />}
             variant="secondary"

@@ -1,10 +1,21 @@
 "use client";
 import Navbar from "../../components/navbar/Navbar";
+import Seo from "../../components/seo/Seo";
 import "./privacypolicy.scss";
 
 const PrivacyPolicy = () => {
   return (
     <>
+      <Seo
+        title="Privacy Policy - PMU Forms"
+        description="Read the privacy policy for PMU Forms. Learn how we collect, use, and protect your personal information when using our digital consent and aftercare forms."
+        keywords="privacy policy, data protection, PMU Forms"
+        canonical="https://pmuforms.com/privacy"
+        ogTitle="Privacy Policy - PMU Forms"
+        ogDescription="Privacy policy for PMU Forms digital consent forms"
+        ogUrl="https://pmuforms.com/privacy"
+        robots="index, follow"
+      />
       <Navbar />
       <div className="privacy-policy">
         <h1>PMU Forms Privacy Policy</h1>

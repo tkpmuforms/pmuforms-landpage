@@ -1,0 +1,22 @@
+# robots.txt for PMU Landing Page
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: *.json$
+
+# Specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://pmuforms.com/sitemap.xml
+
+# Comment: Update the domain above to match your actual domain
