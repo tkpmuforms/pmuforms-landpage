@@ -11,9 +11,7 @@ const TipsandTrends = () => {
         <h2 className="tips-trends__title">
           Tips, Trends & Tutorials for Artists
         </h2>
-        <a href="/blogs" className="tips-trends__view-all">
-          View All
-        </a>
+        <a className="tips-trends__view-all">View All</a>
       </div>
 
       <div className="tips-trends__content">

@@ -170,6 +170,7 @@
         }
 
         @media (max-width: 768px) {
+          flex-wrap: wrap;
           &.first-row,
           &.third-row,
           &.second-row {
@@ -180,6 +181,7 @@
         }
 
         @media (max-width: 576px) {
+          flex-wrap: wrap;
           &.first-row,
           &.third-row,
           &.second-row {

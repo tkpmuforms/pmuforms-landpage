@@ -7,6 +7,9 @@ import Button from "../shared/Button";
 import "./setupinfoursteps.scss";
 
 const SetUpInFourSteps = () => {
+  const videolink =
+    "https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms";
+
   const steps = [
     {
       id: 1,
@@ -14,6 +17,7 @@ const SetUpInFourSteps = () => {
       description: "Find it on the App Store and install in seconds.",
       buttonSvg: <AppleButtonSvg />,
       buttonText: "Download on iOS",
+      buttonHref: "https://apps.apple.com/ng/app/pmu-forms/id1497270923",
       image: <img src={step1 || "/placeholder.svg"} alt="Step 1" />,
     },
     {
@@ -22,6 +26,7 @@ const SetUpInFourSteps = () => {
       description: "Access 30+ ready-made forms or tailor your own.",
       buttonSvg: <WatchADemoSvg />,
       buttonText: "Watch a Demo",
+      buttonHref: videolink,
       image: <img src={step2 || "/placeholder.svg"} alt="Step 2" />,
     },
     {
@@ -31,6 +36,7 @@ const SetUpInFourSteps = () => {
         "Clients fill and sign digitally — no printing, no scanning.",
       buttonSvg: <WatchADemoSvg />,
       buttonText: "Watch a Demo",
+      buttonHref: videolink,
       image: <img src={step3 || "/placeholder.svg"} alt="Step 3" />,
     },
     {
@@ -40,6 +46,7 @@ const SetUpInFourSteps = () => {
         "Track client notes, store signatures, and keep all records organized securely.",
       buttonSvg: <WatchADemoSvg />,
       buttonText: "Watch a Demo",
+      buttonHref: videolink,
       image: <img src={step4 || "/placeholder.svg"} alt="Step 4" />,
     },
   ];
@@ -56,19 +63,28 @@ const SetUpInFourSteps = () => {
         </div>
 
         <div className="setup-steps__grid">
-          {steps.map((step) => (
-            <div key={step.id} className="setup-steps__card">
+          {steps.map((step, index) => (
+            <div
+              key={step.id}
+              className="setup-steps__card"
+              style={{ "--card-index": index } as React.CSSProperties}
+            >
               <div className="setup-steps__card-content">
                 <h3 className="setup-steps__card-title">{step.title}</h3>
                 <p className="setup-steps__card-description">
                   {step.description}
                 </p>
                 <Button
-                  onClick={() => console.log("Downloading iOS app...")}
+                  href={step.buttonHref}
+                  target="_blank"
                   icon={step.buttonSvg}
                   variant="primary"
                   size="small"
-                  className="smart-consent-forms__download-btn"
+                  className={`smart-consent-forms__download-btn ${
+                    step.buttonText === "Watch a Demo"
+                      ? "smart-consent-forms__download-btn--demo"
+                      : ""
+                  }`}
                 >
                   {step.buttonText}
                 </Button>

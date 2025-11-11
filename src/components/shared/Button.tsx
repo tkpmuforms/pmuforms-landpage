@@ -3,12 +3,14 @@ import "./button.scss";
 
 interface ButtonProps {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
   icon?: React.ReactNode;
   variant?: "primary" | "secondary" | "custom";
   size?: "small" | "medium" | "large";
   disabled?: boolean;
+  href?: string;
+  target?: "_blank" | "_self" | "_parent" | "_top";
 }
 
 const Button = ({
@@ -19,6 +21,8 @@ const Button = ({
   variant = "primary",
   size = "medium",
   disabled = false,
+  href,
+  target = "_self",
 }: ButtonProps) => {
   const getVariantClass = () => {
     switch (variant) {
@@ -45,6 +49,20 @@ const Button = ({
         return "btn-medium";
     }
   };
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={target}
+        className={`custom-button ${getVariantClass()} ${getSizeClass()} ${className}`}
+        style={{ textDecoration: "none", cursor: "pointer" }}
+      >
+        {icon && <span className="button-icon">{icon}</span>}
+        <span className="button-text">{children}</span>
+      </a>
+    );
+  }
 
   return (
     <button
