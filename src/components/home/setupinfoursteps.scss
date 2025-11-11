@@ -98,6 +98,19 @@
     margin-bottom: 30px;
   }
 
+  &__buttons-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }
+
   &__card-title {
     font-size: 1.5rem;
     font-weight: 600;
@@ -165,6 +178,16 @@
 
     &:hover:not(:disabled) {
       background-color: #f5e6f5 !important;
+    }
+  }
+
+  &--web {
+    background-color: #faf2fa !important;
+    color: #333 !important;
+    box-shadow: none !important;
+
+    &:hover:not(:disabled) {
+      background-color: #faf2fa !important;
     }
   }
 }

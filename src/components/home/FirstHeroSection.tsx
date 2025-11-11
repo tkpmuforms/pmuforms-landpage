@@ -38,7 +38,7 @@ const FirstHeroSection = () => {
             Download on iOS
           </Button>
           <Button
-            href="https://www.pmuforms.com/"
+            href="https://artist.pmuforms.com/"
             target="_blank"
             icon={<WatchADemoSvg />}
             variant="secondary"
