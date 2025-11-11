@@ -7,13 +7,13 @@ import Button from "../shared/Button";
 const Navbar = () => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const navigate = useNavigate();
-  const mobileMenuRef = useRef(null);
+  const mobileMenuRef: any = useRef(null);
 
   const toggleMobileMenu = () => {
     setMobileMenuVisible(!mobileMenuVisible);
   };
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = (event: any) => {
     if (
       mobileMenuRef.current &&
       !mobileMenuRef.current.contains(event.target)
