@@ -8,7 +8,7 @@ export const LogoSvg: React.FC<React.SVGProps<SVGSVGElement>> = ({
       viewBox="0 0 50 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xmlnsXlink"
       onClick={onClick}
     >
       <rect
@@ -65,7 +65,7 @@ export const HippaSvg: React.FC<React.SVGProps<SVGSVGElement>> = () => {
       viewBox="0 0 66 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xmlnsXlink"
     >
       <rect
         x="0.854248"
@@ -923,7 +923,7 @@ export const PmuLogoFooter: React.FC<React.SVGProps<SVGSVGElement>> = () => {
       viewBox="0 0 77 77"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xmlnsXlink"
     >
       <rect width="77" height="77" fill="url(#pattern0_422_19971)" />
       <defs>
