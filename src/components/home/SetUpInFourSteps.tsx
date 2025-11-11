@@ -13,11 +13,15 @@ const SetUpInFourSteps = () => {
   const steps = [
     {
       id: 1,
-      title: "Download the PMU Forms App",
-      description: "Find it on the App Store and install in seconds.",
+      title: "Use PMU Forms anywhere",
+      description:
+        "Access the web version right from your browser, or download the app from the App Store to use it on the go.",
       buttonSvg: <AppleButtonSvg />,
+      button2Svg: <WatchADemoSvg />,
       buttonText: "Download on iOS",
+      button2Text: "Open Web Version",
       buttonHref: "https://apps.apple.com/ng/app/pmu-forms/id1497270923",
+      button2Href: "https://artist.pmuforms.com/",
       image: <img src={step1 || "/placeholder.svg"} alt="Step 1" />,
     },
     {
@@ -74,20 +78,38 @@ const SetUpInFourSteps = () => {
                 <p className="setup-steps__card-description">
                   {step.description}
                 </p>
-                <Button
-                  href={step.buttonHref}
-                  target="_blank"
-                  icon={step.buttonSvg}
-                  variant="primary"
-                  size="small"
-                  className={`smart-consent-forms__download-btn ${
-                    step.buttonText === "Watch a Demo"
-                      ? "smart-consent-forms__download-btn--demo"
-                      : ""
-                  }`}
-                >
-                  {step.buttonText}
-                </Button>
+                <div className="setup-steps__buttons-container">
+                  <Button
+                    href={step.buttonHref}
+                    target="_blank"
+                    icon={step.buttonSvg}
+                    variant="primary"
+                    size="small"
+                    className={`smart-consent-forms__download-btn ${
+                      step.buttonText === "Watch a Demo"
+                        ? "smart-consent-forms__download-btn--demo"
+                        : ""
+                    }`}
+                  >
+                    {step.buttonText}
+                  </Button>
+                  {step.button2Href && (
+                    <Button
+                      href={step.button2Href}
+                      target="_blank"
+                      icon={step.button2Svg}
+                      variant="primary"
+                      size="small"
+                      className={`smart-consent-forms__download-btn ${
+                        step.button2Text === "Watch a Demo"
+                          ? "smart-consent-forms__download-btn--demo"
+                          : "smart-consent-forms__download-btn--web"
+                      }`}
+                    >
+                      {step.button2Text}
+                    </Button>
+                  )}
+                </div>
               </div>
               <div className="setup-steps__card-image">{step.image}</div>
             </div>
