@@ -5,8 +5,9 @@ import "./trustedbyleadingartist.scss";
 import image1 from "../../assets/images/pexels-cottonbro-6862594 1.png";
 import image2 from "../../assets/images/pexels-polina-tankilevitch-3735625 1.png";
 import image3 from "../../assets/images/pexels-shkrabaanthony-5486145 1.png";
-import { NikelogoTrustedPmuSvg } from "../../assets/svgs/Svg";
-import Avatar from "../../assets/images/avatar.avif";
+import logo1 from "../../assets/images/logo1.jpg";
+import logo2 from "../../assets/images/logo2.png";
+import logo3 from "../../assets/images/logo3.png";
 
 const TrustedByLeadingArtist = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -16,11 +17,10 @@ const TrustedByLeadingArtist = () => {
       id: 1,
       review:
         "I just wanted to reach out and express my gratitude once more for adding Botox when I previously requested it - it's been such a valuable addition! Your app has truly simplified the process of managing consent forms and waivers, making it much more efficient for my business.",
-      nikeImage: <NikelogoTrustedPmuSvg />,
+      logo: logo1,
       rating: 5,
-      name: "Michelle G",
-      jobdescription: "Brow Artist",
-      businessName: "Beauty Studio Pro",
+      name: "Michelle N.",
+      businessName: "Mbellish Brows",
       backgroundImage: image1,
       profileImage: "/professional-woman-headshot.png",
     },
@@ -28,11 +28,10 @@ const TrustedByLeadingArtist = () => {
       id: 2,
       review:
         "Good afternoon, I'm eager to try out your PMU forms as I've heard great things about them. However, I would prefer to use my own forms. Is there a way to import them into your system or will I need to retype each question into the new forms?",
-      nikeImage: <NikelogoTrustedPmuSvg />,
+      logo: logo2,
       rating: 5,
-      name: "Laura C",
-      jobdescription: "Brow Artist",
-      businessName: "Beauty Studio Pro",
+      name: "Laura C.",
+      businessName: "Naples Permanent Makeup",
       backgroundImage: image2,
       profileImage: "/professional-blonde-headshot.png",
     },
@@ -40,11 +39,10 @@ const TrustedByLeadingArtist = () => {
       id: 3,
       review:
         "I love this app! it's so easy to use and has really simplified my work. It helps me stay organized and run my appointments smoothly without any stress. Everything I need is right there!",
-      nikeImage: <NikelogoTrustedPmuSvg />,
+      logo: logo3,
       rating: 5,
       name: "Shona B.",
-      jobdescription: "PMU Forms User",
-      businessName: "PMU Studio Elite",
+      businessName: "Luxe Beauty Bar",
       backgroundImage: image3,
       profileImage: "/professional-woman-headshot-brunette.png",
     },
@@ -98,22 +96,22 @@ const TrustedByLeadingArtist = () => {
                 className="card-background"
                 style={{ backgroundImage: `url(${review.backgroundImage})` }}
               >
-                {/* <div className="nike-logo">{review.nikeImage}</div> */}
+                {/* <div className="nike-logo">
+                  <img src={review.logo} alt={review.businessName} />
+                </div> */}
 
                 <div className="testimonial-content">
                   <p className="testimonial-text">"{review.review}"</p>
 
                   <div className="author-info">
                     <img
-                      src={Avatar}
+                      src={review.logo}
                       alt={review.name}
                       className="author-avatar"
                     />
                     <div className="author-details">
                       <h4 className="author-name">{review.name}</h4>
-                      <p className="author-title">
-                        {review.jobdescription}, {review.businessName}
-                      </p>
+                      <p className="author-title">{review.businessName}</p>
                       <div className="rating">
                         {[...Array(5)].map((_, i) => (
                           <span
