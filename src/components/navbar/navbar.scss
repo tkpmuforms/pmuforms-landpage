@@ -94,12 +94,12 @@
   .hamburger-menu {
     display: none;
     cursor: pointer;
-    padding: 20px;
+    padding: 8px;
     border-radius: 4px;
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: #370037;
+      background-color: #b817b6;
       color: white;
       .hamburger-icon span {
         background-color: white;
@@ -122,10 +122,6 @@
         border-radius: 2px;
         transition: all 0.3s ease;
       }
-    }
-
-    &:hover .hamburger-icon span {
-      background-color: var(--color-blue-dark);
     }
   }
 

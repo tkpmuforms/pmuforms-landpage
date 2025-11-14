@@ -15,28 +15,58 @@ const TipsandTrends = () => {
       </div>
 
       <div className="tips-trends__content">
-        <article className="tips-trends__featured-article">
+        <a
+          href="https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="tips-trends__featured-article"
+        >
           <div className="tips-trends__article-image">
             <img src={image1} alt="Woman receiving face massage treatment" />
           </div>
           <div className="tips-trends__article-content">
             <time className="tips-trends__date">March 9, 2025</time>
             <h3 className="tips-trends__article-title">
-              How to Legally Protect Your PMU Business with Consent Forms
+              How to Use PMU Forms
             </h3>
             <div className="tips-trends__arrow-icon">
               <ArrowIconTipsandTrendSvg />
             </div>
           </div>
-        </article>
+        </a>
 
         <div className="tips-trends__secondary-articles">
-          <article className="tips-trends__article">
+          <a
+            href="https://pmuforms.crunch.help/en/pmuforms-functionality/managing-your-services"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tips-trends__article"
+          >
             <div className="tips-trends__article-image">
               <img src={image2} alt="Professional doing microblading work" />
             </div>
             <div className="tips-trends__article-content">
               <time className="tips-trends__date">March 1, 2025</time>
+              <h3 className="tips-trends__article-title">
+                How to Legally Protect Your PMU Business with Consent Forms
+              </h3>
+              <div className="tips-trends__arrow-icon">
+                <ArrowIconTipsandTrendSvg />
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://pmuforms.crunch.help/en/pmuforms-functionality/editing-forms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tips-trends__article"
+          >
+            <div className="tips-trends__article-image">
+              <img src={image3} alt="PMU work being performed on client" />
+            </div>
+            <div className="tips-trends__article-content">
+              <time className="tips-trends__date">February 12, 2025</time>
               <h3 className="tips-trends__article-title">
                 What to Include in Your Microblading Consent Form
               </h3>
@@ -44,22 +74,7 @@ const TipsandTrends = () => {
                 <ArrowIconTipsandTrendSvg />
               </div>
             </div>
-          </article>
-
-          <article className="tips-trends__article">
-            <div className="tips-trends__article-image">
-              <img src={image3} alt="PMU work being performed on client" />
-            </div>
-            <div className="tips-trends__article-content">
-              <time className="tips-trends__date">February 12, 2025</time>
-              <h3 className="tips-trends__article-title">
-                How to Create a 5-Star Client Experience with Digital Forms
-              </h3>
-              <div className="tips-trends__arrow-icon">
-                <ArrowIconTipsandTrendSvg />
-              </div>
-            </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>

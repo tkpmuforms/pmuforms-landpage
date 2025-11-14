@@ -7,7 +7,8 @@ import Button from "../shared/Button";
 const Navbar = () => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const navigate = useNavigate();
-  const mobileMenuRef = useRef(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => {
     setMobileMenuVisible(!mobileMenuVisible);
@@ -16,7 +17,9 @@ const Navbar = () => {
   const handleClickOutside = (event) => {
     if (
       mobileMenuRef.current &&
-      !mobileMenuRef.current.contains(event.target)
+      !mobileMenuRef.current.contains(event.target) &&
+      hamburgerRef.current &&
+      !hamburgerRef.current.contains(event.target)
     ) {
       setMobileMenuVisible(false);
     }
@@ -48,6 +51,7 @@ const Navbar = () => {
         <LogoSvg />
       </div>
       <div
+        ref={hamburgerRef}
         className="hamburger-menu"
         onClick={toggleMobileMenu}
         aria-label="Toggle mobile menu"
