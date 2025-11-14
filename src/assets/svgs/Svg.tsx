@@ -342,6 +342,33 @@ export const WatchADemoSvg: React.FC<React.SVGProps<SVGSVGElement>> = () => {
   );
 };
 
+export const WebIconSvg: React.FC<React.SVGProps<SVGSVGElement>> = () => {
+  return (
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 30 30"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="15"
+        cy="15"
+        r="13.5"
+        fill="#B817B6"
+        stroke="#370037"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M15 3C15 3 11 8 11 15C11 22 15 27 15 27M15 3C15 3 19 8 19 15C19 22 15 27 15 27M15 3C8.373 3 3 8.373 3 15C3 21.627 8.373 27 15 27C21.627 27 27 21.627 27 15C27 8.373 21.627 3 15 3ZM4 10H26M4 20H26"
+        stroke="#F5F2F9"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+
 export const ThirtyMadeReadySvg: React.FC<
   React.SVGProps<SVGSVGElement>
 > = () => {

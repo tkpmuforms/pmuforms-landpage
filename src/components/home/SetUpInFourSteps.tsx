@@ -2,7 +2,11 @@ import step1 from "../../assets/images/step1.png";
 import step2 from "../../assets/images/step2.png";
 import step3 from "../../assets/images/step3.png";
 import step4 from "../../assets/images/step4.png";
-import { AppleButtonSvg, WatchADemoSvg } from "../../assets/svgs/Svg";
+import {
+  AppleButtonSvg,
+  WatchADemoSvg,
+  WebIconSvg,
+} from "../../assets/svgs/Svg";
 import Button from "../shared/Button";
 import "./setupinfoursteps.scss";
 
@@ -17,7 +21,7 @@ const SetUpInFourSteps = () => {
       description:
         "Access the web version right from your browser, or download the app from the App Store to use it on the go.",
       buttonSvg: <AppleButtonSvg />,
-      button2Svg: <WatchADemoSvg />,
+      button2Svg: <WebIconSvg />,
       buttonText: "Download on iOS",
       button2Text: "Open Web Version",
       buttonHref: "https://apps.apple.com/ng/app/pmu-forms/id1497270923",
