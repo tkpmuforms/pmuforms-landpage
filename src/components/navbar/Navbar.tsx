@@ -108,7 +108,7 @@ const Navbar = () => {
           icon={<AppleButtonSvg />}
           variant="primary"
           size="small"
-          className=""
+          className="download-app"
         >
           Download on iOS
         </Button>
@@ -120,7 +120,7 @@ const Navbar = () => {
           size="small"
           className="try-free-button"
         >
-          Try For Free
+          Open Web Version
         </Button>
       </div>
     </div>

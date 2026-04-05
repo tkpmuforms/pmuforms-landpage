@@ -45,7 +45,7 @@ const FirstHeroSection = () => {
             size="small"
             className="try-button"
           >
-            Try For Free
+            Open Web Version
           </Button>
         </div>
 

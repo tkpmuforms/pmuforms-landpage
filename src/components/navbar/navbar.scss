@@ -170,11 +170,25 @@
       }
     }
 
+    .logo {
+      order: 1;
+    }
+
     .buttons {
-      display: none;
+      order: 2;
+      display: flex;
+      gap: 8px;
+      padding-right: 0;
+      flex: 1;
+      justify-content: center;
+
+      .download-app {
+        display: none;
+      }
     }
 
     .hamburger-menu {
+      order: 3;
       display: block;
     }
   }
