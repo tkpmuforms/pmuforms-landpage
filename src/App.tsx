@@ -9,6 +9,7 @@ import Home from "./pages/home/Home";
 import LegallyProtect from "./components/howitWorks/features/LegallyProtect";
 import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
 import TermsAndConditions from "./pages/termsandconditions/TermsAndConditions";
+import DeleteAccount from "./pages/delete-account/DeleteAccount";
 import NotFound from "./pages/notfound/NotFound";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/blogs/legally-protect" element={<LegallyProtect />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsAndConditions />} />
+            <Route path="/delete-account" element={<DeleteAccount />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

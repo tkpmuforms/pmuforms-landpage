@@ -34,6 +34,8 @@ const Footer = () => {
         <a href="/terms">Terms</a>
         <span>|</span>
         <a href="/privacy">Privacy</a>
+        <span>|</span>
+        <a href="/delete-account">Delete Account</a>
       </div>
 
       <div className="footer__social">

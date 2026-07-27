@@ -1,5 +1,4 @@
 "use client";
-import Navbar from "../../components/navbar/Navbar";
 import Seo from "../../components/seo/Seo";
 import "./privacypolicy.scss";
 
@@ -16,13 +15,8 @@ const PrivacyPolicy = () => {
         ogUrl="https://pmuforms.com/privacy"
         robots="index, follow"
       />
-      <Navbar />
       <div className="privacy-policy">
         <h1>PMU Forms Privacy Policy</h1>
-        <p>
-          Your privacy matters. Protect yourself with a secure VPN router.{" "}
-          <span className="sponsored">Sponsored</span>
-        </p>
         <p>
           Dephyned built the PMU Forms app as a Freemium app. This SERVICE is
           provided by Dephyned at no cost and is intended for use as is.
@@ -49,16 +43,22 @@ const PrivacyPolicy = () => {
         <p>
           For a better experience, while using our Service, we may require you
           to provide us with certain personally identifiable information,
-          including but not limited to email. The information that we request
-          will be retained by us and used as described in this privacy policy.
+          including your name, email address, and phone number. Depending on
+          how you use the Service, this may also include client records you
+          create (names, contact details, consent and intake form responses,
+          signatures, and procedure photos) and payment information processed
+          for bookings and deposits. The information that we request will be
+          retained by us and used as described in this privacy policy.
         </p>
         <p>
           The app does use third-party services that may collect information
           used to identify you.
         </p>
         <ul>
-          <li>Firebase Analytics</li>
-          <li>Firebase Crashlytics</li>
+          <li>Firebase Authentication (account sign-in, including Google and Apple sign-in)</li>
+          <li>Cloud Firestore and Firebase Storage (storing your business, client, and form data, including photos)</li>
+          <li>Firebase Cloud Messaging (push notifications)</li>
+          <li>Stripe (payment processing for bookings and deposits)</li>
         </ul>
 
         <h2>Log Data</h2>
@@ -143,6 +143,13 @@ const PrivacyPolicy = () => {
           notify you of any changes by posting the new Privacy Policy on this
           page. These changes are effective immediately after they are posted on
           this page.
+        </p>
+
+        <h2>Deleting Your Account and Data</h2>
+        <p>
+          You can request deletion of your account and associated data at any
+          time. Visit our{" "}
+          <a href="/delete-account">account deletion page</a> for instructions.
         </p>
 
         <h2>Contact Us</h2>
