@@ -1,0 +1,357 @@
+.template-page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+  font-family: "Bariol Regular", sans-serif;
+  color: #3d3547;
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Bariol Bold", sans-serif;
+    color: #370037;
+  }
+
+  &__crumbs {
+    margin-bottom: 20px;
+
+    a {
+      color: #8e2d8e;
+      text-decoration: none;
+      font-family: "Bariol Bold", sans-serif;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__header {
+    margin-bottom: 32px;
+
+    h1 {
+      font-size: 44px;
+      line-height: 1.1;
+      margin: 0 0 16px;
+      color: #8e2d8e;
+
+      @media (max-width: 768px) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &__eyebrow {
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 13px;
+    font-family: "Bariol Bold", sans-serif;
+    color: #b817b6;
+  }
+
+  &__intro {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 12px;
+  }
+
+  &__actions {
+    margin-top: 20px;
+  }
+
+  &__print {
+    padding: 12px 22px;
+    border-radius: 10px;
+    border: 2px solid #8e2d8e;
+    background: #fff;
+    color: #8e2d8e;
+    font-family: "Bariol Bold", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      background: #faf2fa;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #b817b6;
+      outline-offset: 3px;
+    }
+  }
+
+  &__disclaimer {
+    margin: 28px 0;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: #f7f4f9;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5b5266;
+  }
+}
+
+.template-cta {
+  margin: 32px 0;
+  padding: 28px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #faf2fa 0%, #f3e6f3 100%);
+  border: 1px solid #ecd3ec;
+
+  h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+  }
+
+  p {
+    margin: 0 0 20px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+
+      .custom-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// the printable form itself
+.template-sheet {
+  background: #fff;
+  border: 1px solid #e6e0ea;
+  border-radius: 16px;
+  padding: 36px 40px;
+  box-shadow: 0 6px 24px rgba(55, 0, 55, 0.06);
+
+  @media (max-width: 600px) {
+    padding: 22px 18px;
+  }
+
+  &__title {
+    font-size: 26px;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+
+  &__business {
+    margin-bottom: 8px;
+  }
+
+  &__section {
+    margin-top: 28px;
+    break-inside: auto;
+
+    h3 {
+      font-size: 19px;
+      margin: 0 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #ecd3ec;
+      break-after: avoid;
+    }
+  }
+
+  &__note {
+    margin: 0 0 12px;
+    font-style: italic;
+    color: #6a5e77;
+  }
+
+  ol,
+  ul {
+    margin: 0;
+    padding-left: 22px;
+  }
+
+  li {
+    line-height: 1.55;
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+}
+
+.tpl-line {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 14px;
+
+  > span:first-child {
+    flex: 0 0 auto;
+    max-width: 60%;
+  }
+
+  &__blank {
+    flex: 1 1 auto;
+    min-width: 80px;
+    border-bottom: 1px solid #9c90a8;
+    height: 1.2em;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+
+    > span:first-child {
+      max-width: none;
+    }
+
+    &__blank {
+      height: 1.6em;
+    }
+  }
+}
+
+.tpl-yesno li,
+.tpl-initials li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.tpl-yesno__a,
+.tpl-initials__box {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  color: #5b5266;
+  font-family: "Bariol Bold", sans-serif;
+}
+
+.template-sheet ul.tpl-checklist,
+.template-sheet ol.tpl-yesno,
+.template-sheet ol.tpl-initials {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tpl-signatures {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px 24px;
+  margin-top: 24px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  .tpl-line--signature {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    font-size: 14px;
+    color: #6a5e77;
+
+    .tpl-line__blank {
+      height: 2.2em;
+    }
+  }
+}
+
+.template-hub {
+  &__grid {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  &__card {
+    padding: 24px;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid #e6e0ea;
+    box-shadow: 0 6px 24px rgba(55, 0, 55, 0.06);
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 21px;
+      margin: 0 0 10px;
+
+      a {
+        color: #370037;
+        text-decoration: none;
+
+        &:hover {
+          color: #8e2d8e;
+        }
+      }
+    }
+
+    p {
+      flex: 1;
+      margin: 0 0 16px;
+      line-height: 1.55;
+    }
+  }
+
+  &__open {
+    color: #8e2d8e;
+    font-family: "Bariol Bold", sans-serif;
+    text-decoration: none;
+  }
+}
+
+// Printing a template page prints only the form and the disclaimer.
+@media print {
+  .app-container:has(.template-page) {
+    padding-top: 0;
+
+    .navbar,
+    .footer,
+    .referral-banner {
+      display: none !important;
+    }
+  }
+
+  .template-page {
+    padding: 0;
+    max-width: none;
+    color: #000;
+
+    &__crumbs,
+    &__header,
+    .template-cta {
+      display: none !important;
+    }
+
+    &__disclaimer {
+      background: none;
+      padding: 0;
+      font-size: 10pt;
+      color: #333;
+    }
+  }
+
+  .template-sheet {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    font-size: 11pt;
+
+    h3 {
+      border-bottom-color: #999;
+    }
+  }
+
+  .tpl-line__blank {
+    border-bottom-color: #000;
+  }
+}

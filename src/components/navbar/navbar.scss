@@ -170,6 +170,15 @@
     white-space: nowrap;
   }
 
+  // keep a gap between the last link and the app icons
+  .links {
+    margin: 0 16px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    padding: 20px 40px;
+  }
+
   @media screen and (max-width: 1200px) {
     .links ul {
       gap: 24px;
@@ -180,13 +189,14 @@
     }
   }
 
-  @media screen and (max-width: 1150px) {
+  // "Try For Free" is also in the hero, so it goes first when space runs out
+  @media screen and (max-width: 1380px) {
     .buttons .try-free-button {
       display: none;
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1100px) {
     padding: 10px 15px;
 
     .logo {

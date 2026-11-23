@@ -2,9 +2,22 @@ import { useState } from "react";
 import "./faq.scss";
 import Button from "../shared/Button";
 import { useNavigate } from "react-router-dom";
-import { FAQ_ITEMS as faqItems } from "./faqItems";
+import { FAQ_ITEMS, type FAQItem } from "./faqItems";
 
-const FAQ = () => {
+interface FAQProps {
+  items?: FAQItem[];
+  title?: string;
+  subtitle?: string;
+  /** section id, for links like /#faq */
+  id?: string;
+}
+
+const FAQ = ({
+  items: faqItems = FAQ_ITEMS,
+  title = "Frequently Asked Questions",
+  subtitle = "Everything you need to know about PMU Forms",
+  id = "faq",
+}: FAQProps) => {
   const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -14,12 +27,10 @@ const FAQ = () => {
 
 
   return (
-    <section className="faq" id="faq">
+    <section className="faq" id={id}>
       <div className="faq__container">
-        <h2 className="faq__title">Frequently Asked Questions</h2>
-        <p className="faq__subtitle">
-          Everything you need to know about PMU Forms
-        </p>
+        <h2 className="faq__title">{title}</h2>
+        <p className="faq__subtitle">{subtitle}</p>
 
         <div className="faq__list">
           {faqItems.map((item, index) => (
@@ -33,9 +44,9 @@ const FAQ = () => {
               <button
                 type="button"
                 className="faq__question"
-                id={`faq-question-${index}`}
+                id={`${id}-question-${index}`}
                 aria-expanded={openIndex === index}
-                aria-controls={`faq-answer-${index}`}
+                aria-controls={`${id}-answer-${index}`}
                 onClick={() => toggleFAQ(index)}
               >
                 <span className="faq__question-text">{item.question}</span>
@@ -77,9 +88,9 @@ const FAQ = () => {
               {/* always in the page so search engines can read the answers */}
               <div
                 className="faq__answer"
-                id={`faq-answer-${index}`}
+                id={`${id}-answer-${index}`}
                 role="region"
-                aria-labelledby={`faq-question-${index}`}
+                aria-labelledby={`${id}-question-${index}`}
                 hidden={openIndex !== index}
               >
                 <p>{item.answer}</p>

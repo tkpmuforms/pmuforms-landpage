@@ -104,6 +104,16 @@ const Navbar = () => {
               FAQ
             </Link>
           </li>
+          <li>
+            <Link to="/pricing" onClick={() => setMobileMenuVisible(false)}>
+              Pricing
+            </Link>
+          </li>
+          <li>
+            <Link to="/templates" onClick={() => setMobileMenuVisible(false)}>
+              Free Templates
+            </Link>
+          </li>
         </ul>
       </div>
 

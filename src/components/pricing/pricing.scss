@@ -1,0 +1,281 @@
+$ink: #3f3346;
+$muted: #6b7280;
+$line: #eee4ee;
+$primary: #8e2d8e;
+$primary-dark: #6e1f6e;
+$tint: #f4e3f4;
+
+.pricing {
+  padding: 88px 20px 96px;
+  background: #ffffff;
+  scroll-margin-top: 80px;
+
+  @media (max-width: 768px) {
+    padding: 64px 16px 72px;
+  }
+
+  &__container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: $tint;
+    color: $primary;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: $ink;
+
+    @media (max-width: 768px) {
+      font-size: 34px;
+    }
+  }
+
+  &__lead {
+    margin: 0 auto;
+    max-width: 560px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: $muted;
+  }
+
+  // ---------------------------------------------------------------- plans
+
+  &__plans {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 360px));
+    justify-content: center;
+    gap: 24px;
+
+    @media (max-width: 720px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  &__plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px 28px;
+    border: 1px solid $line;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(63, 51, 70, 0.06);
+
+    &--featured {
+      border: 2px solid $primary;
+      box-shadow: 0 16px 40px rgba(142, 45, 142, 0.16);
+
+      @media (max-width: 720px) {
+        // the better deal first on phones
+        order: -1;
+      }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: $primary;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  &__plan-name {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: $ink;
+  }
+
+  &__price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin: 0 0 8px;
+  }
+
+  &__amount {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    color: $ink;
+  }
+
+  &__period {
+    font-size: 17px;
+    color: $muted;
+  }
+
+  &__note {
+    margin: 0 0 24px;
+    min-height: 44px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: $muted;
+  }
+
+  &__cta {
+    margin-top: auto;
+    display: block;
+    padding: 14px 18px;
+    border: 1.5px solid $primary;
+    border-radius: 12px;
+    color: $primary;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: $tint;
+    }
+
+    &--primary {
+      background: $primary;
+      color: #fff;
+
+      &:hover,
+      &:focus-visible {
+        background: $primary-dark;
+        color: #fff;
+      }
+    }
+  }
+
+  &__apps {
+    margin: 24px auto 0;
+    max-width: 620px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+    color: $muted;
+
+    a {
+      color: $primary;
+      font-weight: 600;
+    }
+  }
+
+  // ------------------------------------------------------------- included
+
+  &__included {
+    margin-top: 56px;
+    padding: 36px 32px;
+    border-radius: 20px;
+    background: #faf6fa;
+
+    @media (max-width: 768px) {
+      padding: 28px 18px;
+    }
+  }
+
+  &__included-title {
+    margin: 0 0 28px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: $ink;
+  }
+
+  &__groups {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 32px;
+
+    @media (max-width: 960px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  &__group {
+    h4 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: $primary;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 1.45;
+      color: $ink;
+    }
+  }
+
+  &__check {
+    flex: 0 0 auto;
+    margin-top: 1px;
+  }
+
+  // ---------------------------------------------------------------- value
+
+  &__value {
+    margin: 32px auto 0;
+    max-width: 680px;
+    text-align: center;
+
+    p {
+      margin: 0 0 10px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: $ink;
+    }
+
+    strong {
+      color: $primary;
+    }
+  }
+
+  &__referral {
+    font-size: 15px !important;
+    color: $muted !important;
+  }
+
+  &__fine {
+    margin: 16px auto 0;
+    text-align: center;
+    font-size: 13px;
+    color: $muted;
+  }
+}

@@ -28,6 +28,8 @@ const Footer = () => {
         <a href="#review">REVIEWS</a>
         <a href="#blogs">BLOGS</a>
         <a href="#faq">FAQS</a>
+        <a href="/pricing">PRICING</a>
+        <a href="/templates">FREE TEMPLATES</a>
       </nav>
 
       <div className="footer__secondary-links">

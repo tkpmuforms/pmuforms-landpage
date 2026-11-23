@@ -3,7 +3,10 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { initAnalytics } from "./analytics";
+import { captureAttribution } from "./attribution";
 
+// remember the ad / referral link before anything changes the URL
+captureAttribution();
 initAnalytics();
 
 const root = document.getElementById("root")!;

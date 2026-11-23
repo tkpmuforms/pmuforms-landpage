@@ -1,0 +1,76 @@
+.referral-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 24px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 14px 20px;
+  background: #faf2fa;
+  border-bottom: 1px solid #ecd3ec;
+  color: #370037;
+  font-family: "Bariol Regular", sans-serif;
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+    max-width: 720px;
+
+    strong {
+      font-family: "Bariol Bold", sans-serif;
+      color: #8e2d8e;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__cta {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: #8e2d8e;
+    color: #fff;
+    font-family: "Bariol Bold", sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      background: #370037;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #b817b6;
+      outline-offset: 3px;
+    }
+  }
+
+  &__close {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #6a5e77;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover {
+      background: #f1e1f1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    text-align: center;
+
+    &__text {
+      font-size: 15px;
+    }
+  }
+}

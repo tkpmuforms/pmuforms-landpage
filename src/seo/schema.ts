@@ -6,10 +6,12 @@ import {
   SUPPORT_EMAIL,
   WEB_APP_URL,
 } from "../constants/links";
+import { PRICING_OFFERS } from "../constants/pricing";
 
 /**
- * JSON-LD for the home page. Only facts we can stand behind: no ratings,
- * prices or certifications, which Google treats as spam when unverifiable.
+ * JSON-LD for the home page. Only facts we can stand behind: no ratings or
+ * certifications, which Google treats as spam when unverifiable. Prices are
+ * included because they're shown on the page (see constants/pricing.ts).
  */
 const ORG_ID = `${SITE_URL}/#organization`;
 
@@ -55,6 +57,7 @@ export const homeStructuredData = {
       downloadUrl: [IOS_APP_URL, ANDROID_APP_URL],
       installUrl: [IOS_APP_URL, ANDROID_APP_URL],
       publisher: { "@id": ORG_ID },
+      offers: PRICING_OFFERS,
       description:
         "Digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and deposits, and pigment inventory tracked by lot, for permanent makeup artists.",
       featureList: [

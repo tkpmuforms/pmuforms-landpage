@@ -3,6 +3,8 @@ import ClientJourney from "../../components/home/ClientJourney";
 import FAQ from "../../components/home/FAQ";
 import FirstHeroSection from "../../components/home/FirstHeroSection";
 import NewFeatures from "../../components/home/NewFeatures";
+import Pricing from "../../components/pricing/Pricing";
+import ReferralBanner from "../../components/referral/ReferralBanner";
 import ReasonsWhyUsePmu from "../../components/home/ReasonsWhyUsePmu";
 import SetUpInFourSteps from "../../components/home/SetUpInFourSteps";
 import SmartConsentForms from "../../components/home/SmartConsentForms";
@@ -28,6 +30,7 @@ const Home = () => {
         ogUrl="https://pmuforms.com/"
         structuredData={homeStructuredData}
       />
+      <ReferralBanner />
       <FirstHeroSection />
       <SmartConsentForms />
       <ClientJourney />
@@ -36,6 +39,7 @@ const Home = () => {
       <SetUpInFourSteps />
       <EverythingYouNeed />
       <TrustedByLeadingArtist />
+      <Pricing />
       <TipsandTrends />
       <FAQ />
     </div>

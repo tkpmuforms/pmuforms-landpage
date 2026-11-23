@@ -31,14 +31,9 @@ export const FAQ_ITEMS: FAQItem[] = [
       "Yes. Inventory tracks each product by lot number and expiration date, shows what's low, expiring or expired, and lets you quarantine or recall a lot. Each product has a compliance passport to keep its SDS, certificate of analysis and ingredient documents together. PMU Forms organizes your documentation; it doesn't certify products.",
   },
   {
-    question: "Do I need to pay to get started?",
+    question: "How much does PMU Forms cost?",
     answer:
-      "PMU Forms offers a free trial that lets you explore all features. After the trial period, affordable subscription plans are available to continue using the service.",
-  },
-  {
-    question: "Why do I need to add a card for the free trial?",
-    answer:
-      "Adding your card ensures a seamless transition after your trial ends. You won't be charged during the trial period, and you can cancel anytime before it ends to avoid any charges.",
+      "Creating your account is free. To send forms to clients and use every feature, subscribe for $19.99 a month or $149.99 a year (about $12.50 a month). Both plans include everything, one subscription works on iPhone, Android and the web, and you can cancel anytime. See pmuforms.com/pricing for the full list of what's included.",
   },
   {
     question: "Can I customize the forms?",
