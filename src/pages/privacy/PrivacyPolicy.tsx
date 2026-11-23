@@ -1,5 +1,4 @@
 "use client";
-import Navbar from "../../components/navbar/Navbar";
 import Seo from "../../components/seo/Seo";
 import "./privacypolicy.scss";
 
@@ -16,7 +15,6 @@ const PrivacyPolicy = () => {
         ogUrl="https://pmuforms.com/privacy"
         robots="index, follow"
       />
-      <Navbar />
       <div className="privacy-policy">
         <h1>PMU Forms Privacy Policy</h1>
         <p>

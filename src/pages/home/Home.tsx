@@ -9,6 +9,7 @@ import SmartConsentForms from "../../components/home/SmartConsentForms";
 import TipsandTrends from "../../components/home/TipsandTrends";
 import TrustedByLeadingArtist from "../../components/home/TrustedByLeadingArtist";
 import Seo from "../../components/seo/Seo";
+import { homeStructuredData } from "../../seo/schema";
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
         ogTitle="PMU Forms - Consent Forms, Aftercare & Deposits for PMU Artists"
         ogDescription="Consent forms, pre-care and aftercare, healing check-ins, Square deposits and pigment lot tracking, in one app for permanent makeup artists."
         ogUrl="https://pmuforms.com/"
+        structuredData={homeStructuredData}
       />
       <FirstHeroSection />
       <SmartConsentForms />

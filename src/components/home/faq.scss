@@ -67,22 +67,40 @@
     }
   }
 
+  &__heading {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
   &__question {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
+    width: 100%;
     cursor: pointer;
     padding: 8px 0;
+    border: 0;
+    background: none;
+    text-align: left;
+    color: #374151;
+    font: inherit;
 
-    h3 {
-      font-size: 18px;
-      font-weight: 500;
-      color: #374151;
-      margin: 0;
+    &:focus-visible {
+      outline: 2px solid #6b46c1;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+  }
 
-      @media (max-width: 768px) {
-        font-size: 16px;
-      }
+  &__question-text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
     }
   }
 
@@ -101,6 +119,11 @@
 
   &__answer {
     padding: 16px 0 8px;
+
+    &[hidden] {
+      display: none;
+    }
+
 
     p {
       font-size: 16px;

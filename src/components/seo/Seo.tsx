@@ -31,13 +31,13 @@ interface SeoComponent {
  * Uses react-helmet-async for dynamic meta tag management
  */
 const Seo: SeoComponent = ({
-  title = 'PMU Forms - Smart Consent & Aftercare Forms for Permanent Makeup Artists',
-  description = 'PMU Forms is the leading digital consent and aftercare solution for permanent makeup artists. Streamline client onboarding, ensure legal compliance, and grow your PMU business with smart digital forms.',
-  keywords = 'PMU forms, permanent makeup, consent forms, aftercare, digital forms, PMU artist, eyebrow, eyeliner, lips',
+  title = 'PMU Forms - Consent Forms, Aftercare & Deposits for Permanent Makeup Artists',
+  description = 'PMU Forms is the all-in-one app for permanent makeup artists: digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and deposits, and pigment inventory tracked by lot.',
+  keywords = 'PMU forms, permanent makeup, consent forms, aftercare, PMU artist, PMU software',
   canonical = 'https://pmuforms.com',
   ogTitle,
   ogDescription,
-  ogImage = 'https://pmuforms.com/PMULogo.png',
+  ogImage = 'https://pmuforms.com/og-image.png',
   ogUrl,
   twitterCard = 'summary_large_image',
   twitterTitle,
@@ -54,7 +54,6 @@ const Seo: SeoComponent = ({
     <Helmet>
       {/* Primary Meta Tags */}
       <title>{title}</title>
-      <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content={author} />
@@ -69,6 +68,7 @@ const Seo: SeoComponent = ({
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="PMU Forms: consent forms, aftercare and deposits for PMU artists" />
       <meta property="og:site_name" content="PMU Forms" />
       <meta property="og:locale" content="en_US" />
 
@@ -83,7 +83,7 @@ const Seo: SeoComponent = ({
       {/* Article Meta Tags (if applicable) */}
       {publishedDate && <meta property="article:published_time" content={publishedDate} />}
       {modifiedDate && <meta property="article:modified_time" content={modifiedDate} />}
-      {author && <meta property="article:author" content={author} />}
+      {type === 'article' && author && <meta property="article:author" content={author} />}
 
       {/* JSON-LD Structured Data */}
       {structuredData && (

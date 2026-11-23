@@ -71,8 +71,10 @@
 
         @media (max-width: 768px) {
           display: flex;
-          margin: 0 auto;
-          width: 40%;
+          justify-content: center;
+          margin: 0 auto 12px;
+          width: min(260px, 100%);
+          box-sizing: border-box;
         }
 
         &:hover {

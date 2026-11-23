@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import "./trustedbyleadingartist.scss";
-import image1 from "../../assets/images/pexels-cottonbro-6862594 1.png";
-import image2 from "../../assets/images/pexels-polina-tankilevitch-3735625 1.png";
-import image3 from "../../assets/images/pexels-shkrabaanthony-5486145 1.png";
+import image1 from "../../assets/images/pexels-cottonbro-6862594 1.jpg";
+import image2 from "../../assets/images/pexels-polina-tankilevitch-3735625 1.jpg";
+import image3 from "../../assets/images/pexels-shkrabaanthony-5486145 1.jpg";
 import { NikelogoTrustedPmuSvg } from "../../assets/svgs/Svg";
 import Avatar from "../../assets/images/avatar.avif";
 

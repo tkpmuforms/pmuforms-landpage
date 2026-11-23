@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Navbar from "../../components/navbar/Navbar";
 import Seo from "../../components/seo/Seo";
 import "./termsandconditions.scss";
 
@@ -156,7 +155,6 @@ In Accordance with Section 9 of the "Instructions for Minimum Terms of Developer
         ogUrl="https://pmuforms.com/terms"
         robots="index, follow"
       />
-      <Navbar />
       <div className="terms-agreement-container">
         <div className="terms-header">
           <h1>END USER LICENSE AGREEMENT</h1>

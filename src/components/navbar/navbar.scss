@@ -130,7 +130,36 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  // The bar holds six links and up to three buttons; step down as space runs out.
+  .links li,
+  .links a {
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 1520px) {
+    // both store buttons are in the hero right below
+    .buttons .android-button {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .links ul {
+      gap: 24px;
+    }
+
+    .buttons {
+      gap: 12px;
+    }
+  }
+
+  @media screen and (max-width: 1150px) {
+    .buttons .try-free-button {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
     padding: 10px 15px;
 
     .logo {

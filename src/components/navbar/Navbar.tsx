@@ -1,22 +1,23 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AppleButtonSvg, LogoSvg, WatchADemoSvg } from "../../assets/svgs/Svg";
 import "./navbar.scss";
 import Button from "../shared/Button";
+import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
+import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
 
 const Navbar = () => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
-  const navigate = useNavigate();
-  const mobileMenuRef: any = useRef(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => {
     setMobileMenuVisible(!mobileMenuVisible);
   };
 
-  const handleClickOutside = (event: any) => {
+  const handleClickOutside = (event: MouseEvent) => {
     if (
       mobileMenuRef.current &&
-      !mobileMenuRef.current.contains(event.target)
+      !mobileMenuRef.current.contains(event.target as Node)
     ) {
       setMobileMenuVisible(false);
     }
@@ -44,9 +45,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div onClick={() => navigate("/")} className="logo">
+      <Link to="/" className="logo" aria-label="PMU Forms home">
         <LogoSvg />
-      </div>
+      </Link>
       <div
         className="hamburger-menu"
         onClick={toggleMobileMenu}
@@ -107,7 +108,7 @@ const Navbar = () => {
 
       <div className="buttons">
         <Button
-          href="https://apps.apple.com/ng/app/pmu-forms/id1497270923"
+          href={IOS_APP_URL}
           target="_blank"
           icon={<AppleButtonSvg />}
           variant="primary"
@@ -117,7 +118,17 @@ const Navbar = () => {
           Download on iOS
         </Button>
         <Button
-          href="https://artist.pmuforms.com/"
+          href={ANDROID_APP_URL}
+          target="_blank"
+          icon={<GooglePlaySvg />}
+          variant="primary"
+          size="small"
+          className="android-button"
+        >
+          Download on Android
+        </Button>
+        <Button
+          href={WEB_APP_URL}
           target="_blank"
           icon={<WatchADemoSvg />}
           variant="secondary"

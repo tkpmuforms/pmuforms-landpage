@@ -26,3 +26,6 @@ dist-ssr
 # local env files (only public VITE_ values belong in them)
 .env
 .env.*.local
+
+# build-time SSR bundle used by scripts/prerender.mjs
+dist-ssr

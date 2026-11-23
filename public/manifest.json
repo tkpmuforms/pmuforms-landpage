@@ -1,46 +1,41 @@
 {
-  "name": "PMU Forms - Smart Consent & Aftercare Forms",
+  "name": "PMU Forms - Consent Forms, Aftercare & Deposits",
   "short_name": "PMU Forms",
-  "description": "The leading digital consent and aftercare solution for permanent makeup artists",
+  "description": "Consent forms, pre-care and aftercare, healing check-ins, Square deposits and pigment lot tracking for permanent makeup artists.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#ffffff",
-  "theme_color": "#6366f1",
+  "theme_color": "#8e2d8e",
   "icons": [
     {
-      "src": "/PMULogo.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/PMULogo.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
-    },
-    {
-      "src": "/PMULogo.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
     }
   ],
-  "categories": ["productivity", "business"],
-  "screenshots": [
+  "categories": [
+    "productivity",
+    "business"
+  ],
+  "related_applications": [
     {
-      "src": "/PMULogo.png",
-      "sizes": "540x720",
-      "type": "image/png",
-      "form_factor": "narrow"
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.pmuforms.mobile",
+      "id": "com.pmuforms.mobile"
     },
     {
-      "src": "/PMULogo.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
+      "platform": "itunes",
+      "url": "https://apps.apple.com/ng/app/pmu-forms/id1497270923"
     }
-  ]
+  ],
+  "prefer_related_applications": false
 }

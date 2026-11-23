@@ -38,6 +38,7 @@ code {
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Bariol Regular";
   font-style: normal;
   font-weight: normal;
@@ -47,6 +48,7 @@ code {
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Bariol Thin";
   font-style: normal;
   font-weight: normal;
@@ -55,6 +57,7 @@ code {
       format("woff");
 }
 @font-face {
+  font-display: swap;
   font-family: "Bariol Bold";
   font-style: normal;
   font-weight: normal;
@@ -64,6 +67,7 @@ code {
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Bariol Light";
   font-style: normal;
   font-weight: normal;

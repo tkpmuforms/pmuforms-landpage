@@ -9,6 +9,9 @@ import {
   WatchADemoSvg,
 } from "../../assets/svgs/Svg";
 import Button from "../shared/Button";
+import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
+import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
+import { ANDROID_APP_URL, DEMO_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
 import "./footer.scss";
 
 const Footer = () => {
@@ -53,7 +56,7 @@ const Footer = () => {
 
       <div className="footer__buttons">
         <Button
-          href="https://apps.apple.com/ng/app/pmu-forms/id1497270923"
+          href={IOS_APP_URL}
           target="_blank"
           icon={<AppleButtonSvg />}
           variant="primary"
@@ -63,7 +66,27 @@ const Footer = () => {
           Download on iOS
         </Button>
         <Button
-          href="https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms"
+          href={ANDROID_APP_URL}
+          target="_blank"
+          icon={<GooglePlaySvg />}
+          variant="primary"
+          size="small"
+          className=""
+        >
+          Download on Android
+        </Button>
+        <Button
+          href={WEB_APP_URL}
+          target="_blank"
+          icon={<WebAppSvg />}
+          variant="primary"
+          size="small"
+          className=""
+        >
+          Open Web App
+        </Button>
+        <Button
+          href={DEMO_URL}
           target="_blank"
           icon={<WatchADemoSvg />}
           variant="secondary"

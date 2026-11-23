@@ -2,11 +2,13 @@
 
 import { AppleButtonSvg, WatchADemoSvg } from "../../assets/svgs/Svg";
 import Button from "../shared/Button";
+import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
+import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
+import { ANDROID_APP_URL, DEMO_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
 import "./smartconsentforms.scss";
 
 const SmartConsentForms = () => {
-  const videolink =
-    "https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms";
+  const videolink = DEMO_URL;
 
   return (
     <section className="smart-consent-forms">
@@ -23,7 +25,7 @@ const SmartConsentForms = () => {
         </p>
         <div className="smart-consent-forms__buttons">
           <Button
-            href="https://apps.apple.com/ng/app/pmu-forms/id1497270923"
+            href={IOS_APP_URL}
             target="_blank"
             icon={<AppleButtonSvg />}
             variant="primary"
@@ -31,6 +33,26 @@ const SmartConsentForms = () => {
             className="smart-consent-forms__download-btn"
           >
             Download on iOS
+          </Button>
+          <Button
+            href={ANDROID_APP_URL}
+            target="_blank"
+            icon={<GooglePlaySvg />}
+            variant="primary"
+            size="small"
+            className="smart-consent-forms__download-btn"
+          >
+            Download on Android
+          </Button>
+          <Button
+            href={WEB_APP_URL}
+            target="_blank"
+            icon={<WebAppSvg />}
+            variant="primary"
+            size="small"
+            className="smart-consent-forms__download-btn"
+          >
+            Open Web App
           </Button>
           <Button
             href={videolink}

@@ -1,7 +1,7 @@
 import "./tipsandtrends.scss";
-import image1 from "../../assets/images/africanwoman.png";
-import image2 from "../../assets/images/happy-black-woman-wearing-golden-eye-mask 1.png";
-import image3 from "../../assets/images/professional-tattoo-artist-his-customer-workshop 1.png";
+import image1 from "../../assets/images/africanwoman.jpg";
+import image2 from "../../assets/images/happy-black-woman-wearing-golden-eye-mask 1.jpg";
+import image3 from "../../assets/images/professional-tattoo-artist-his-customer-workshop 1.jpg";
 import { ArrowIconTipsandTrendSvg } from "../../assets/svgs/Svg";
 
 const TipsandTrends = () => {

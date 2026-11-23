@@ -1,4 +1,4 @@
-import FacialImage from "../../../assets/images/africanwoman.png";
+import FacialImage from "../../../assets/images/africanwoman.jpg";
 import Seo from "../../seo/Seo";
 import "./legallyProtect.scss";
 

@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Turnstile, { type TurnstileHandle } from "../turnstile/Turnstile";
+import { trackEvent } from "../../analytics";
 import "./contactform.scss";
 
 const API_URL = import.meta.env.VITE_API_URL || "https://admin.pmuforms.com";
@@ -149,6 +150,7 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
+        trackEvent("generate_lead", { form: "contact" });
         setNotification({
           type: "success",
           message:

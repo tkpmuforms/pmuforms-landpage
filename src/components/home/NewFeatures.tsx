@@ -1,6 +1,9 @@
 import type React from "react";
 import { AppleButtonSvg, WatchADemoSvg } from "../../assets/svgs/Svg";
 import Button from "../shared/Button";
+import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
+import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
+import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
 import {
   BottleIcon,
   CalendarIcon,
@@ -281,10 +284,10 @@ const NewFeatures = () => (
 
       <div className="new-features__cta">
         <h3>Try every feature free.</h3>
-        <p>Start on the web today, or download the app.</p>
+        <p>Start on the web today, or download the app for iPhone or Android.</p>
         <div className="new-features__cta-buttons">
           <Button
-            href="https://artist.pmuforms.com/"
+            href={WEB_APP_URL}
             target="_blank"
             icon={<WatchADemoSvg />}
             variant="secondary"
@@ -293,13 +296,31 @@ const NewFeatures = () => (
             Try For Free
           </Button>
           <Button
-            href="https://apps.apple.com/ng/app/pmu-forms/id1497270923"
+            href={IOS_APP_URL}
             target="_blank"
             icon={<AppleButtonSvg />}
             variant="primary"
             size="small"
           >
             Download on iOS
+          </Button>
+          <Button
+            href={ANDROID_APP_URL}
+            target="_blank"
+            icon={<GooglePlaySvg />}
+            variant="primary"
+            size="small"
+          >
+            Download on Android
+          </Button>
+          <Button
+            href={WEB_APP_URL}
+            target="_blank"
+            icon={<WebAppSvg />}
+            variant="primary"
+            size="small"
+          >
+            Open Web App
           </Button>
         </div>
       </div>

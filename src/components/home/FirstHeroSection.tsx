@@ -10,6 +10,9 @@ import iphone1 from "../../assets/images/iPhone1.png";
 import iphone2 from "../../assets/images/iPhone2.png";
 import iphone3 from "../../assets/images/iPhone3.png";
 import Button from "../shared/Button";
+import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
+import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
+import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
 import "./firstherosection.scss";
 
 const FirstHeroSection = () => {
@@ -29,7 +32,7 @@ const FirstHeroSection = () => {
           </p>
 
           <Button
-            href="https://apps.apple.com/ng/app/pmu-forms/id1497270923"
+            href={IOS_APP_URL}
             target="_blank"
             className="download-button"
             icon={<AppleButtonSvg />}
@@ -39,7 +42,27 @@ const FirstHeroSection = () => {
             Download on iOS
           </Button>
           <Button
-            href="https://artist.pmuforms.com/"
+            href={ANDROID_APP_URL}
+            target="_blank"
+            className="download-button"
+            icon={<GooglePlaySvg />}
+            variant="custom"
+            size="small"
+          >
+            Download on Android
+          </Button>
+          <Button
+            href={WEB_APP_URL}
+            target="_blank"
+            className="download-button"
+            icon={<WebAppSvg />}
+            variant="custom"
+            size="small"
+          >
+            Open Web App
+          </Button>
+          <Button
+            href={WEB_APP_URL}
             target="_blank"
             icon={<WatchADemoSvg />}
             variant="secondary"

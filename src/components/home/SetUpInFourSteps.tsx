@@ -4,24 +4,31 @@ import step3 from "../../assets/images/step3.png";
 import step4 from "../../assets/images/step4.png";
 import { AppleButtonSvg, WatchADemoSvg } from "../../assets/svgs/Svg";
 import Button from "../shared/Button";
+import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
+import {
+  ANDROID_APP_URL,
+  DEMO_URL,
+  IOS_APP_URL,
+  WEB_APP_URL,
+} from "../../constants/links";
 import "./setupinfoursteps.scss";
 
 const SetUpInFourSteps = () => {
-  const videolink =
-    "https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms";
+  const videolink = DEMO_URL;
 
   const steps = [
     {
       id: 1,
       title: "Use PMU Forms anywhere",
       description:
-        "Access the web version right from your browser, or download the app from the App Store to use it on the go.",
+        "Access the web version right from your browser, or download the app from the App Store or Google Play to use it on the go.",
       buttonSvg: <AppleButtonSvg />,
       button2Svg: <WatchADemoSvg />,
       buttonText: "Download on iOS",
-      button2Text: "Open Web Version",
-      buttonHref: "https://apps.apple.com/ng/app/pmu-forms/id1497270923",
-      button2Href: "https://artist.pmuforms.com/",
+      button2Text: "Open Web App",
+      buttonHref: IOS_APP_URL,
+      button2Href: WEB_APP_URL,
+      androidHref: ANDROID_APP_URL,
       image: <img src={step1 || "/placeholder.svg"} alt="Step 1" />,
     },
     {
@@ -93,6 +100,18 @@ const SetUpInFourSteps = () => {
                   >
                     {step.buttonText}
                   </Button>
+                  {step.androidHref && (
+                    <Button
+                      href={step.androidHref}
+                      target="_blank"
+                      icon={<GooglePlaySvg />}
+                      variant="primary"
+                      size="small"
+                      className="smart-consent-forms__download-btn"
+                    >
+                      Download on Android
+                    </Button>
+                  )}
                   {step.button2Href && (
                     <Button
                       href={step.button2Href}
