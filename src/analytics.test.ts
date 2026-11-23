@@ -125,7 +125,7 @@ describe("analytics", () => {
       analytics.trackPageView("/contact");
       analytics.trackEvent("generate_lead", { form: "contact" });
 
-      document.body.innerHTML = `<footer class="footer"><a id="a" href="${ANDROID_APP_URL}">Download on Android</a></footer>`;
+      document.body.innerHTML = `<footer class="footer"><a id="a" href="${ANDROID_APP_URL}" aria-label="Download on Android"><svg></svg></a></footer>`;
       document.addEventListener("click", (e) => e.preventDefault());
       document.getElementById("a")!.click();
 
@@ -133,7 +133,12 @@ describe("analytics", () => {
         expect.arrayContaining([
           expect.objectContaining({ event: "virtual_page_view", page_path: "/contact" }),
           { event: "generate_lead", form: "contact" },
-          expect.objectContaining({ event: "app_download_click", store: "android", section: "footer" }),
+          expect.objectContaining({
+            event: "app_download_click",
+            store: "android",
+            section: "footer",
+            link_text: "Download on Android", // from aria-label on icon-only links
+          }),
         ])
       );
     });

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { AppleButtonSvg, LogoSvg, WatchADemoSvg } from "../../assets/svgs/Svg";
 import "./navbar.scss";
 import Button from "../shared/Button";
-import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
+import { AndroidSvg } from "../../assets/svgs/AndroidSvg";
+import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
 import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
 
 const Navbar = () => {
@@ -107,26 +108,38 @@ const Navbar = () => {
       </div>
 
       <div className="buttons">
-        <Button
-          href={IOS_APP_URL}
-          target="_blank"
-          icon={<AppleButtonSvg />}
-          variant="primary"
-          size="small"
-          className=""
-        >
-          Download on iOS
-        </Button>
-        <Button
-          href={ANDROID_APP_URL}
-          target="_blank"
-          icon={<GooglePlaySvg />}
-          variant="primary"
-          size="small"
-          className="android-button"
-        >
-          Download on Android
-        </Button>
+        <div className="store-icons" role="group" aria-label="Get PMU Forms">
+          <a
+            href={IOS_APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="store-icon store-icon--ios"
+            aria-label="Download on iOS"
+            title="Download on iOS"
+          >
+            <AppleButtonSvg width={18} height={22} />
+          </a>
+          <a
+            href={ANDROID_APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="store-icon store-icon--android"
+            aria-label="Download on Android"
+            title="Download on Android"
+          >
+            <AndroidSvg width={22} height={22} />
+          </a>
+          <a
+            href={WEB_APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="store-icon store-icon--web"
+            aria-label="Open Web App"
+            title="Open Web App"
+          >
+            <WebAppSvg width={20} height={20} />
+          </a>
+        </div>
         <Button
           href={WEB_APP_URL}
           target="_blank"

@@ -123,7 +123,7 @@ function trackOutboundClick(event: MouseEvent): void {
     destination === "web_app" ? "web_app_click" : "app_download_click",
     {
       store: destination,
-      link_text: link.textContent?.trim().slice(0, 60),
+      link_text: (link.textContent?.trim() || link.getAttribute("aria-label") || "").slice(0, 60),
       section: area?.id || area?.className.split(" ")[0] || "unknown",
     }
   );
