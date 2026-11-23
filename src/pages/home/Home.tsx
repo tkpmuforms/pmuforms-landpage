@@ -1,6 +1,8 @@
 import EverythingYouNeed from "../../components/home/EverthingYouNeed";
+import ClientJourney from "../../components/home/ClientJourney";
 import FAQ from "../../components/home/FAQ";
 import FirstHeroSection from "../../components/home/FirstHeroSection";
+import NewFeatures from "../../components/home/NewFeatures";
 import ReasonsWhyUsePmu from "../../components/home/ReasonsWhyUsePmu";
 import SetUpInFourSteps from "../../components/home/SetUpInFourSteps";
 import SmartConsentForms from "../../components/home/SmartConsentForms";
@@ -16,16 +18,18 @@ const Home = () => {
       }}
     >
       <Seo
-        title="PMU Forms - Smart Consent & Aftercare Forms for Permanent Makeup Artists"
-        description="PMU Forms is the leading digital consent and aftercare solution for permanent makeup artists. Streamline client onboarding, ensure legal compliance, and grow your PMU business with smart digital forms."
-        keywords="PMU forms, permanent makeup, consent forms, aftercare, digital forms, PMU artist, eyebrow, eyeliner, lips, PMU software"
+        title="PMU Forms - Consent Forms, Aftercare & Deposits for Permanent Makeup Artists"
+        description="PMU Forms is the all-in-one app for permanent makeup artists: digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and deposits, and pigment inventory tracked by lot."
+        keywords="PMU forms, permanent makeup, consent forms, aftercare, pre-care, healing check-in, PMU deposits, Square integration, pigment inventory, lot tracking, PMU artist, PMU software"
         canonical="https://pmuforms.com/"
-        ogTitle="PMU Forms - Smart Consent & Aftercare Forms"
-        ogDescription="The leading digital consent and aftercare solution for permanent makeup artists. Streamline your PMU business today."
+        ogTitle="PMU Forms - Consent Forms, Aftercare & Deposits for PMU Artists"
+        ogDescription="Consent forms, pre-care and aftercare, healing check-ins, Square deposits and pigment lot tracking, in one app for permanent makeup artists."
         ogUrl="https://pmuforms.com/"
       />
       <FirstHeroSection />
       <SmartConsentForms />
+      <ClientJourney />
+      <NewFeatures />
       <ReasonsWhyUsePmu />
       <SetUpInFourSteps />
       <EverythingYouNeed />

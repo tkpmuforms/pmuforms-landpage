@@ -18,13 +18,14 @@ const FirstHeroSection = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            Secure digital consent <br />
-            forms for PMU artists, ready <br /> in minutes.
+            Consent forms, aftercare <br />
+            &amp; deposits for PMU artists, <br /> all in one app.
           </h1>
           <p className="hero-description">
-            Collect signatures, manage clients, and protect your business with{" "}
-            <span className="highlight">HIPAA-compliant</span> digital consent
-            forms — all from one app.
+            Collect signatures, send pre-care and aftercare, check in on
+            healing, take deposits through Square, and track every pigment lot,
+            with <span className="highlight">HIPAA-compliant</span> digital
+            consent forms at the core.
           </p>
 
           <Button

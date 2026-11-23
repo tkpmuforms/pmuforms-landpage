@@ -201,6 +201,26 @@
               resize: vertical;
               font-family: inherit;
             }
+
+            [aria-invalid="true"] {
+              border-color: #c62828;
+            }
+
+            .field-error {
+              display: block;
+              margin-top: 6px;
+              font-size: 13px;
+              color: #c62828;
+            }
+          }
+
+          // honeypot: off-screen for people, still in the form for bots
+          .contact-hp {
+            position: absolute;
+            left: -10000px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
           }
 
           .submit-btn {

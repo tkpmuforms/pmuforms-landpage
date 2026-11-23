@@ -21,6 +21,7 @@ const Footer = () => {
       <nav className="footer__nav">
         <a href="#howItWorks">HOW IT WORKS</a>
         <a href="#features">FEATURES</a>
+        <a href="#whats-new">WHAT'S NEW</a>
         <a href="#review">REVIEWS</a>
         <a href="#blogs">BLOGS</a>
         <a href="#faq">FAQS</a>
