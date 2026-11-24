@@ -24,7 +24,8 @@ const ReferralBanner = () => {
   const [code, setCode] = useState<string | null>(null);
 
   useEffect(() => {
-    const fromUrl = normalizeReferralCode(new URLSearchParams(search).get("ref"));
+    const params = new URLSearchParams(search);
+    const fromUrl = normalizeReferralCode(params.get("code") ?? params.get("ref"));
     const stored = pathname === "/" ? readAttribution()?.ref : undefined;
     const found = fromUrl ?? stored ?? null;
     setCode(found && !wasDismissed(found) ? found : null);
@@ -44,13 +45,14 @@ const ReferralBanner = () => {
   return (
     <aside className="referral-banner" aria-label="Referral invitation">
       <p className="referral-banner__text">
-        <strong>A fellow artist invited you to PMU Forms.</strong> Get $19.99 off your first
-        payment when you subscribe in the web app.
+        <strong>A fellow artist invited you to PMU Forms.</strong> Your first month is free
+        ($19.99 off your first payment) when you subscribe in the web app.
       </p>
       <div className="referral-banner__actions">
         <a
           className="referral-banner__cta"
-          href={WEB_APP_URL}
+          // the app saves the code and applies it at payment
+          href={`${WEB_APP_URL.replace(/\/+$/, "")}/?code=${encodeURIComponent(code)}`}
           target="_blank"
           rel="noopener noreferrer"
         >

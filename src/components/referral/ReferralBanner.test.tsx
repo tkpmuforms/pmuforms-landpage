@@ -22,7 +22,21 @@ describe("ReferralBanner", () => {
     render(at("/?ref=TEST-1234"));
 
     expect(await screen.findByText(/A fellow artist invited you/)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Claim it" })).toHaveAttribute("href", WEB_APP_URL);
+    expect(screen.getByText(/Your first month is free/)).toBeInTheDocument();
+    // carries the code into the app, in case the cookie isn't shared
+    expect(screen.getByRole("link", { name: "Claim it" })).toHaveAttribute(
+      "href",
+      `${WEB_APP_URL.replace(/\/+$/, "")}/?code=TEST-1234`,
+    );
+  });
+
+  it("works for ?code= links and promotion codes too", async () => {
+    render(at("/?code=pmu_20_off"));
+
+    expect(await screen.findByText(/A fellow artist invited you/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Claim it" }).getAttribute("href")).toMatch(
+      /\?code=PMU_20_OFF$/,
+    );
   });
 
   it("is never part of the prerendered HTML", () => {

@@ -52,10 +52,13 @@ const clean = (value: string | null | undefined, max = 100) => {
   return text ? text.slice(0, max) : undefined;
 };
 
-/** Referral codes are letters, digits and dashes; anything else is dropped. */
+/**
+ * A discount code from a link: an artist's referral code (GLOWSTUD-7K2Q) or
+ * a promotion code (PMUFORMS2026, PMU_20_OFF). Anything else is dropped.
+ */
 export const normalizeReferralCode = (value: string | null | undefined) => {
   const code = (value ?? "").trim().toUpperCase();
-  return /^[A-Z0-9-]{4,20}$/.test(code) ? code : undefined;
+  return /^[A-Z0-9_-]{3,30}$/.test(code) ? code : undefined;
 };
 
 const isOwnSite = (host: string) =>
@@ -110,7 +113,8 @@ export function captureAttribution(
   for (const [key, param] of PARAMS) {
     const value =
       key === "ref"
-        ? normalizeReferralCode(params.get(param))
+        ? // ?code= (QR codes, Refer links) or ?ref= (older links)
+          normalizeReferralCode(params.get("code") ?? params.get(param))
         : clean(params.get(param), key.endsWith("clid") ? 200 : 100);
     if (value) fromUrl[key] = value;
   }
