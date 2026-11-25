@@ -10,6 +10,7 @@ import {
   YEARLY_SAVINGS_PERCENT,
   formatPrice,
 } from "../../constants/pricing";
+import { HOLIDAY_CLAIM_URL, HOLIDAY_OFFER, useHolidayOffer } from "../../constants/holiday";
 import "./pricing.scss";
 
 const Check = () => (
@@ -34,6 +35,7 @@ interface PricingProps {
 /** The two plans and everything they include. Used on the home page and /pricing. */
 const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
   const Heading = headingLevel;
+  const holiday = useHolidayOffer();
 
   return (
     <section className="pricing" id="pricing" aria-labelledby="pricing-title">
@@ -59,8 +61,19 @@ const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
               <span className="pricing__period">/month</span>
             </p>
             <p className="pricing__note">Billed monthly. Cancel anytime.</p>
-            <a className="pricing__cta" href={WEB_APP_URL} target="_blank" rel="noopener noreferrer">
-              Get started
+            {holiday && (
+              <p className="pricing__holiday">
+                🎁 Holiday offer: your first month is free with code{" "}
+                <strong>{HOLIDAY_OFFER.code}</strong>.
+              </p>
+            )}
+            <a
+              className="pricing__cta"
+              href={holiday ? HOLIDAY_CLAIM_URL : WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {holiday ? "Claim my free month" : "Get started"}
             </a>
           </article>
 

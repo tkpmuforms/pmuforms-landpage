@@ -1,7 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
 import { MemoryRouter } from "react-router-dom";
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { HOLIDAY_CLAIM_URL } from "../../constants/holiday";
 import { ATTRIBUTION_COOKIE, captureAttribution } from "../../attribution";
 import { WEB_APP_URL } from "../../constants/links";
 import ReferralBanner from "./ReferralBanner";
@@ -63,5 +64,47 @@ describe("ReferralBanner", () => {
     unmount();
     render(at("/?ref=TEST-1234"));
     expect(screen.queryByText(/A fellow artist invited you/)).toBeNull();
+  });
+});
+
+describe("ReferralBanner during the holiday offer", () => {
+  beforeEach(() => {
+    document.cookie = `${ATTRIBUTION_COOKIE}=; Path=/; Max-Age=0`;
+    window.localStorage.clear();
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date("2026-12-15T12:00:00Z"));
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it("shows the holiday offer to everyone on the home page", async () => {
+    render(at("/"));
+    const banner = await screen.findByRole("complementary", { name: "Holiday offer" });
+    expect(banner).toHaveTextContent("Holiday offer: start 2027 strong.");
+    expect(banner).toHaveTextContent("code PMUSTUDIO2027");
+    expect(screen.getByRole("link", { name: "Claim it" })).toHaveAttribute(
+      "href",
+      HOLIDAY_CLAIM_URL,
+    );
+  });
+
+  it("uses the holiday wording for holiday links, not the referral invitation", async () => {
+    render(at("/templates?code=pmustudio2027"));
+    expect(await screen.findByRole("complementary", { name: "Holiday offer" })).toBeInTheDocument();
+    expect(screen.queryByText(/fellow artist/)).toBeNull();
+  });
+
+  it("still shows a friend's invitation first", async () => {
+    render(at("/?ref=TEST-1234"));
+    expect(await screen.findByText(/A fellow artist invited you/)).toBeInTheDocument();
+    expect(screen.queryByRole("complementary", { name: "Holiday offer" })).toBeNull();
+  });
+
+  it("is gone once the offer ends", () => {
+    vi.setSystemTime(new Date("2027-02-01T07:00:00Z"));
+    render(at("/"));
+    expect(screen.queryByRole("complementary", { name: "Holiday offer" })).toBeNull();
   });
 });

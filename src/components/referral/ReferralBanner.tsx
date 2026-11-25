@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { normalizeReferralCode, readAttribution } from "../../attribution";
 import { WEB_APP_URL } from "../../constants/links";
+import { HOLIDAY_OFFER, holidayOfferActive } from "../../constants/holiday";
 import "./referralBanner.scss";
 
 const DISMISSED_KEY = "pmu_ref_banner_dismissed";
@@ -15,9 +16,10 @@ const wasDismissed = (code: string) => {
 };
 
 /**
- * Shown to visitors who arrived through a friend's referral link. Decided
- * only after mount: the prerendered HTML never contains it, so hydration
- * always matches.
+ * Shown to visitors who arrived through a friend's referral link, and while
+ * the holiday offer runs, to everyone else on the home page. Decided only
+ * after mount: the prerendered HTML never contains it, so hydration always
+ * matches.
  */
 const ReferralBanner = () => {
   const { search, pathname } = useLocation();
@@ -27,11 +29,13 @@ const ReferralBanner = () => {
     const params = new URLSearchParams(search);
     const fromUrl = normalizeReferralCode(params.get("code") ?? params.get("ref"));
     const stored = pathname === "/" ? readAttribution()?.ref : undefined;
-    const found = fromUrl ?? stored ?? null;
+    const holiday = pathname === "/" && holidayOfferActive() ? HOLIDAY_OFFER.code : undefined;
+    const found = fromUrl ?? stored ?? holiday ?? null;
     setCode(found && !wasDismissed(found) ? found : null);
   }, [search, pathname]);
 
   if (!code) return null;
+  const isHoliday = code === HOLIDAY_OFFER.code;
 
   const dismiss = () => {
     try {
@@ -43,11 +47,21 @@ const ReferralBanner = () => {
   };
 
   return (
-    <aside className="referral-banner" aria-label="Referral invitation">
-      <p className="referral-banner__text">
-        <strong>A fellow artist invited you to PMU Forms.</strong> Your first month is free
-        ($19.99 off your first payment) when you subscribe in the web app.
-      </p>
+    <aside
+      className="referral-banner"
+      aria-label={isHoliday ? "Holiday offer" : "Referral invitation"}
+    >
+      {isHoliday ? (
+        <p className="referral-banner__text">
+          <strong>🎁 Holiday offer: start {HOLIDAY_OFFER.year} strong.</strong> Your first
+          month is on us with code <strong>{HOLIDAY_OFFER.code}</strong>.
+        </p>
+      ) : (
+        <p className="referral-banner__text">
+          <strong>A fellow artist invited you to PMU Forms.</strong> Your first month is free
+          ($19.99 off your first payment) when you subscribe in the web app.
+        </p>
+      )}
       <div className="referral-banner__actions">
         <a
           className="referral-banner__cta"
@@ -62,7 +76,7 @@ const ReferralBanner = () => {
           type="button"
           className="referral-banner__close"
           onClick={dismiss}
-          aria-label="Dismiss invitation"
+          aria-label={isHoliday ? "Dismiss holiday offer" : "Dismiss invitation"}
         >
           ×
         </button>

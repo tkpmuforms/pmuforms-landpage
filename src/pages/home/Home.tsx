@@ -2,6 +2,7 @@ import EverythingYouNeed from "../../components/home/EverthingYouNeed";
 import ClientJourney from "../../components/home/ClientJourney";
 import FAQ from "../../components/home/FAQ";
 import FirstHeroSection from "../../components/home/FirstHeroSection";
+import HolidayOffer from "../../components/holiday/HolidayOffer";
 import NewFeatures from "../../components/home/NewFeatures";
 import Pricing from "../../components/pricing/Pricing";
 import ReferralBanner from "../../components/referral/ReferralBanner";
@@ -32,6 +33,7 @@ const Home = () => {
       />
       <ReferralBanner />
       <FirstHeroSection />
+      <HolidayOffer />
       <SmartConsentForms />
       <ClientJourney />
       <NewFeatures />

@@ -1,0 +1,247 @@
+$plum: #370037;
+$primary: #8e2d8e;
+$bright: #b817b6;
+$gold: #f6c869;
+
+.holiday-offer {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 20px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(246, 200, 105, 0.18) 0, transparent 32%),
+    radial-gradient(circle at 88% 82%, rgba(184, 23, 182, 0.35) 0, transparent 40%),
+    linear-gradient(135deg, #4a0a4a 0%, $plum 55%, #24002a 100%);
+  color: #fff;
+  font-family: "Bariol Regular", sans-serif;
+  scroll-margin-top: 80px;
+
+  @media (max-width: 768px) {
+    padding: 56px 16px;
+  }
+
+  // a scatter of small lights, drawn with gradients (no images)
+  &__sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.3;
+    background-image:
+      radial-gradient(circle, $gold 0 1.5px, transparent 2.5px),
+      radial-gradient(circle, #ffffff 0 1px, transparent 2px),
+      radial-gradient(circle, #f3b5f2 0 1.2px, transparent 2.2px);
+    background-size:
+      140px 140px,
+      90px 90px,
+      200px 200px;
+    background-position:
+      10px 20px,
+      60px 45px,
+      120px 100px;
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 48px;
+    align-items: center;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(246, 200, 105, 0.16);
+    border: 1px solid rgba(246, 200, 105, 0.45);
+    color: $gold;
+    font-family: "Bariol Bold", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin: 0 0 18px;
+    font-family: "Bariol Bold", sans-serif;
+    font-size: 54px;
+    line-height: 1.05;
+    color: #fff;
+
+    span {
+      display: block;
+      color: $gold;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 38px;
+    }
+  }
+
+  &__lead {
+    margin: 0 0 28px;
+    max-width: 560px;
+    font-size: 19px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.86);
+  }
+
+  &__code-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__code {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 8px 8px 16px;
+    border: 2px dashed rgba(246, 200, 105, 0.8);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  &__code-label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  &__code-value {
+    font-family: "Bariol Bold", sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    color: #fff;
+  }
+
+  &__copy {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-family: "Bariol Bold", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.24);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $gold;
+      outline-offset: 2px;
+    }
+  }
+
+  &__cta {
+    display: inline-block;
+    padding: 16px 28px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #ffd884, $gold);
+    color: $plum;
+    font-family: "Bariol Bold", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(246, 200, 105, 0.25);
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(246, 200, 105, 0.35);
+    }
+
+    &:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+    }
+  }
+
+  &__fine {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  // ------------------------------------------------------------- the plan
+
+  &__plan {
+    padding: 30px 28px 24px;
+    border-radius: 20px;
+    background: #fff;
+    color: #3f3346;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 768px) {
+      padding: 24px 20px 20px;
+    }
+  }
+
+  &__plan-title {
+    margin: 0 0 20px;
+    font-family: "Bariol Bold", sans-serif;
+    font-size: 22px;
+    color: $plum;
+  }
+
+  &__steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__step {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  &__step-num {
+    flex: 0 0 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: $primary;
+    color: #fff;
+    font-family: "Bariol Bold", sans-serif;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+  }
+
+  &__step-title {
+    margin: 4px 0 4px;
+    font-family: "Bariol Bold", sans-serif;
+    font-size: 18px;
+    color: #2a1f30;
+  }
+
+  &__step-text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #6b7280;
+  }
+
+  &__plan-foot {
+    margin: 4px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid #eee4ee;
+    font-size: 15px;
+    color: $primary;
+    font-family: "Bariol Bold", sans-serif;
+  }
+}

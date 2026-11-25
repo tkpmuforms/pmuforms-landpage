@@ -1,7 +1,8 @@
 import { render, screen, within } from "@testing-library/react";
 import { HelmetProvider } from "react-helmet-async";
 import { MemoryRouter } from "react-router-dom";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { HOLIDAY_CLAIM_URL } from "../../constants/holiday";
 import { WEB_APP_URL } from "../../constants/links";
 import {
   INCLUDED,
@@ -40,7 +41,27 @@ describe("pricing numbers", () => {
 });
 
 describe("Pricing section", () => {
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it("shows the holiday code on the monthly plan while the offer runs", () => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date("2026-12-15T12:00:00Z"));
+    render(<Pricing />);
+    const monthly = screen.getByRole("article", { name: "Monthly" });
+    expect(monthly).toHaveTextContent(
+      "Holiday offer: your first month is free with code PMUSTUDIO2027.",
+    );
+    expect(within(monthly).getByRole("link", { name: "Claim my free month" })).toHaveAttribute(
+      "href",
+      HOLIDAY_CLAIM_URL,
+    );
+  });
+
   it("shows both plans with their prices and a way to start", () => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date("2027-03-01T12:00:00Z")); // after the holiday offer
     render(<Pricing />);
 
     const monthly = screen.getByRole("article", { name: "Monthly" });

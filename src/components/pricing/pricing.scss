@@ -56,6 +56,22 @@ $tint: #f4e3f4;
     color: $muted;
   }
 
+  &__holiday {
+    margin: 0 0 18px;
+    padding: 10px 12px;
+    border: 1px dashed #d9a6d9;
+    border-radius: 10px;
+    background: #fbf3fb;
+    color: $ink;
+    font-size: 15px;
+    line-height: 1.45;
+
+    strong {
+      color: $primary;
+      letter-spacing: 0.02em;
+    }
+  }
+
   // ---------------------------------------------------------------- plans
 
   &__plans {
