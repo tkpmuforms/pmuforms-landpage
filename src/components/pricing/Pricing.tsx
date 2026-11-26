@@ -1,4 +1,10 @@
-import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
+import {
+  ANDROID_APP_URL,
+  IOS_APP_LIVE,
+  IOS_APP_URL,
+  WEB_APP_URL,
+  WEB_SIGNUP_URL,
+} from "../../constants/links";
 import {
   INCLUDED,
   MONTHLY_PRICE,
@@ -104,17 +110,31 @@ const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
           </article>
         </div>
 
-        <p className="pricing__apps">
-          Prefer your phone? Subscribe in the{" "}
-          <a href={IOS_APP_URL} target="_blank" rel="noopener noreferrer">
-            iPhone app
-          </a>{" "}
-          or the{" "}
-          <a href={ANDROID_APP_URL} target="_blank" rel="noopener noreferrer">
-            Android app
-          </a>
-          . One subscription works everywhere.
-        </p>
+        {IOS_APP_LIVE ? (
+          <p className="pricing__apps">
+            Prefer your phone? Subscribe in the{" "}
+            <a href={IOS_APP_URL} target="_blank" rel="noopener noreferrer">
+              iPhone app
+            </a>{" "}
+            or the{" "}
+            <a href={ANDROID_APP_URL} target="_blank" rel="noopener noreferrer">
+              Android app
+            </a>
+            . One subscription works everywhere.
+          </p>
+        ) : (
+          <p className="pricing__apps">
+            Prefer your phone? Subscribe in the{" "}
+            <a href={ANDROID_APP_URL} target="_blank" rel="noopener noreferrer">
+              Android app
+            </a>
+            , or{" "}
+            <a href={WEB_SIGNUP_URL} target="_blank" rel="noopener noreferrer">
+              sign up on the web
+            </a>{" "}
+            from your iPhone's browser. One subscription works everywhere.
+          </p>
+        )}
 
         <div className="pricing__included">
           <h3 className="pricing__included-title">Everything included in both plans</h3>

@@ -1,11 +1,16 @@
 import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
-import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
+import {
+  ANDROID_APP_URL,
+  IOS_APP_LIVE,
+  IOS_APP_URL,
+  WEB_APP_URL,
+} from "../../constants/links";
 import Navbar from "./Navbar";
 
 describe("Navbar", () => {
-  it("shows iOS, Android and web app icon links with readable names", () => {
+  it("shows the store and web app icon links with readable names", () => {
     render(
       <MemoryRouter>
         <Navbar />
@@ -14,7 +19,8 @@ describe("Navbar", () => {
     const group = screen.getByRole("group", { name: "Get PMU Forms" });
     const links = within(group).getAllByRole("link");
     expect(links.map((a) => [a.getAttribute("aria-label"), a.getAttribute("href")])).toEqual([
-      ["Download on iOS", IOS_APP_URL],
+      // no App Store link until the new iOS app is live
+      ...(IOS_APP_LIVE ? [["Download on iOS", IOS_APP_URL]] : []),
       ["Download on Android", ANDROID_APP_URL],
       ["Open Web App", WEB_APP_URL],
     ]);

@@ -5,7 +5,12 @@ import "./navbar.scss";
 import Button from "../shared/Button";
 import { AndroidSvg } from "../../assets/svgs/AndroidSvg";
 import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
-import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
+import {
+  ANDROID_APP_URL,
+  IOS_APP_LIVE,
+  IOS_APP_URL,
+  WEB_APP_URL,
+} from "../../constants/links";
 
 const Navbar = () => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
@@ -114,16 +119,18 @@ const Navbar = () => {
 
       <div className="buttons">
         <div className="store-icons" role="group" aria-label="Get PMU Forms">
-          <a
-            href={IOS_APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="store-icon store-icon--ios"
-            aria-label="Download on iOS"
-            title="Download on iOS"
-          >
-            <AppleButtonSvg width={18} height={22} />
-          </a>
+          {IOS_APP_LIVE && (
+            <a
+              href={IOS_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="store-icon store-icon--ios"
+              aria-label="Download on iOS"
+              title="Download on iOS"
+            >
+              <AppleButtonSvg width={18} height={22} />
+            </a>
+          )}
           <a
             href={ANDROID_APP_URL}
             target="_blank"

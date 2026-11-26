@@ -3,7 +3,12 @@ import { AppleButtonSvg, WatchADemoSvg } from "../../assets/svgs/Svg";
 import Button from "../shared/Button";
 import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
 import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
-import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
+import {
+  ANDROID_APP_URL,
+  IOS_APP_LIVE,
+  IOS_APP_URL,
+  WEB_APP_URL,
+} from "../../constants/links";
 import {
   BottleIcon,
   CalendarIcon,
@@ -284,7 +289,11 @@ const NewFeatures = () => (
 
       <div className="new-features__cta">
         <h3>Try every feature free.</h3>
-        <p>Start on the web today, or download the app for iPhone or Android.</p>
+        <p>
+          {IOS_APP_LIVE
+            ? "Start on the web today, or download the app for iPhone or Android."
+            : "Start on the web today from any device, including iPhone, or download the app for Android."}
+        </p>
         <div className="new-features__cta-buttons">
           <Button
             href={WEB_APP_URL}
@@ -295,15 +304,17 @@ const NewFeatures = () => (
           >
             Try For Free
           </Button>
-          <Button
-            href={IOS_APP_URL}
-            target="_blank"
-            icon={<AppleButtonSvg />}
-            variant="primary"
-            size="small"
-          >
-            Download on iOS
-          </Button>
+          {IOS_APP_LIVE && (
+            <Button
+              href={IOS_APP_URL}
+              target="_blank"
+              icon={<AppleButtonSvg />}
+              variant="primary"
+              size="small"
+            >
+              Download on iOS
+            </Button>
+          )}
           <Button
             href={ANDROID_APP_URL}
             target="_blank"

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL } from "./constants/links";
+import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL, WEB_SIGNUP_URL } from "./constants/links";
 
 const loadAnalytics = async (gaId?: string, gtmId?: string) => {
   vi.resetModules();
@@ -94,6 +94,8 @@ describe("analytics", () => {
     expect(linkDestination(ANDROID_APP_URL)).toBe("android");
     expect(linkDestination(IOS_APP_URL)).toBe("ios");
     expect(linkDestination(WEB_APP_URL)).toBe("web_app");
+    // the iPhone web signup buttons count as web app clicks, not iOS downloads
+    expect(linkDestination(WEB_SIGNUP_URL)).toBe("web_app");
     expect(linkDestination("https://pmuforms.com/contact")).toBeNull();
   });
 

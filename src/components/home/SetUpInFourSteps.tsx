@@ -8,9 +8,12 @@ import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
 import {
   ANDROID_APP_URL,
   DEMO_URL,
+  IOS_APP_LIVE,
   IOS_APP_URL,
   WEB_APP_URL,
+  WEB_SIGNUP_URL,
 } from "../../constants/links";
+import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
 import "./setupinfoursteps.scss";
 
 const SetUpInFourSteps = () => {
@@ -20,13 +23,14 @@ const SetUpInFourSteps = () => {
     {
       id: 1,
       title: "Use PMU Forms anywhere",
-      description:
-        "Access the web version right from your browser, or download the app from the App Store or Google Play to use it on the go.",
-      buttonSvg: <AppleButtonSvg />,
+      description: IOS_APP_LIVE
+        ? "Access the web version right from your browser, or download the app from the App Store or Google Play to use it on the go."
+        : "Access the web version right from your browser on any device, including iPhone, or download the app from Google Play to use it on the go.",
+      buttonSvg: IOS_APP_LIVE ? <AppleButtonSvg /> : <WebAppSvg />,
       button2Svg: <WatchADemoSvg />,
-      buttonText: "Download on iOS",
+      buttonText: IOS_APP_LIVE ? "Download on iOS" : "Sign up free on the web",
       button2Text: "Open Web App",
-      buttonHref: IOS_APP_URL,
+      buttonHref: IOS_APP_LIVE ? IOS_APP_URL : WEB_SIGNUP_URL,
       button2Href: WEB_APP_URL,
       androidHref: ANDROID_APP_URL,
       image: <img src={step1 || "/placeholder.svg"} alt="Step 1" />,

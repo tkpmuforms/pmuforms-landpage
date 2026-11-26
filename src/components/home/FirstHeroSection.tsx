@@ -11,7 +11,12 @@ import iphone3 from "../../assets/images/iPhone3.png";
 import Button from "../shared/Button";
 import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
 import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
-import { ANDROID_APP_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
+import {
+  ANDROID_APP_URL,
+  IOS_APP_LIVE,
+  IOS_APP_URL,
+  WEB_APP_URL,
+} from "../../constants/links";
 import "./firstherosection.scss";
 
 const FirstHeroSection = () => {
@@ -30,16 +35,19 @@ const FirstHeroSection = () => {
             consent forms at the core.
           </p>
 
-          <Button
-            href={IOS_APP_URL}
-            target="_blank"
-            className="download-button"
-            icon={<AppleButtonSvg />}
-            variant="custom"
-            size="small"
-          >
-            Download on iOS
-          </Button>
+          {/* until the new iOS app is live, "Try For Free" below is the iPhone path */}
+          {IOS_APP_LIVE && (
+            <Button
+              href={IOS_APP_URL}
+              target="_blank"
+              className="download-button"
+              icon={<AppleButtonSvg />}
+              variant="custom"
+              size="small"
+            >
+              Download on iOS
+            </Button>
+          )}
           <Button
             href={ANDROID_APP_URL}
             target="_blank"

@@ -4,7 +4,14 @@ import { AppleButtonSvg, WatchADemoSvg } from "../../assets/svgs/Svg";
 import Button from "../shared/Button";
 import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
 import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
-import { ANDROID_APP_URL, DEMO_URL, IOS_APP_URL, WEB_APP_URL } from "../../constants/links";
+import {
+  ANDROID_APP_URL,
+  DEMO_URL,
+  IOS_APP_LIVE,
+  IOS_APP_URL,
+  WEB_APP_URL,
+  WEB_SIGNUP_URL,
+} from "../../constants/links";
 import "./smartconsentforms.scss";
 
 const SmartConsentForms = () => {
@@ -24,16 +31,29 @@ const SmartConsentForms = () => {
           forms in under 10 minutes.
         </p>
         <div className="smart-consent-forms__buttons">
-          <Button
-            href={IOS_APP_URL}
-            target="_blank"
-            icon={<AppleButtonSvg />}
-            variant="primary"
-            size="small"
-            className="smart-consent-forms__download-btn"
-          >
-            Download on iOS
-          </Button>
+          {IOS_APP_LIVE ? (
+            <Button
+              href={IOS_APP_URL}
+              target="_blank"
+              icon={<AppleButtonSvg />}
+              variant="primary"
+              size="small"
+              className="smart-consent-forms__download-btn"
+            >
+              Download on iOS
+            </Button>
+          ) : (
+            <Button
+              href={WEB_SIGNUP_URL}
+              target="_blank"
+              icon={<WebAppSvg />}
+              variant="primary"
+              size="small"
+              className="smart-consent-forms__download-btn"
+            >
+              Sign up free on the web
+            </Button>
+          )}
           <Button
             href={ANDROID_APP_URL}
             target="_blank"
