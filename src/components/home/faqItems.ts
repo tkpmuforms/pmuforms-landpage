@@ -3,12 +3,35 @@ export interface FAQItem {
   answer: string;
 }
 
-/** Shared by the FAQ section and the FAQPage structured data on the home page. */
+/**
+ * Shared by the FAQ section and the FAQPage structured data on the home page.
+ * Keep answers true to the app today, with no legal, HIPAA or compliance claims.
+ */
 export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "What is PMU Forms?",
     answer:
-      "PMU Forms is a simple, secure platform for artists and professionals to create, share, and manage digital consent forms with their clients. No paper, no stress — everything in one place.",
+      "PMU Forms is a client management app for permanent makeup and beauty artists. Send consent and intake forms clients sign on their phone, keep every signed form with the client and appointment, and handle pre-care, aftercare, deposits and healing check-ins in one place, on iPhone, Android and the web.",
+  },
+  {
+    question: "Can I use my own forms?",
+    answer:
+      "Yes. Start from 30+ ready-made PMU and beauty forms and edit them, build your own, or scan or upload the paper forms you already use. You choose which forms go with each service, including services you add yourself.",
+  },
+  {
+    question: "Do my clients need to download anything?",
+    answer:
+      "No. Clients open a link on their phone or computer, fill in the form and sign with their finger or mouse. You're notified when it comes in.",
+  },
+  {
+    question: "Can my team use PMU Forms?",
+    answer:
+      "Yes. Invite up to 5 people by email to work in your account, at no extra cost. They can see clients, appointments and forms and add notes, while only you manage billing, settings and integrations. Each appointment records who performed it, and printed forms show “Performed by” with their name.",
+  },
+  {
+    question: "Can I record that I checked a client's ID?",
+    answer:
+      "Yes. After you look at the client's photo ID in person, record the ID check on the appointment: the type of ID, whether they're over 18, who checked it and when. It shows on the client's printed forms. PMU Forms doesn't store ID numbers or photos of IDs, and please don't upload pictures of IDs as notes or photos.",
   },
   {
     question: "Does PMU Forms work with Square?",
@@ -31,23 +54,13 @@ export const FAQ_ITEMS: FAQItem[] = [
       "Yes. Inventory tracks each product by lot number and expiration date, shows what's low, expiring or expired, and lets you quarantine or recall a lot. Each product has a compliance passport to keep its SDS, certificate of analysis and ingredient documents together. PMU Forms organizes your documentation; it doesn't certify products.",
   },
   {
+    question: "How is my clients' information kept private?",
+    answer:
+      "Client records are private to your business: in the app, only you and the people you invite can see them. Information is sent over encrypted connections and stored with cloud providers, we don't sell client data, and when you delete a client, note or photo we delete it from our systems. PMU Forms isn't built for HIPAA-covered medical practices. See our Privacy Policy for the details.",
+  },
+  {
     question: "How much does PMU Forms cost?",
     answer:
-      "Creating your account is free. To send forms to clients and use every feature, subscribe for $19.99 a month or $149.99 a year (about $12.50 a month). Both plans include everything, one subscription works on iPhone, Android and the web, and you can cancel anytime. See pmuforms.com/pricing for the full list of what's included.",
-  },
-  {
-    question: "Can I customize the forms?",
-    answer:
-      "Yes! PMU Forms allows you to customize templates to match your brand and specific service needs. You can add your logo, adjust form fields, and tailor the content to your requirements.",
-  },
-  {
-    question: "Is PMU Forms secure?",
-    answer:
-      "Absolutely. PMU Forms uses industry-standard encryption to protect all data. Your clients' information and your business documents are stored securely and accessible only to authorized users.",
-  },
-  {
-    question: "Do my clients need to download anything?",
-    answer:
-      "No, your clients don't need to download anything. They can complete and sign forms directly on their device through a secure link you send them.",
+      "Creating your account is free. To send forms to clients and use every feature, subscribe for $19.99 a month or $149.99 a year (about $12.50 a month). Both plans include everything, including your team, one subscription works on iPhone, Android and the web, and you can cancel anytime. See pmuforms.com/pricing for the full list of what's included.",
   },
 ];

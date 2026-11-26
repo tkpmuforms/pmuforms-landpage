@@ -4,8 +4,6 @@ import { FORM_TEMPLATES, templatePath } from "../pages/templates/templateData";
 export const PRERENDER_ROUTES = [
   "/",
   "/contact",
-  "/blogs",
-  "/blogs/legally-protect",
   "/privacy",
   "/terms",
   "/pricing",

@@ -35,9 +35,11 @@ export const INCLUDED: IncludedGroup[] = [
     items: [
       "30+ ready-made PMU and beauty forms",
       "Edit any form, or remove questions you don't need",
+      "Scan or upload the paper forms you already use",
       "Your own form link clients fill out on their phone",
       "Handwritten e-signatures for client and artist",
       "Signed forms stored for you, with PDF export",
+      "In-person ID check record (no ID photos stored)",
     ],
   },
   {
@@ -72,6 +74,7 @@ export const INCLUDED: IncludedGroup[] = [
     items: [
       "iPhone, Android and web apps",
       "One subscription works on all of them",
+      "Up to 5 team members at no extra cost",
       `Email support from real people at ${SUPPORT_EMAIL}`,
     ],
   },

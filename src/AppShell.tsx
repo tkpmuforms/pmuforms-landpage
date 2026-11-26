@@ -1,9 +1,7 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import RouteTracker from "./components/analytics/RouteTracker";
 import Footer from "./components/footer/Footer";
-import BlogsList from "./components/howitWorks/BlogsList";
-import LegallyProtect from "./components/howitWorks/features/LegallyProtect";
 import Navbar from "./components/navbar/Navbar";
 import ContactUs from "./pages/contact/ContactUs";
 import Home from "./pages/home/Home";
@@ -25,8 +23,9 @@ const AppShell = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/contact" element={<ContactUs />} />
-      <Route path="/blogs" element={<BlogsList />} />
-      <Route path="/blogs/legally-protect" element={<LegallyProtect />} />
+      {/* the blog was removed; old links go to the free templates */}
+      <Route path="/blogs" element={<Navigate to="/templates" replace />} />
+      <Route path="/blogs/*" element={<Navigate to="/templates" replace />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<TermsAndConditions />} />
       <Route path="/pricing" element={<PricingPage />} />

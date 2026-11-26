@@ -95,11 +95,6 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/#blogs" onClick={(e) => handleAnchorClick(e, "blogs")}>
-              Blogs
-            </Link>
-          </li>
-          <li>
             <Link to="/#faq" onClick={(e) => handleAnchorClick(e, "faq")}>
               FAQ
             </Link>

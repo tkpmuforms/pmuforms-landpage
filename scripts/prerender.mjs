@@ -3,7 +3,7 @@
  *
  *   dist/index.html                    <- "/"
  *   dist/contact/index.html            <- "/contact"
- *   dist/blogs/legally-protect/index.html, ...
+ *   dist/templates/microblading-consent-form/index.html, ...
  *
  * nginx's `try_files $uri $uri/ /index.html;` serves these directly, so
  * crawlers get real content and per-page meta tags without running JS.
