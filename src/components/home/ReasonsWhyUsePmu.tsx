@@ -29,9 +29,9 @@ const ReasonsWhyUsePmu = () => {
     },
     {
       id: 4,
-      title: "Stay Compliant with HIPAA",
+      title: "Keep Client Data Private",
       description:
-        "PMUforms helps PMU artists comply with data protection laws like HIPAA and GDPR by securely encrypting client data.",
+        "PMUforms keeps client records private to your business, sends everything over encrypted connections, and lets you control who on your team has access.",
       icon: <ReasonsWhyImageSvg />,
     },
     {

@@ -17,7 +17,7 @@ const SmartConsentForms = () => {
           Smart Consent Forms Designed for the Beauty Industry.
         </h2>
         <p className="smart-consent-forms__description">
-          PMU Forms is a fast, HIPAA-compliant digital forms app built for
+          PMU Forms is a fast, secure digital forms app built for
           permanent makeup and beauty professionals. Whether you offer
           microblading, lip blush, microneedling, or 20+ other services, PMU
           Forms helps you collect legally sound, fully customizable consent

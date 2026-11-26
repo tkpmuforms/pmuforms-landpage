@@ -1,7 +1,6 @@
 import {
   AppleButtonSvg,
   CloudBasedSvg,
-  HippaSvg,
   SecureDigitalSvg,
   WatchADemoSvg,
 } from "../../assets/svgs/Svg";
@@ -27,7 +26,7 @@ const FirstHeroSection = () => {
           <p className="hero-description">
             Collect signatures, send pre-care and aftercare, check in on
             healing, take deposits through Square, and track every pigment lot,
-            with <span className="highlight">HIPAA-compliant</span> digital
+            with <span className="highlight">secure</span> digital
             consent forms at the core.
           </p>
 
@@ -77,9 +76,6 @@ const FirstHeroSection = () => {
           <div className="feature-item">
             <SecureDigitalSvg />
             <span>Secure Digital Signatures</span>
-          </div>
-          <div className="feature-item">
-            <HippaSvg />
           </div>
           <div className="feature-item">
             <CloudBasedSvg />

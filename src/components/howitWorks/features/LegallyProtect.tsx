@@ -44,9 +44,9 @@ const LegallyProtect = () => {
         </p>
         <p>Consent forms are your first line of defense.</p>
         <p>
-          When done right, they don't just help you stay compliant with
-          regulations like HIPAA — they also protect you from liability, improve
-          client trust, and make your business look more professional.
+          When done right, they don't just record your client's consent — they
+          also protect you from liability, improve client trust, and make your
+          business look more professional.
         </p>
         <p>Let's break it down.</p>
 
@@ -115,9 +115,9 @@ const LegallyProtect = () => {
           </ul>
 
           <p>
-            And because PMU Forms is HIPAA-compliant, we're also checking the
-            box for data privacy laws — which is especially important if you're
-            handling medical history or client information.
+            PMU Forms also keeps those records private to your business and
+            sends them over encrypted connections — which matters when you're
+            handling medical history and client information.
           </p>
 
           <h2>Our Top Form Legal Protections</h2>

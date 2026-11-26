@@ -1,5 +1,4 @@
 import logoNav from "../images/logo-nav.png";
-import hipaaBadge from "../images/hipaa-badge.png";
 import logoFooter from "../images/logo-footer.png";
 
 export const LogoSvg: React.FC<{ onClick?: React.MouseEventHandler<HTMLImageElement> }> = ({
@@ -28,9 +27,6 @@ export const AppleButtonSvg: React.FC<React.SVGProps<SVGSVGElement>> = (
   );
 };
 
-export const HippaSvg: React.FC = () => (
-  <img src={hipaaBadge} width={66} height={65} alt="HIPAA compliant" loading="lazy" />
-);
 
 export const SecureDigitalSvg: React.FC<React.SVGProps<SVGSVGElement>> = () => {
   return (

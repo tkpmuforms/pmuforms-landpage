@@ -2,7 +2,6 @@
 import {
   AppleButtonSvg,
   FaceBookSvg,
-  HippaSvg,
   InstagramSvg,
   LinkendInSvg,
   PmuLogoFooter,
@@ -97,10 +96,6 @@ const Footer = () => {
         >
           Watch a Demo
         </Button>
-      </div>
-
-      <div className="footer__hipaa">
-        <HippaSvg />
       </div>
 
       <div className="footer__copyright">
