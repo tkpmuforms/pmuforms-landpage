@@ -95,8 +95,8 @@ const structuredData = (t: FormTemplate) => {
         description: t.description,
         url,
         mainEntityOfPage: url,
-        datePublished: TEMPLATES_PUBLISHED,
-        dateModified: TEMPLATES_PUBLISHED,
+        datePublished: t.published ?? TEMPLATES_PUBLISHED,
+        dateModified: t.published ?? TEMPLATES_PUBLISHED,
         image: `${SITE_URL}/og-image.png`,
         author: { "@type": "Organization", name: "PMU Forms", url: `${SITE_URL}/` },
         publisher: { "@id": `${SITE_URL}/#organization` },
@@ -129,8 +129,8 @@ const TemplatePage = () => {
         canonical={url}
         ogUrl={url}
         type="article"
-        publishedDate={TEMPLATES_PUBLISHED}
-        modifiedDate={TEMPLATES_PUBLISHED}
+        publishedDate={template.published ?? TEMPLATES_PUBLISHED}
+        modifiedDate={template.published ?? TEMPLATES_PUBLISHED}
         structuredData={structuredData(template)}
       />
 
