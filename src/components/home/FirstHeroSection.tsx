@@ -13,6 +13,7 @@ import { GooglePlaySvg } from "../../assets/svgs/GooglePlaySvg";
 import { WebAppSvg } from "../../assets/svgs/WebAppSvg";
 import {
   ANDROID_APP_URL,
+  DEMO_URL,
   IOS_APP_LIVE,
   IOS_APP_URL,
   WEB_APP_URL,
@@ -35,7 +36,7 @@ const FirstHeroSection = () => {
             consent forms at the core.
           </p>
 
-          {/* until the new iOS app is live, "Try For Free" below is the iPhone path */}
+          {/* until the new iOS app is live, "Open Web App" below is the iPhone path */}
           {IOS_APP_LIVE && (
             <Button
               href={IOS_APP_URL}
@@ -69,14 +70,14 @@ const FirstHeroSection = () => {
             Open Web App
           </Button>
           <Button
-            href={WEB_APP_URL}
+            href={DEMO_URL}
             target="_blank"
             icon={<WatchADemoSvg />}
             variant="secondary"
             size="small"
             className="try-button"
           >
-            Try For Free
+            Watch a Demo
           </Button>
         </div>
 

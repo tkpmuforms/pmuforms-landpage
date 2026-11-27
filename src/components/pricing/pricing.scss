@@ -81,16 +81,16 @@ $tint: #f4e3f4;
 
   // ---------------------------------------------------------------- plans
 
-  // mobile first: one column, side by side from 721px
+  // mobile first: one column, the three plans side by side from 900px
   &__plans {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 440px);
+    justify-content: center;
     gap: 28px;
 
-    @media (min-width: 721px) {
-      grid-template-columns: repeat(2, minmax(0, 360px));
-      justify-content: center;
-      gap: 24px;
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(3, minmax(0, 340px));
+      gap: 20px;
     }
   }
 

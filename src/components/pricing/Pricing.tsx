@@ -60,7 +60,8 @@ const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
           </Heading>
           <p className="pricing__lead">
             Starter is for part-time artists. Pro is for when you're busy and want no
-            limits. Both work on every device.
+            limits: pay monthly, or yearly and save {YEARLY_SAVINGS_PERCENT}%. Both
+            works on every device.
           </p>
         </header>
 
@@ -106,22 +107,55 @@ const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
             </a>
           </article>
 
-          <article
-            className="pricing__plan pricing__plan--featured"
-            aria-labelledby="plan-pro"
-          >
-            <span className="pricing__badge">No limits</span>
-            <h3 className="pricing__plan-name" id="plan-pro">
-              Pro
+          <article className="pricing__plan" aria-labelledby="plan-pro-monthly">
+            <h3 className="pricing__plan-name" id="plan-pro-monthly">
+              Pro Monthly
             </h3>
             <p className="pricing__best-for">{PRO_BEST_FOR}</p>
             <p className="pricing__price">
               <span className="pricing__amount">{formatPrice(MONTHLY_PRICE)}</span>
               <span className="pricing__period">/month</span>
             </p>
+            <p className="pricing__note">Billed monthly. Cancel anytime.</p>
+            <ul className="pricing__limits">
+              <li>
+                <Check />
+                <span>
+                  <strong>Unlimited</strong> clients
+                </span>
+              </li>
+              <li>
+                <Check />
+                <span>
+                  <strong>Unlimited</strong> appointments
+                </span>
+              </li>
+              <li>
+                <Check />
+                <span>Every feature included.</span>
+              </li>
+            </ul>
+            <a className="pricing__cta" href={startUrl} target="_blank" rel="noopener noreferrer">
+              Get Pro Monthly
+            </a>
+          </article>
+
+          <article
+            className="pricing__plan pricing__plan--featured"
+            aria-labelledby="plan-pro-yearly"
+          >
+            <span className="pricing__badge">Best value · Save {YEARLY_SAVINGS_PERCENT}%</span>
+            <h3 className="pricing__plan-name" id="plan-pro-yearly">
+              Pro Yearly
+            </h3>
+            <p className="pricing__best-for">{PRO_BEST_FOR}</p>
+            <p className="pricing__price">
+              <span className="pricing__amount">{formatPrice(YEARLY_PRICE)}</span>
+              <span className="pricing__period">/year</span>
+            </p>
             <p className="pricing__note">
-              Or {formatPrice(YEARLY_PRICE)}/year: just {formatPrice(YEARLY_PER_MONTH)} a
-              month. You save {formatPrice(YEARLY_SAVINGS)} a year ({YEARLY_SAVINGS_PERCENT}%).
+              Just {formatPrice(YEARLY_PER_MONTH)} a month. You save{" "}
+              {formatPrice(YEARLY_SAVINGS)} a year.
             </p>
             <ul className="pricing__limits">
               <li>
@@ -138,7 +172,7 @@ const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
               </li>
               <li>
                 <Check />
-                <span>Every feature included. Pay monthly or yearly.</span>
+                <span>Every feature included. One payment a year.</span>
               </li>
             </ul>
             <a
@@ -147,7 +181,7 @@ const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Get Pro
+              Get Pro Yearly
             </a>
           </article>
         </div>

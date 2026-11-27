@@ -68,6 +68,12 @@ const ClientJourney = () => (
           </li>
         ))}
       </ol>
+
+      <p className="client-journey__also">
+        <strong>Also included:</strong> 30+ ready-made forms or your own,
+        see who hasn&rsquo;t signed yet, forms locked once signed, and a team
+        of up to 5 in one account.
+      </p>
     </div>
   </section>
 );

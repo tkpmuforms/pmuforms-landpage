@@ -13,8 +13,6 @@ async function renderAll(live: boolean) {
   }));
   const modules = await Promise.all([
     import("./home/FirstHeroSection"),
-    import("./home/SmartConsentForms"),
-    import("./home/SetUpInFourSteps"),
     import("./home/NewFeatures"),
     import("./footer/Footer"),
     import("./pricing/Pricing"),
@@ -48,9 +46,9 @@ describe("iOS app links", () => {
     expect(screen.queryByText("Download on iOS")).not.toBeInTheDocument();
     expect(screen.queryByLabelText("Download on iOS")).not.toBeInTheDocument();
     // Google Play stays everywhere it was
-    expect(android).toHaveLength(8);
+    expect(android).toHaveLength(6);
     const signups = screen.getAllByRole("link", { name: /Sign up free on the web/ });
-    expect(signups).toHaveLength(3); // smart consent forms, step 1, footer
+    expect(signups).toHaveLength(1); // footer
     signups.forEach((a) => expect(a).toHaveAttribute("href", WEB_SIGNUP_URL));
     expect(screen.getByRole("link", { name: "sign up on the web" })).toHaveAttribute(
       "href",

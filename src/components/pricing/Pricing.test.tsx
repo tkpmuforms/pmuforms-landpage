@@ -89,7 +89,8 @@ describe("Pricing section", () => {
     // both plans' buttons carry the code into the app
     for (const [plan, cta] of [
       ["Starter", "Get Starter"],
-      ["Pro", "Get Pro"],
+      ["Pro Monthly", "Get Pro Monthly"],
+      ["Pro Yearly", "Get Pro Yearly"],
     ]) {
       const card = screen.getByRole("article", { name: plan });
       expect(within(card).getByRole("link", { name: cta })).toHaveAttribute(
@@ -124,18 +125,25 @@ describe("Pricing section", () => {
     );
   });
 
-  it("shows Pro as unlimited, monthly or yearly", () => {
+  it("shows Pro monthly and Pro yearly as their own unlimited plans", () => {
     at("2027-03-01T12:00:00Z");
     render(<Pricing />);
 
-    const pro = screen.getByRole("article", { name: "Pro" });
-    expect(pro).toHaveTextContent("$19.99/month");
-    expect(pro).toHaveTextContent(
-      "Or $149.99/year: just $12.50 a month. You save $89.89 a year (37%).",
+    const monthly = screen.getByRole("article", { name: "Pro Monthly" });
+    expect(monthly).toHaveTextContent("$19.99/month");
+    expect(monthly).toHaveTextContent("Unlimited clients");
+    expect(monthly).toHaveTextContent("Unlimited appointments");
+    expect(within(monthly).getByRole("link", { name: "Get Pro Monthly" })).toHaveAttribute(
+      "href",
+      WEB_APP_URL,
     );
-    expect(pro).toHaveTextContent("Unlimited clients");
-    expect(pro).toHaveTextContent("Unlimited appointments");
-    expect(within(pro).getByRole("link", { name: "Get Pro" })).toHaveAttribute(
+
+    const yearly = screen.getByRole("article", { name: "Pro Yearly" });
+    expect(yearly).toHaveTextContent("Best value · Save 37%");
+    expect(yearly).toHaveTextContent("$149.99/year");
+    expect(yearly).toHaveTextContent("Just $12.50 a month. You save $89.89 a year.");
+    expect(yearly).toHaveTextContent("Unlimited clients");
+    expect(within(yearly).getByRole("link", { name: "Get Pro Yearly" })).toHaveAttribute(
       "href",
       WEB_APP_URL,
     );

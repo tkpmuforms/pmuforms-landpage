@@ -29,6 +29,16 @@ export const FAQ_ITEMS: FAQItem[] = [
       "Yes. Start from 30+ ready-made PMU and beauty forms and edit them, build your own, or scan or upload the paper forms you already use. You choose which forms go with each service, including services you add yourself.",
   },
   {
+    question: "Can I see which clients haven't signed yet?",
+    answer:
+      "Yes. You can see at a glance which clients still have forms to complete, and send them a friendly reminder in one tap.",
+  },
+  {
+    question: "Can a form be changed after the client signs it?",
+    answer:
+      "No. Once a client signs, the form is locked, so the signed copy stays exactly as they agreed to it. Signed forms stay with the client and appointment, ready to print or download as a PDF.",
+  },
+  {
     question: "Do my clients need to download anything?",
     answer:
       "No. Clients open a link on their phone or computer, fill in the form and sign with their finger or mouse. You're notified when it comes in.",

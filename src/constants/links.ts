@@ -18,7 +18,8 @@ export const IOS_APP_LIVE = false;
  * reads the pmu_attr cookie and the current offer itself, so no code here.
  */
 export const WEB_SIGNUP_URL = WEB_APP_URL;
+/** the full walkthrough video */
 export const DEMO_URL =
-  "https://pmuforms.crunch.help/en/pmuforms-functionality/how-to-use-pmu-forms";
+  "https://pmu-tutorials.s3.us-east-2.amazonaws.com/videos/Complete-video.MP4";
 export const SITE_URL = "https://pmuforms.com";
 export const SUPPORT_EMAIL = "contact@pmuforms.com";

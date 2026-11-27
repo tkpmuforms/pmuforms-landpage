@@ -1,4 +1,3 @@
-import EverythingYouNeed from "../../components/home/EverthingYouNeed";
 import ClientJourney from "../../components/home/ClientJourney";
 import FAQ from "../../components/home/FAQ";
 import FirstHeroSection from "../../components/home/FirstHeroSection";
@@ -6,9 +5,6 @@ import HolidayOffer from "../../components/holiday/HolidayOffer";
 import NewFeatures from "../../components/home/NewFeatures";
 import Pricing from "../../components/pricing/Pricing";
 import ReferralBanner from "../../components/referral/ReferralBanner";
-import ReasonsWhyUsePmu from "../../components/home/ReasonsWhyUsePmu";
-import SetUpInFourSteps from "../../components/home/SetUpInFourSteps";
-import SmartConsentForms from "../../components/home/SmartConsentForms";
 import TrustedByLeadingArtist from "../../components/home/TrustedByLeadingArtist";
 import Seo from "../../components/seo/Seo";
 import { homeStructuredData } from "../../seo/schema";
@@ -33,12 +29,8 @@ const Home = () => {
       <ReferralBanner />
       <FirstHeroSection />
       <HolidayOffer />
-      <SmartConsentForms />
       <ClientJourney />
       <NewFeatures />
-      <ReasonsWhyUsePmu />
-      <SetUpInFourSteps />
-      <EverythingYouNeed />
       <TrustedByLeadingArtist />
       <Pricing />
       <FAQ />
