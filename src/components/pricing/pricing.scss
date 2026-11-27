@@ -56,15 +56,18 @@ $tint: #f4e3f4;
     color: $muted;
   }
 
+  // one line for both plans, above the cards
   &__holiday {
-    margin: 0 0 18px;
-    padding: 10px 12px;
+    margin: 0 auto 36px;
+    max-width: 744px;
+    padding: 12px 16px;
     border: 1px dashed #d9a6d9;
-    border-radius: 10px;
+    border-radius: 12px;
     background: #fbf3fb;
     color: $ink;
     font-size: 15px;
-    line-height: 1.45;
+    line-height: 1.5;
+    text-align: center;
 
     strong {
       color: $primary;
@@ -72,16 +75,22 @@ $tint: #f4e3f4;
     }
   }
 
+  &__holiday-lead {
+    letter-spacing: 0 !important;
+  }
+
   // ---------------------------------------------------------------- plans
 
+  // mobile first: one column, side by side from 721px
   &__plans {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 360px));
-    justify-content: center;
-    gap: 24px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
 
-    @media (max-width: 720px) {
-      grid-template-columns: minmax(0, 1fr);
+    @media (min-width: 721px) {
+      grid-template-columns: repeat(2, minmax(0, 360px));
+      justify-content: center;
+      gap: 24px;
     }
   }
 
@@ -89,21 +98,57 @@ $tint: #f4e3f4;
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 32px 28px 28px;
+    padding: 30px 20px 22px;
     border: 1px solid $line;
     border-radius: 20px;
     background: #fff;
     box-shadow: 0 10px 30px rgba(63, 51, 70, 0.06);
 
+    @media (min-width: 721px) {
+      padding: 32px 28px 28px;
+    }
+
     &--featured {
       border: 2px solid $primary;
       box-shadow: 0 16px 40px rgba(142, 45, 142, 0.16);
-
-      @media (max-width: 720px) {
-        // the better deal first on phones
-        order: -1;
-      }
     }
+  }
+
+  &__best-for {
+    margin: -4px 0 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: $muted;
+  }
+
+  &__limits {
+    margin: 0 0 24px;
+    padding: 16px 0 0;
+    border-top: 1px solid $line;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 1.45;
+      color: $ink;
+    }
+
+    strong {
+      color: $primary;
+    }
+  }
+
+  &__upgrade {
+    margin: 28px auto 0;
+    max-width: 620px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+    color: $ink;
   }
 
   &__badge {
@@ -147,8 +192,7 @@ $tint: #f4e3f4;
   }
 
   &__note {
-    margin: 0 0 24px;
-    min-height: 44px;
+    margin: 0 0 20px;
     font-size: 15px;
     line-height: 1.5;
     color: $muted;
@@ -185,7 +229,7 @@ $tint: #f4e3f4;
   }
 
   &__apps {
-    margin: 24px auto 0;
+    margin: 12px auto 0;
     max-width: 620px;
     text-align: center;
     font-size: 15px;

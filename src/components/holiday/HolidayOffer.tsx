@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MONTHLY_PRICE, formatPrice } from "../../constants/pricing";
+import { MONTHLY_PRICE, STARTER_PRICE, formatPrice } from "../../constants/pricing";
 import { HOLIDAY_CLAIM_URL, HOLIDAY_OFFER, useHolidayOffer } from "../../constants/holiday";
 import "./holidayOffer.scss";
 
@@ -51,7 +51,7 @@ const HolidayOffer = () => {
           <p className="holiday-offer__lead">
             Use the quiet weeks to set up your studio, and walk into the new year with forms,
             deposits and aftercare that run themselves. Subscribe with the code below and we'll
-            cover your first month: {formatPrice(HOLIDAY_OFFER.discount)} off your first payment.
+            cover your first month, on any plan.
           </p>
 
           <div className="holiday-offer__code-row">
@@ -72,8 +72,10 @@ const HolidayOffer = () => {
             </a>
           </div>
           <p className="holiday-offer__fine">
-            $0 for your first month, then {formatPrice(MONTHLY_PRICE)}/month. Cancel anytime. For
-            new subscribers. Works on iPhone, Android and the web.
+            $0 for your first month, then {formatPrice(STARTER_PRICE)}/month on Starter or{" "}
+            {formatPrice(MONTHLY_PRICE)}/month on Pro. On Pro yearly, it's{" "}
+            {formatPrice(HOLIDAY_OFFER.discount)} off your first year. Cancel anytime. For new
+            subscribers. Works on iPhone, Android and the web.
           </p>
         </div>
 

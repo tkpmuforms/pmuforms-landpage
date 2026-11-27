@@ -1,3 +1,13 @@
+import {
+  LOWEST_MONTHLY_PRICE,
+  MONTHLY_PRICE,
+  STARTER_LIMITS_TEXT,
+  STARTER_PRICE,
+  YEARLY_PER_MONTH,
+  YEARLY_PRICE,
+  formatPrice,
+} from "../../constants/pricing";
+
 export interface FAQItem {
   question: string;
   answer: string;
@@ -60,7 +70,11 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: "How much does PMU Forms cost?",
+    answer: `Creating your account is free. To send forms to clients, subscribe from ${formatPrice(LOWEST_MONTHLY_PRICE)} a month. Starter is ${formatPrice(STARTER_PRICE)} a month for ${STARTER_LIMITS_TEXT}. Pro is ${formatPrice(MONTHLY_PRICE)} a month, or ${formatPrice(YEARLY_PRICE)} a year (about ${formatPrice(YEARLY_PER_MONTH)} a month), with unlimited clients and appointments. Both plans include every feature, including your team, one subscription works on iPhone, Android and the web, and you can cancel anytime. See pmuforms.com/pricing for the full list of what's included.`,
+  },
+  {
+    question: "Which plan is right for me?",
     answer:
-      "Creating your account is free. To send forms to clients and use every feature, subscribe for $19.99 a month or $149.99 a year (about $12.50 a month). Both plans include everything, including your team, one subscription works on iPhone, Android and the web, and you can cancel anytime. See pmuforms.com/pricing for the full list of what's included.",
+      "Starter is best for part-time artists who see a few clients a month. Pro is for busier artists and studios who don't want limits. If you start on Starter and reach a limit, nothing is deleted; you just can't add new clients or appointments until you upgrade to Pro, which you can do anytime in the web app.",
   },
 ];

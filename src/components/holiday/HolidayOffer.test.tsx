@@ -22,8 +22,12 @@ describe("HolidayOffer", () => {
       screen.getByRole("heading", { name: "Start 2027 strong. Your first month is on us." }),
     ).toBeInTheDocument();
     expect(screen.getByText("PMUSTUDIO2027")).toBeInTheDocument();
-    expect(screen.getByText(/\$19\.99 off your first payment/)).toBeInTheDocument();
-    expect(screen.getByText(/\$0 for your first month, then \$19\.99\/month/)).toBeInTheDocument();
+    expect(screen.getByText(/cover your first month, on any plan/)).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /\$0 for your first month, then \$9\.99\/month on Starter or \$19\.99\/month on Pro\. On Pro yearly, it's \$19\.99 off your first year\./,
+      ),
+    ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Claim my free month" })).toHaveAttribute(
       "href",
       HOLIDAY_CLAIM_URL,

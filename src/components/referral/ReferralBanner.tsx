@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { normalizeReferralCode, readAttribution } from "../../attribution";
 import { WEB_APP_URL } from "../../constants/links";
 import { HOLIDAY_OFFER, holidayOfferActive } from "../../constants/holiday";
+import { REFERRAL_DISCOUNT, formatPrice } from "../../constants/pricing";
 import "./referralBanner.scss";
 
 const DISMISSED_KEY = "pmu_ref_banner_dismissed";
@@ -54,12 +55,13 @@ const ReferralBanner = () => {
       {isHoliday ? (
         <p className="referral-banner__text">
           <strong>🎁 Holiday offer: start {HOLIDAY_OFFER.year} strong.</strong> Your first
-          month is on us with code <strong>{HOLIDAY_OFFER.code}</strong>.
+          month is on us, on any plan, with code <strong>{HOLIDAY_OFFER.code}</strong>.
         </p>
       ) : (
         <p className="referral-banner__text">
           <strong>A fellow artist invited you to PMU Forms.</strong> Your first month is free
-          ($19.99 off your first payment) when you subscribe in the web app.
+          on any plan ({formatPrice(REFERRAL_DISCOUNT)} off your first payment) when you
+          subscribe in the web app.
         </p>
       )}
       <div className="referral-banner__actions">

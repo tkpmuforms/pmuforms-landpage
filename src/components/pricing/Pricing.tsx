@@ -8,7 +8,12 @@ import {
 import {
   INCLUDED,
   MONTHLY_PRICE,
+  PRO_BEST_FOR,
   REFERRAL_DISCOUNT,
+  STARTER_APPOINTMENT_LIMIT,
+  STARTER_BEST_FOR,
+  STARTER_CLIENT_LIMIT,
+  STARTER_PRICE,
   YEARLY_PER_DAY,
   YEARLY_PER_MONTH,
   YEARLY_PRICE,
@@ -38,10 +43,12 @@ interface PricingProps {
   headingLevel?: "h1" | "h2";
 }
 
-/** The two plans and everything they include. Used on the home page and /pricing. */
+/** Starter and Pro side by side, and everything both include. Used on the home page and /pricing. */
 const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
   const Heading = headingLevel;
   const holiday = useHolidayOffer();
+  // the claim link saves the holiday code in the app, so it's applied at payment
+  const startUrl = holiday ? HOLIDAY_CLAIM_URL : WEB_APP_URL;
 
   return (
     <section className="pricing" id="pricing" aria-labelledby="pricing-title">
@@ -49,66 +56,107 @@ const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
         <header className="pricing__header">
           <p className="pricing__eyebrow">Pricing</p>
           <Heading className="pricing__title" id="pricing-title">
-            One plan. Everything included.
+            Two plans. Every feature in both.
           </Heading>
           <p className="pricing__lead">
-            Every feature, on every device, for one simple price. Pay monthly, or pay
-            yearly and save {YEARLY_SAVINGS_PERCENT}%.
+            Starter is for part-time artists. Pro is for when you're busy and want no
+            limits. Both work on every device.
           </p>
         </header>
 
+        {holiday && (
+          <p className="pricing__holiday">
+            🎁 <strong className="pricing__holiday-lead">First month free on any plan.</strong>{" "}
+            Use code <strong>{HOLIDAY_OFFER.code}</strong> by January 31, {HOLIDAY_OFFER.year}.
+          </p>
+        )}
+
         <div className="pricing__plans">
-          <article className="pricing__plan" aria-labelledby="plan-monthly">
-            <h3 className="pricing__plan-name" id="plan-monthly">
-              Monthly
+          <article className="pricing__plan" aria-labelledby="plan-starter">
+            <h3 className="pricing__plan-name" id="plan-starter">
+              Starter
             </h3>
+            <p className="pricing__best-for">{STARTER_BEST_FOR}</p>
             <p className="pricing__price">
-              <span className="pricing__amount">{formatPrice(MONTHLY_PRICE)}</span>
+              <span className="pricing__amount">{formatPrice(STARTER_PRICE)}</span>
               <span className="pricing__period">/month</span>
             </p>
             <p className="pricing__note">Billed monthly. Cancel anytime.</p>
-            {holiday && (
-              <p className="pricing__holiday">
-                🎁 Holiday offer: your first month is free with code{" "}
-                <strong>{HOLIDAY_OFFER.code}</strong>.
-              </p>
-            )}
-            <a
-              className="pricing__cta"
-              href={holiday ? HOLIDAY_CLAIM_URL : WEB_APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {holiday ? "Claim my free month" : "Get started"}
+            <ul className="pricing__limits">
+              <li>
+                <Check />
+                <span>
+                  Up to <strong>{STARTER_CLIENT_LIMIT} clients</strong> at a time. Deleting a
+                  client frees a space.
+                </span>
+              </li>
+              <li>
+                <Check />
+                <span>
+                  Up to <strong>{STARTER_APPOINTMENT_LIMIT} appointments</strong> a month.
+                </span>
+              </li>
+              <li>
+                <Check />
+                <span>Everything else is included, just like Pro.</span>
+              </li>
+            </ul>
+            <a className="pricing__cta" href={startUrl} target="_blank" rel="noopener noreferrer">
+              Get Starter
             </a>
           </article>
 
           <article
             className="pricing__plan pricing__plan--featured"
-            aria-labelledby="plan-yearly"
+            aria-labelledby="plan-pro"
           >
-            <span className="pricing__badge">Best value · Save {YEARLY_SAVINGS_PERCENT}%</span>
-            <h3 className="pricing__plan-name" id="plan-yearly">
-              Yearly
+            <span className="pricing__badge">No limits</span>
+            <h3 className="pricing__plan-name" id="plan-pro">
+              Pro
             </h3>
+            <p className="pricing__best-for">{PRO_BEST_FOR}</p>
             <p className="pricing__price">
-              <span className="pricing__amount">{formatPrice(YEARLY_PRICE)}</span>
-              <span className="pricing__period">/year</span>
+              <span className="pricing__amount">{formatPrice(MONTHLY_PRICE)}</span>
+              <span className="pricing__period">/month</span>
             </p>
             <p className="pricing__note">
-              Just {formatPrice(YEARLY_PER_MONTH)} a month. You save{" "}
-              {formatPrice(YEARLY_SAVINGS)} a year.
+              Or {formatPrice(YEARLY_PRICE)}/year: just {formatPrice(YEARLY_PER_MONTH)} a
+              month. You save {formatPrice(YEARLY_SAVINGS)} a year ({YEARLY_SAVINGS_PERCENT}%).
             </p>
+            <ul className="pricing__limits">
+              <li>
+                <Check />
+                <span>
+                  <strong>Unlimited</strong> clients
+                </span>
+              </li>
+              <li>
+                <Check />
+                <span>
+                  <strong>Unlimited</strong> appointments
+                </span>
+              </li>
+              <li>
+                <Check />
+                <span>Every feature included. Pay monthly or yearly.</span>
+              </li>
+            </ul>
             <a
               className="pricing__cta pricing__cta--primary"
-              href={WEB_APP_URL}
+              href={startUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Get the yearly plan
+              Get Pro
             </a>
           </article>
         </div>
+
+        <p className="pricing__upgrade">
+          Start on Starter and upgrade to Pro anytime in the web app, under Profile →
+          Payment. At the limit nothing is deleted; you just can't add more until you
+          upgrade.
+        </p>
 
         {IOS_APP_LIVE ? (
           <p className="pricing__apps">
@@ -157,12 +205,13 @@ const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
 
         <div className="pricing__value">
           <p>
-            <strong>About {formatPrice(YEARLY_PER_DAY)} a day</strong> on the yearly
-            plan. One deposit collected instead of a no-show covers months of PMU Forms.
+            <strong>About {formatPrice(YEARLY_PER_DAY)} a day</strong> on Pro yearly. One
+            deposit collected instead of a no-show covers months of PMU Forms.
           </p>
           <p className="pricing__referral">
             Invited by another artist? Sign up with their link and get{" "}
-            {formatPrice(REFERRAL_DISCOUNT)} off your first payment in the web app.
+            {formatPrice(REFERRAL_DISCOUNT)} off your first payment in the web app. That's your
+            first month free on Starter or Pro monthly.
           </p>
         </div>
 

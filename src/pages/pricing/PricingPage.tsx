@@ -6,6 +6,8 @@ import {
   MONTHLY_PRICE,
   PRICING_FAQ,
   PRICING_OFFERS,
+  STARTER_LIMITS_TEXT,
+  STARTER_PRICE,
   YEARLY_PRICE,
   formatPrice,
 } from "../../constants/pricing";
@@ -38,10 +40,10 @@ const PricingPage = () => (
   <div style={{ background: "#F5F5F5" }}>
     <Seo
       title="PMU Forms Pricing: Plans for Permanent Makeup Artists"
-      description={`PMU Forms is ${formatPrice(MONTHLY_PRICE)} a month or ${formatPrice(YEARLY_PRICE)} a year, with every feature included: consent forms, pre-care and aftercare emails, healing check-ins, Square deposits and pigment lot tracking.`}
+      description={`PMU Forms starts at ${formatPrice(STARTER_PRICE)} a month. Starter: every feature, ${STARTER_LIMITS_TEXT}. Pro: ${formatPrice(MONTHLY_PRICE)} a month or ${formatPrice(YEARLY_PRICE)} a year, no limits.`}
       keywords="PMU Forms pricing, PMU software price, consent form app price, permanent makeup software cost"
       canonical={`${SITE_URL}/pricing`}
-      ogTitle="PMU Forms Pricing: one plan, everything included"
+      ogTitle="PMU Forms Pricing: Starter and Pro, every feature in both"
       ogUrl={`${SITE_URL}/pricing`}
       structuredData={pricingStructuredData}
     />
