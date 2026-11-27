@@ -32,9 +32,9 @@ export const REASONS: { title: string; description: string; icon: React.ReactNod
     icon: <BellIcon />,
   },
   {
-    title: "Deposits and Square bookings",
+    title: "Square bookings and payments",
     description:
-      "Request a deposit with a Square payment link, and Square bookings send the right forms for you.",
+      "Square bookings send the right forms for you, and extra charges go out as a Square payment link.",
     icon: <CardIcon />,
   },
   {

@@ -21,7 +21,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "What is PMU Forms?",
     answer:
-      "PMU Forms is a client management app for permanent makeup and beauty artists. Send consent and intake forms clients sign on their phone, keep every signed form with the client and appointment, and handle pre-care, aftercare, deposits and healing check-ins in one place, on iPhone, Android and the web.",
+      "PMU Forms is a client management app for permanent makeup and beauty artists. Send consent and intake forms clients sign on their phone, keep every signed form with the client and appointment, and handle pre-care, aftercare and healing check-ins in one place, on iPhone, Android and the web.",
   },
   {
     question: "Can I use my own forms?",
@@ -59,9 +59,9 @@ export const FAQ_ITEMS: FAQItem[] = [
       "Yes. Connect Square Appointments and match your Square services to your PMU Forms services. New bookings then add the client and appointment to PMU Forms and send the right consent forms, and reschedules in Square move the appointment for you.",
   },
   {
-    question: "Can I take deposits and payments from clients?",
+    question: "Can I request extra payments from clients?",
     answer:
-      "Yes, if you use Square. From any appointment, request a deposit or the balance and PMU Forms emails your client a secure Square payment link. The money goes straight to your Square account, and the appointment shows Paid once the client pays. PMU Forms doesn't add a fee on top; Square's standard processing fees apply.",
+      "Yes, if you use Square. Clients pay for their booking through Square as usual. For anything extra, like a remaining balance or an add-on, request it from the appointment and PMU Forms emails your client a secure Square payment link. The money goes straight to your Square account, and the appointment shows Paid once the client pays. PMU Forms doesn't add a fee on top; Square's standard processing fees apply.",
   },
   {
     question: "Can I send pre-care, aftercare and healing check-ins?",

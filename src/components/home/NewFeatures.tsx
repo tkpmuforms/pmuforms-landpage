@@ -68,7 +68,7 @@ const PaymentsVisual = () => (
     <div className="nf-mock__body">
       <div className="nf-row">
         <div>
-          <p className="nf-mock__strong">Deposit · $50.00</p>
+          <p className="nf-mock__strong">Lash tint add-on · $35.00</p>
           <p className="nf-mock__muted">Payment received Nov 24</p>
         </div>
         <Badge tone="green">Paid</Badge>
@@ -185,8 +185,8 @@ const FEATURES: Feature[] = [
     id: "payments",
     tag: "Payments",
     icon: <CardIcon />,
-    title: "Collect deposits without the chasing.",
-    lead: "Request a deposit or the balance from any appointment and let Square handle the checkout.",
+    title: "Request extra charges without the chasing.",
+    lead: "Clients already pay when they book in Square. For anything extra, like a remaining balance or an add-on, request it from the appointment and let Square handle the checkout.",
     points: [
       "Email the client a secure Square payment link, or copy it to text",
       "Money goes straight to your Square account",

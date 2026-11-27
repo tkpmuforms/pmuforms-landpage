@@ -240,7 +240,7 @@ const Pricing = ({ headingLevel = "h2" }: PricingProps) => {
         <div className="pricing__value">
           <p>
             <strong>About {formatPrice(YEARLY_PER_DAY)} a day</strong> on Pro yearly. One
-            deposit collected instead of a no-show covers months of PMU Forms.
+            extra charge you would otherwise have forgotten to collect covers months of PMU Forms.
           </p>
           <p className="pricing__referral">
             Invited by another artist? Sign up with their link and get{" "}

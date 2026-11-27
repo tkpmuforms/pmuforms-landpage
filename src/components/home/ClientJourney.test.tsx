@@ -14,5 +14,6 @@ describe("ClientJourney", () => {
       "Healing check-in",
     ]);
     expect(screen.queryByText(/Deposit/)).toBeNull();
+    expect(screen.getByText(/create your own forms and services/)).toBeInTheDocument();
   });
 });

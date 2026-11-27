@@ -10,7 +10,7 @@ const STEPS = [
   },
   {
     title: "Connect Square",
-    text: "New bookings send their forms automatically, and deposits come in by payment link, without the chasing.",
+    text: "New bookings send their forms automatically, and extra charges go out as a payment link, without the chasing.",
   },
   {
     title: "Put aftercare on autopilot",
@@ -50,7 +50,7 @@ const HolidayOffer = () => {
           </h2>
           <p className="holiday-offer__lead">
             Use the quiet weeks to set up your studio, and walk into the new year with forms,
-            deposits and aftercare that run themselves. Subscribe with the code below and we'll
+            aftercare and healing check-ins that run themselves. Subscribe with the code below and we'll
             cover your first month, on any plan.
           </p>
 

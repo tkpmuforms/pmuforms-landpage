@@ -17,12 +17,12 @@ const Home = () => {
       }}
     >
       <Seo
-        title="PMU Forms - Consent Forms, Aftercare & Deposits for Permanent Makeup Artists"
-        description="PMU Forms is the all-in-one app for permanent makeup artists: digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and deposits, and pigment inventory tracked by lot."
-        keywords="PMU forms, permanent makeup, consent forms, aftercare, pre-care, healing check-in, PMU deposits, Square integration, pigment inventory, lot tracking, PMU artist, PMU software"
+        title="PMU Forms - Consent Forms, Aftercare & Healing Check-ins for Permanent Makeup Artists"
+        description="PMU Forms is the all-in-one app for permanent makeup artists: digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and payment links, and pigment inventory tracked by lot."
+        keywords="PMU forms, permanent makeup, consent forms, aftercare, pre-care, healing check-in, Square integration, pigment inventory, lot tracking, PMU artist, PMU software"
         canonical="https://pmuforms.com/"
-        ogTitle="PMU Forms - Consent Forms, Aftercare & Deposits for PMU Artists"
-        ogDescription="Consent forms, pre-care and aftercare, healing check-ins, Square deposits and pigment lot tracking, in one app for permanent makeup artists."
+        ogTitle="PMU Forms - Consent Forms, Aftercare & Healing Check-ins for PMU Artists"
+        ogDescription="Consent forms, pre-care and aftercare, healing check-ins, Square booking sync and pigment lot tracking, in one app for permanent makeup artists."
         ogUrl="https://pmuforms.com/"
         structuredData={homeStructuredData}
       />

@@ -59,12 +59,12 @@ export const homeStructuredData = {
       publisher: { "@id": ORG_ID },
       offers: PRICING_OFFERS,
       description:
-        "Digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and deposits, and pigment inventory tracked by lot, for permanent makeup artists.",
+        "Digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and payment links, and pigment inventory tracked by lot, for permanent makeup artists.",
       featureList: [
         "Digital consent forms with handwritten e-signatures",
         "30+ ready-made PMU and beauty forms",
         "Square Appointments booking sync",
-        "Deposits and payments through Square payment links",
+        "Extra charges through Square payment links",
         "Pre-care and aftercare emails",
         "Healing check-ins with client photo upload",
         "Pigment and supply inventory tracked by lot and expiry",

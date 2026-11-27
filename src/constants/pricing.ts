@@ -82,7 +82,7 @@ export const INCLUDED: IncludedGroup[] = [
     title: "Bookings and payments",
     items: [
       "Square Appointments sync: new bookings get their forms automatically",
-      "Deposits and payments by Square payment link",
+      "Request extra charges by Square payment link",
       "No PMU Forms fee on payments (Square's standard fees apply)",
     ],
   },
@@ -141,9 +141,9 @@ export const PRICING_FAQ: FAQItem[] = [
       "No. One subscription unlocks PMU Forms on iPhone, Android and the web. Sign in with the same account everywhere.",
   },
   {
-    question: "Are there extra fees for taking deposits?",
+    question: "Are there extra fees for taking payments?",
     answer:
-      "PMU Forms doesn't add any fee to deposits or payments. Payments go through your own Square account, so Square's standard processing fees apply. Taking payments needs a connected Square account.",
+      "PMU Forms doesn't add any fee to payments. Payments go through your own Square account, so Square's standard processing fees apply. Taking payments needs a connected Square account.",
   },
   {
     question: "A friend sent me their link. Do I get a discount?",

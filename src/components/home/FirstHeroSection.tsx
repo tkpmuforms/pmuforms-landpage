@@ -27,11 +27,11 @@ const FirstHeroSection = () => {
         <div className="hero-text">
           <h1 className="hero-title">
             Consent forms, aftercare <br />
-            &amp; deposits for PMU artists, <br /> all in one app.
+            &amp; healing check-ins for PMU artists, <br /> all in one app.
           </h1>
           <p className="hero-description">
             Collect signatures, send pre-care and aftercare, check in on
-            healing, take deposits through Square, and track every pigment lot,
+            healing, request extra charges through Square, and track every pigment lot,
             with <span className="highlight">secure</span> digital
             consent forms at the core.
           </p>

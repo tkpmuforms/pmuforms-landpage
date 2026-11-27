@@ -31,8 +31,8 @@ interface SeoComponent {
  * Uses react-helmet-async for dynamic meta tag management
  */
 const Seo: SeoComponent = ({
-  title = 'PMU Forms - Consent Forms, Aftercare & Deposits for Permanent Makeup Artists',
-  description = 'PMU Forms is the all-in-one app for permanent makeup artists: digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and deposits, and pigment inventory tracked by lot.',
+  title = 'PMU Forms - Consent Forms, Aftercare & Healing Check-ins for Permanent Makeup Artists',
+  description = 'PMU Forms is the all-in-one app for permanent makeup artists: digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and payment links, and pigment inventory tracked by lot.',
   keywords = 'PMU forms, permanent makeup, consent forms, aftercare, PMU artist, PMU software',
   canonical = 'https://pmuforms.com',
   ogTitle,
@@ -68,7 +68,7 @@ const Seo: SeoComponent = ({
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="PMU Forms: consent forms, aftercare and deposits for PMU artists" />
+      <meta property="og:image:alt" content="PMU Forms: consent forms, aftercare and healing check-ins for PMU artists" />
       <meta property="og:site_name" content="PMU Forms" />
       <meta property="og:locale" content="en_US" />
 

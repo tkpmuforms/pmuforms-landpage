@@ -1,7 +1,7 @@
 {
-  "name": "PMU Forms - Consent Forms, Aftercare & Deposits",
+  "name": "PMU Forms - Consent Forms, Aftercare & Healing Check-ins",
   "short_name": "PMU Forms",
-  "description": "Consent forms, pre-care and aftercare, healing check-ins, Square deposits and pigment lot tracking for permanent makeup artists.",
+  "description": "Consent forms, pre-care and aftercare, healing check-ins, Square booking sync and pigment lot tracking for permanent makeup artists.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
