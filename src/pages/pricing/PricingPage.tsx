@@ -1,11 +1,10 @@
 import FAQ from "../../components/home/FAQ";
 import Pricing from "../../components/pricing/Pricing";
 import Seo from "../../components/seo/Seo";
-import { SITE_URL, WEB_APP_URL } from "../../constants/links";
+import { SITE_URL } from "../../constants/links";
 import {
   MONTHLY_PRICE,
   PRICING_FAQ,
-  PRICING_OFFERS,
   STARTER_LIMITS_TEXT,
   STARTER_PRICE,
   YEARLY_PRICE,
@@ -15,15 +14,6 @@ import {
 const pricingStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "SoftwareApplication",
-      "@id": `${SITE_URL}/#app`,
-      name: "PMU Forms",
-      applicationCategory: "BusinessApplication",
-      operatingSystem: "iOS, Android, Web",
-      url: WEB_APP_URL,
-      offers: PRICING_OFFERS,
-    },
     {
       "@type": "FAQPage",
       "@id": `${SITE_URL}/pricing#billing-faq`,

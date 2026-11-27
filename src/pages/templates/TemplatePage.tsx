@@ -6,6 +6,7 @@ import TemplateCta from "./TemplateCta";
 import {
   type FormTemplate,
   type TemplateBlock,
+  FORM_TEMPLATES,
   TEMPLATE_DISCLAIMER,
   TEMPLATES_PUBLISHED,
   findTemplate,
@@ -173,6 +174,17 @@ const TemplatePage = () => {
       </article>
 
       <p className="template-page__disclaimer">{TEMPLATE_DISCLAIMER}</p>
+
+      <nav className="template-page__related" aria-labelledby="related-templates">
+        <h2 id="related-templates">More free PMU templates</h2>
+        <ul>
+          {FORM_TEMPLATES.filter((t) => t.slug !== template.slug).map((t) => (
+            <li key={t.slug}>
+              <Link to={templatePath(t.slug)}>{t.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       <TemplateCta
         heading="Send it digitally with PMU Forms"

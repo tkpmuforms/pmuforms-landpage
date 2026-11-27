@@ -17,7 +17,7 @@ const Home = () => {
       }}
     >
       <Seo
-        title="PMU Forms - Consent Forms, Aftercare & Healing Check-ins for Permanent Makeup Artists"
+        title="PMU Forms: Consent Form & Aftercare App for PMU Artists"
         description="PMU Forms is the all-in-one app for permanent makeup artists: digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and payment links, and pigment inventory tracked by lot."
         keywords="PMU forms, permanent makeup, consent forms, aftercare, pre-care, healing check-in, Square integration, pigment inventory, lot tracking, PMU artist, PMU software"
         canonical="https://pmuforms.com/"

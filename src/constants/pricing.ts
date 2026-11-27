@@ -151,32 +151,3 @@ export const PRICING_FAQ: FAQItem[] = [
   },
 ];
 
-const PRO_DESCRIPTION = "Every feature, with unlimited clients and appointments.";
-
-/** schema.org Offers for the SoftwareApplication structured data. */
-export const PRICING_OFFERS = [
-  {
-    "@type": "Offer",
-    name: "Starter (monthly)",
-    description: `Every feature, for ${STARTER_LIMITS_TEXT}.`,
-    price: STARTER_PRICE.toFixed(2),
-    priceCurrency: "USD",
-    category: "subscription",
-  },
-  {
-    "@type": "Offer",
-    name: "Pro (monthly)",
-    description: PRO_DESCRIPTION,
-    price: MONTHLY_PRICE.toFixed(2),
-    priceCurrency: "USD",
-    category: "subscription",
-  },
-  {
-    "@type": "Offer",
-    name: "Pro (yearly)",
-    description: PRO_DESCRIPTION,
-    price: YEARLY_PRICE.toFixed(2),
-    priceCurrency: "USD",
-    category: "subscription",
-  },
-];

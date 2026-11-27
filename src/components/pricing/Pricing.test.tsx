@@ -8,7 +8,6 @@ import { WEB_APP_URL } from "../../constants/links";
 import {
   INCLUDED,
   PRICING_FAQ,
-  PRICING_OFFERS,
   STARTER_APPOINTMENT_LIMIT,
   STARTER_CLIENT_LIMIT,
   STARTER_PRICE,
@@ -17,7 +16,6 @@ import {
   YEARLY_SAVINGS_PERCENT,
 } from "../../constants/pricing";
 import PricingPage from "../../pages/pricing/PricingPage";
-import { homeStructuredData } from "../../seo/schema";
 import Pricing from "./Pricing";
 
 const at = (iso: string) => {
@@ -36,18 +34,6 @@ describe("pricing numbers", () => {
     expect(STARTER_PRICE).toBe(9.99);
     expect(STARTER_CLIENT_LIMIT).toBe(10);
     expect(STARTER_APPOINTMENT_LIMIT).toBe(5);
-  });
-
-  it("gives search engines the same prices as the page", () => {
-    expect(PRICING_OFFERS.map((o) => [o.name, o.price, o.priceCurrency])).toEqual([
-      ["Starter (monthly)", "9.99", "USD"],
-      ["Pro (monthly)", "19.99", "USD"],
-      ["Pro (yearly)", "149.99", "USD"],
-    ]);
-    const app = homeStructuredData["@graph"].find(
-      (n) => n["@type"] === "SoftwareApplication",
-    ) as { offers?: unknown };
-    expect(app.offers).toEqual(PRICING_OFFERS);
   });
 
   it("makes no certification or compliance claims", () => {

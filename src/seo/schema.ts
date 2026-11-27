@@ -1,17 +1,13 @@
 import { FAQ_ITEMS } from "../components/home/faqItems";
-import {
-  ANDROID_APP_URL,
-  IOS_APP_URL,
-  SITE_URL,
-  SUPPORT_EMAIL,
-  WEB_APP_URL,
-} from "../constants/links";
-import { PRICING_OFFERS } from "../constants/pricing";
+import { ANDROID_APP_URL, IOS_APP_URL, SITE_URL, SUPPORT_EMAIL } from "../constants/links";
 
 /**
  * JSON-LD for the home page. Only facts we can stand behind: no ratings or
- * certifications, which Google treats as spam when unverifiable. Prices are
- * included because they're shown on the page (see constants/pricing.ts).
+ * certifications, which Google treats as spam when unverifiable.
+ *
+ * No SoftwareApplication node: Google (and Semrush's audit) treat it as
+ * invalid without aggregateRating or review, and we have no verified ratings
+ * to give. The app store links are on the Organization (sameAs) instead.
  */
 const ORG_ID = `${SITE_URL}/#organization`;
 
@@ -46,30 +42,6 @@ export const homeStructuredData = {
       url: `${SITE_URL}/`,
       publisher: { "@id": ORG_ID },
       inLanguage: "en",
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": `${SITE_URL}/#app`,
-      name: "PMU Forms",
-      applicationCategory: "BusinessApplication",
-      operatingSystem: "iOS, Android, Web",
-      url: WEB_APP_URL,
-      downloadUrl: [IOS_APP_URL, ANDROID_APP_URL],
-      installUrl: [IOS_APP_URL, ANDROID_APP_URL],
-      publisher: { "@id": ORG_ID },
-      offers: PRICING_OFFERS,
-      description:
-        "Digital consent forms, pre-care and aftercare emails, healing check-ins, Square booking sync and payment links, and pigment inventory tracked by lot, for permanent makeup artists.",
-      featureList: [
-        "Digital consent forms with handwritten e-signatures",
-        "30+ ready-made PMU and beauty forms",
-        "Square Appointments booking sync",
-        "Extra charges through Square payment links",
-        "Pre-care and aftercare emails",
-        "Healing check-ins with client photo upload",
-        "Pigment and supply inventory tracked by lot and expiry",
-        "Client notes and before/after photos",
-      ],
     },
     {
       "@type": "FAQPage",

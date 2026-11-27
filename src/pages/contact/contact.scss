@@ -1,0 +1,35 @@
+.contact-help {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 20px 64px;
+
+  h2 {
+    margin: 0 0 20px;
+    font-size: 26px;
+    color: #24061f;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    color: #333333;
+  }
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666666;
+  }
+
+  a {
+    color: #8e2d8e;
+    font-weight: 600;
+  }
+}

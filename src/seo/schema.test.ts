@@ -14,10 +14,13 @@ describe("home structured data", () => {
     expect(entities.map((q) => q.acceptedAnswer.text)).toEqual(FAQ_ITEMS.map((q) => q.answer));
   });
 
-  it("lists both app stores", () => {
-    const app = byType("SoftwareApplication");
-    expect(app.operatingSystem).toBe("iOS, Android, Web");
-    expect(app.downloadUrl).toEqual([IOS_APP_URL, ANDROID_APP_URL]);
+  it("lists both app stores on the organization", () => {
+    const org = byType("Organization");
+    expect(org.sameAs).toEqual(expect.arrayContaining([IOS_APP_URL, ANDROID_APP_URL]));
+  });
+
+  it("has no SoftwareApplication, which is invalid without ratings", () => {
+    expect(byType("SoftwareApplication")).toBeUndefined();
   });
 
   it("makes no unverifiable claims", () => {

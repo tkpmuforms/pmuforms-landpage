@@ -1,0 +1,30 @@
+# PMU Forms
+
+> PMU Forms is a client management app for permanent makeup (PMU) and beauty artists. Clients fill in and sign consent and intake forms on their phone before they arrive. Artists send pre-care and aftercare emails, run healing check-ins where clients send a photo, sync bookings from Square Appointments, request extra charges through Square payment links, and track pigment and supply lots on each client. It works on iPhone, Android and the web.
+
+Plans: Starter is $9.99 a month for up to 10 clients at a time and 5 appointments a month. Pro is $19.99 a month or $149.99 a year with unlimited clients and appointments. Both plans include every feature. Creating an account is free; a subscription is needed to send forms to clients.
+
+## Main pages
+
+- [Home](https://pmuforms.com/): what PMU Forms does, the client journey from booking to healed results, and frequently asked questions
+- [Pricing](https://pmuforms.com/pricing): Starter and Pro plans, what's included, and billing questions
+- [Free form templates](https://pmuforms.com/templates): free printable PMU consent, intake and aftercare templates
+- [Contact](https://pmuforms.com/contact): reach the PMU Forms team
+- [Web app](https://artist.pmuforms.com/): sign up or sign in
+
+## Free templates
+
+- [Microblading Consent Form Template](https://pmuforms.com/templates/microblading-consent-form)
+- [Permanent Makeup Aftercare Instructions Template](https://pmuforms.com/templates/pmu-aftercare-instructions)
+- [PMU Client Intake Form Template](https://pmuforms.com/templates/pmu-client-intake-form)
+- [Lip Blush Consent Form Template](https://pmuforms.com/templates/lip-blush-consent-form)
+- [Scalp Micropigmentation (SMP) Consent Form Template](https://pmuforms.com/templates/scalp-micropigmentation-consent-form)
+- [Brow Lamination Consent Form Template](https://pmuforms.com/templates/brow-lamination-consent-form)
+- [Lash Lift and Tint Consent Form Template](https://pmuforms.com/templates/lash-lift-consent-form)
+- [Chemical Peel Consent Form Template](https://pmuforms.com/templates/chemical-peel-consent-form)
+
+## Optional
+
+- [Android app](https://play.google.com/store/apps/details?id=com.pmuforms.mobile)
+- [Privacy policy](https://pmuforms.com/privacy)
+- [Terms and conditions](https://pmuforms.com/terms)
