@@ -3,7 +3,6 @@ import {
   BottleIcon,
   CalendarIcon,
   CameraIcon,
-  CardIcon,
   ClipboardIcon,
   MailIcon,
 } from "./featureIcons";
@@ -19,11 +18,6 @@ const STEPS: { title: string; text: string; icon: React.ReactNode }[] = [
     title: "Forms & pre-care",
     text: "Consent forms go out with the booking, and pre-care arrives before the visit.",
     icon: <ClipboardIcon />,
-  },
-  {
-    title: "Deposit paid",
-    text: "Send a Square payment link and see the moment it's paid.",
-    icon: <CardIcon />,
   },
   {
     title: "Treatment",

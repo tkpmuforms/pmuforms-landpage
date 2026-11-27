@@ -62,7 +62,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
     position: relative;
 
@@ -71,8 +71,9 @@
       content: "";
       position: absolute;
       top: 28px;
-      left: 8%;
-      right: 8%;
+      // from the first icon's centre to the last
+      left: 10%;
+      right: 10%;
       height: 2px;
       background: linear-gradient(90deg, #e7c6e7, #b817b6, #e7c6e7);
       z-index: 0;
