@@ -9,7 +9,7 @@ function NotFound() {
         title="404 - Page Not Found | PMU Forms"
         description="The page you're looking for doesn't exist. Return to the PMU Forms homepage."
         keywords="404, not found, error page"
-        canonical="https://pmuforms.com/404"
+        canonical={null}
         robots="noindex, follow"
       />
       <div className="not-found-container">

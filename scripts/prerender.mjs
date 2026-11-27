@@ -4,6 +4,7 @@
  *   dist/index.html                    <- "/"
  *   dist/contact/index.html            <- "/contact"
  *   dist/templates/microblading-consent-form/index.html, ...
+ *   dist/404.html                      <- any unknown path
  *
  * nginx's `try_files $uri $uri/ /index.html;` serves these directly, so
  * crawlers get real content and per-page meta tags without running JS.
@@ -27,7 +28,11 @@ const { render, PRERENDER_ROUTES } = await import(
 );
 
 const failures = [];
-for (const route of PRERENDER_ROUTES) {
+// Any path that isn't a real page renders the "*" route, i.e. the 404 page.
+// nginx serves dist/404.html with a real 404 status (error_page 404 /404.html).
+const NOT_FOUND_ROUTE = "/404";
+
+for (const route of [...PRERENDER_ROUTES, NOT_FOUND_ROUTE]) {
   try {
     const { html, head } = render(route);
     if (!html || html.length < 500) throw new Error(`rendered only ${html.length} characters`);
@@ -42,7 +47,11 @@ for (const route of PRERENDER_ROUTES) {
       );
 
     const outFile =
-      route === "/" ? join(dist, "index.html") : join(dist, route.slice(1), "index.html");
+      route === "/"
+        ? join(dist, "index.html")
+        : route === NOT_FOUND_ROUTE
+          ? join(dist, "404.html")
+          : join(dist, route.slice(1), "index.html");
     mkdirSync(dirname(outFile), { recursive: true });
     writeFileSync(outFile, page);
     console.log(`prerendered ${route.padEnd(26)} -> ${outFile.slice(root.length + 1)}`);

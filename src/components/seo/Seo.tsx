@@ -5,7 +5,8 @@ interface SeoProps {
   title?: string;
   description?: string;
   keywords?: string;
-  canonical?: string;
+  /** null = no canonical tag (error pages) */
+  canonical?: string | null;
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
@@ -58,11 +59,11 @@ const Seo: SeoComponent = ({
       <meta name="keywords" content={keywords} />
       <meta name="author" content={author} />
       <meta name="robots" content={robots} />
-      <link rel="canonical" href={canonical} />
+      {canonical && <link rel="canonical" href={canonical} />}
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
-      <meta property="og:url" content={ogUrl || canonical} />
+      {(ogUrl || canonical) && <meta property="og:url" content={ogUrl || canonical || ""} />}
       <meta property="og:title" content={ogTitle || title} />
       <meta property="og:description" content={ogDescription || description} />
       <meta property="og:image" content={ogImage} />
@@ -74,7 +75,7 @@ const Seo: SeoComponent = ({
 
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:url" content={ogUrl || canonical} />
+      {(ogUrl || canonical) && <meta name="twitter:url" content={ogUrl || canonical || ""} />}
       <meta name="twitter:title" content={twitterTitle || title} />
       <meta name="twitter:description" content={twitterDescription || description} />
       <meta name="twitter:image" content={twitterImage || ogImage} />
