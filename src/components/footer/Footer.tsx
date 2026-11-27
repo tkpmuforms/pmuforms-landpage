@@ -15,8 +15,8 @@ import {
   DEMO_URL,
   IOS_APP_LIVE,
   IOS_APP_URL,
+  SUPPORT_EMAIL,
   WEB_APP_URL,
-  WEB_SIGNUP_URL,
 } from "../../constants/links";
 import "./footer.scss";
 
@@ -28,11 +28,10 @@ const Footer = () => {
       </div>
 
       <nav className="footer__nav">
-        <a href="#howItWorks">HOW IT WORKS</a>
-        <a href="#features">FEATURES</a>
-        <a href="#whats-new">WHAT'S NEW</a>
-        <a href="#review">REVIEWS</a>
-        <a href="#faq">FAQS</a>
+        <a href="/#journey">HOW IT WORKS</a>
+        <a href="/#whats-new">FEATURES</a>
+        <a href="/#review">REVIEWS</a>
+        <a href="/#faq">FAQS</a>
         <a href="/pricing">PRICING</a>
         <a href="/templates">FREE TEMPLATES</a>
       </nav>
@@ -40,7 +39,7 @@ const Footer = () => {
       <div className="footer__secondary-links">
         <a href="/contact">Contact</a>
         <span>|</span>
-        <a href="#support">Support</a>
+        <a href={`mailto:${SUPPORT_EMAIL}`}>Support</a>
         <span>|</span>
         <a href="/terms">Terms</a>
         <span>|</span>
@@ -62,7 +61,8 @@ const Footer = () => {
       </div>
 
       <div className="footer__buttons">
-        {IOS_APP_LIVE ? (
+        {/* same buttons as the hero; until the new iOS app is live, "Open Web App" is the iPhone path */}
+        {IOS_APP_LIVE && (
           <Button
             href={IOS_APP_URL}
             target="_blank"
@@ -72,17 +72,6 @@ const Footer = () => {
             className=""
           >
             Download on iOS
-          </Button>
-        ) : (
-          <Button
-            href={WEB_SIGNUP_URL}
-            target="_blank"
-            icon={<WebAppSvg />}
-            variant="primary"
-            size="small"
-            className=""
-          >
-            Sign up free on the web
           </Button>
         )}
         <Button
@@ -118,7 +107,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__copyright">
-        © 2025 PMU Forms. All rights reserved.
+        © {new Date().getFullYear()} PMU Forms. All rights reserved.
       </div>
     </footer>
   );

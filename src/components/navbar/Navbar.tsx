@@ -72,18 +72,10 @@ const Navbar = () => {
         <ul>
           <li>
             <Link
-              to="/#howItWorks"
-              onClick={(e) => handleAnchorClick(e, "howItWorks")}
+              to="/#journey"
+              onClick={(e) => handleAnchorClick(e, "journey")}
             >
               How It Works
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/#features"
-              onClick={(e) => handleAnchorClick(e, "features")}
-            >
-              Features
             </Link>
           </li>
           <li>
@@ -91,7 +83,7 @@ const Navbar = () => {
               to="/#whats-new"
               onClick={(e) => handleAnchorClick(e, "whats-new")}
             >
-              What's New
+              Features
             </Link>
           </li>
           <li>

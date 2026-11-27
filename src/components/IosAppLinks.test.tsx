@@ -47,9 +47,8 @@ describe("iOS app links", () => {
     expect(screen.queryByLabelText("Download on iOS")).not.toBeInTheDocument();
     // Google Play stays everywhere it was
     expect(android).toHaveLength(6);
-    const signups = screen.getAllByRole("link", { name: /Sign up free on the web/ });
-    expect(signups).toHaveLength(1); // footer
-    signups.forEach((a) => expect(a).toHaveAttribute("href", WEB_SIGNUP_URL));
+    // the hero and footer offer "Open Web App" instead of a second button to the same page
+    expect(screen.queryByText(/Sign up free on the web/)).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "sign up on the web" })).toHaveAttribute(
       "href",
       WEB_SIGNUP_URL,
