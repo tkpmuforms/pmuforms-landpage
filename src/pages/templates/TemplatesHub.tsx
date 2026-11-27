@@ -21,7 +21,7 @@ const TemplatesHub = () => (
   <div className="template-page template-hub">
     <Seo
       title="Free PMU Form Templates: Consent, Aftercare & Intake | PMU Forms"
-      description="Free, printable form templates for permanent makeup artists: a microblading consent form, PMU aftercare instructions and a client intake form. Print them or send them digitally with PMU Forms."
+      description="Free, printable templates for permanent makeup artists: PMU, microblading, lip blush and SMP consent forms, aftercare instructions and a client intake form."
       keywords="PMU form templates, permanent makeup forms, microblading consent form template, PMU aftercare template, client intake form template"
       canonical={`${SITE_URL}/templates`}
       ogUrl={`${SITE_URL}/templates`}

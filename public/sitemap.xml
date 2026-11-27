@@ -21,7 +21,14 @@
   <!-- Free form templates -->
   <url>
     <loc>https://pmuforms.com/templates</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pmuforms.com/templates/permanent-makeup-consent-form</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

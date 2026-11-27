@@ -7,11 +7,23 @@ import {
   type FormTemplate,
   type TemplateBlock,
   FORM_TEMPLATES,
+  TEMPLATE_AUTHOR,
   TEMPLATE_DISCLAIMER,
   TEMPLATES_PUBLISHED,
   findTemplate,
+  sectionSummary,
   templatePath,
+  templateUpdated,
 } from "./templateData";
+
+/** "November 27, 2026", the same on the server and in every time zone. */
+const formatDate = (iso: string) =>
+  new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 import "./templates.scss";
 
 const Block = ({ block }: { block: TemplateBlock }) => {
@@ -97,7 +109,7 @@ const structuredData = (t: FormTemplate) => {
         url,
         mainEntityOfPage: url,
         datePublished: t.published ?? TEMPLATES_PUBLISHED,
-        dateModified: t.published ?? TEMPLATES_PUBLISHED,
+        dateModified: templateUpdated(t),
         image: `${SITE_URL}/og-image.png`,
         author: { "@type": "Organization", name: "PMU Forms", url: `${SITE_URL}/` },
         publisher: { "@id": `${SITE_URL}/#organization` },
@@ -110,6 +122,19 @@ const structuredData = (t: FormTemplate) => {
           { "@type": "ListItem", position: 3, name: t.title, item: url },
         ],
       },
+      ...(t.faq?.length
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${url}#questions`,
+              mainEntity: t.faq.map((q) => ({
+                "@type": "Question",
+                name: q.question,
+                acceptedAnswer: { "@type": "Answer", text: q.answer },
+              })),
+            },
+          ]
+        : []),
     ],
   };
 };
@@ -131,7 +156,7 @@ const TemplatePage = () => {
         ogUrl={url}
         type="article"
         publishedDate={template.published ?? TEMPLATES_PUBLISHED}
-        modifiedDate={template.published ?? TEMPLATES_PUBLISHED}
+        modifiedDate={templateUpdated(template)}
         structuredData={structuredData(template)}
       />
 
@@ -142,6 +167,26 @@ const TemplatePage = () => {
       <header className="template-page__header">
         <p className="template-page__eyebrow">Free printable template</p>
         <h1>{template.title}</h1>
+        <p className="template-page__byline">
+          By {TEMPLATE_AUTHOR.name} · Updated{" "}
+          <time dateTime={templateUpdated(template)}>{formatDate(templateUpdated(template))}</time>
+        </p>
+
+        <aside className="template-page__summary" aria-labelledby="template-summary">
+          <h2 id="template-summary">At a glance</h2>
+          <p>{template.summary}</p>
+          <ul>
+            <li>
+              <strong>Sections:</strong>{" "}
+              {template.sections.map(sectionSummary).join(", ")}
+            </li>
+            <li>
+              <strong>Use it:</strong> print it free below, or send it digitally so clients sign on
+              their phone before they arrive.
+            </li>
+          </ul>
+        </aside>
+
         {template.intro.map((p) => (
           <p key={p} className="template-page__intro">
             {p}
@@ -174,6 +219,18 @@ const TemplatePage = () => {
       </article>
 
       <p className="template-page__disclaimer">{TEMPLATE_DISCLAIMER}</p>
+
+      {template.faq?.length ? (
+        <section className="template-page__faq" aria-labelledby="template-faq">
+          <h2 id="template-faq">Common questions</h2>
+          {template.faq.map((q) => (
+            <div key={q.question} className="template-page__question">
+              <h3>{q.question}</h3>
+              <p>{q.answer}</p>
+            </div>
+          ))}
+        </section>
+      ) : null}
 
       <nav className="template-page__related" aria-labelledby="related-templates">
         <h2 id="related-templates">More free PMU templates</h2>

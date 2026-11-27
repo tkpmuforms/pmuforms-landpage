@@ -42,7 +42,37 @@ export interface FormTemplate {
   inApp: string;
   /** when the page went up, if after TEMPLATES_PUBLISHED */
   published?: string;
+  /** when the content last changed, if after it went up */
+  updated?: string;
+  /** questions shown on the page and as FAQPage structured data */
+  faq?: TemplateQuestion[];
 }
+
+export interface TemplateQuestion {
+  question: string;
+  answer: string;
+}
+
+/**
+ * Byline on every template. A company, not a person: add a named reviewer
+ * (real name and real credentials only) when one has checked the templates.
+ */
+export const TEMPLATE_AUTHOR = { name: "the PMU Forms team" };
+
+/** "Last updated" date for a template. */
+export const templateUpdated = (t: FormTemplate) =>
+  t.updated ?? t.published ?? TEMPLATES_PUBLISHED;
+
+/** "Health questions (12 questions)" etc., for the summary box. */
+export const sectionSummary = (section: TemplateSection) => {
+  const count = (kind: TemplateBlock["kind"]) =>
+    section.blocks.filter((b) => b.kind === kind).reduce((n, b) => n + b.items.length, 0);
+  const questions = count("yesno");
+  const initials = count("initials");
+  if (questions) return `${section.heading} (${questions} yes/no questions)`;
+  if (initials) return `${section.heading} (${initials} statements to initial)`;
+  return section.heading;
+};
 
 export const TEMPLATES_PUBLISHED = "2026-11-22";
 
@@ -50,6 +80,182 @@ export const TEMPLATE_DISCLAIMER =
   "This template is general information, not legal or medical advice. Rules for permanent makeup differ by state and county, so check your local requirements and have your forms reviewed by a qualified professional before you use them with clients.";
 
 export const FORM_TEMPLATES: FormTemplate[] = [
+  {
+    slug: "permanent-makeup-consent-form",
+    published: "2026-11-27",
+    title: "Permanent Makeup Consent Form Template",
+    seoTitle: "Free Permanent Makeup (PMU) Consent Form Template | PMU Forms",
+    description:
+      "A free, printable permanent makeup consent form template for brows, lips and eyeliner: client details, health questions, area-specific checks, risks to initial, photo release and signatures.",
+    keywords:
+      "permanent makeup consent form, PMU consent form, consent form for permanent makeup, permanent makeup waiver, cosmetic tattoo consent form, eyeliner tattoo consent form",
+    summary:
+      "One form for brows, lips and eyeliner: health questions, area checks, risks to initial and signatures.",
+    intro: [
+      "A permanent makeup consent form records that your client understood the procedure, told you about their health, and agreed to go ahead. If you offer brows, lips and eyeliner, one general form with a short section for each area saves you from keeping three separate forms up to date.",
+      "Use the sections below as a starting point. The client answers the general health questions plus the section for the area they're booking, then initials the statements and signs. Add anything specific to your techniques and your studio's policies.",
+    ],
+    sections: [
+      {
+        heading: "Client information",
+        blocks: [
+          {
+            kind: "fields",
+            items: [
+              "Full name",
+              "Date of birth",
+              "Phone",
+              "Email",
+              "Emergency contact (name and phone)",
+              "Appointment date",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Area being treated",
+        blocks: [
+          {
+            kind: "checklist",
+            items: [
+              "Brows (microblading, powder, combo or nano brows)",
+              "Lips (lip blush, lip liner, lip neutralization)",
+              "Eyeliner (lash enhancement, eyeliner, winged liner)",
+              "Touch-up or color boost",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Health questions",
+        note: "Ask the client to answer every question and add details for any “Yes”.",
+        blocks: [
+          {
+            kind: "yesno",
+            items: [
+              "Are you pregnant, trying to become pregnant, or breastfeeding?",
+              "Do you have diabetes, a heart condition, or a bleeding or clotting disorder?",
+              "Do you take blood thinners, aspirin, fish oil, or other medication or supplements that affect bleeding?",
+              "Have you taken isotretinoin (e.g. Accutane) in the past 12 months?",
+              "Do you use retinol, retinoids, acids or other exfoliating products on your face?",
+              "Have you had Botox, fillers, a chemical peel or laser treatment on your face in the past 4 weeks?",
+              "Do you have a history of keloids or raised scarring?",
+              "Do you have a skin condition in the area being treated (eczema, psoriasis, rosacea, active acne, moles or irritation)?",
+              "Are you receiving chemotherapy or radiation, or do you have an autoimmune condition?",
+              "Do you have allergies (numbing creams, lidocaine, latex, pigments, metals, adhesives)?",
+              "Have you had permanent makeup or a cosmetic tattoo before? If yes, where, when and by whom?",
+              "Do you currently have a sunburn or tan on your face?",
+            ],
+          },
+          {
+            kind: "fields",
+            items: ["Current medications and supplements", "Anything else your artist should know"],
+          },
+        ],
+      },
+      {
+        heading: "Lips only",
+        blocks: [
+          {
+            kind: "yesno",
+            items: [
+              "Have you ever had cold sores or fever blisters? If yes, have you spoken to your doctor about taking an antiviral before your appointment?",
+              "Have you had lip fillers or other injections in or near your lips? If yes, when?",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Eyeliner only",
+        blocks: [
+          {
+            kind: "yesno",
+            items: [
+              "Do you wear contact lenses? (Please bring glasses and don't wear lenses to your appointment.)",
+              "Do you have an eye condition such as glaucoma, dry eye, blepharitis or frequent eye infections?",
+              "Have you had eye surgery (including LASIK) in the past 6 months?",
+              "Do you have lash extensions, or use a lash growth serum?",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "About the procedure",
+        note: "The client initials each statement.",
+        blocks: [
+          {
+            kind: "initials",
+            items: [
+              "I understand permanent makeup places pigment in the skin. It is semi-permanent and fades over time; how it fades depends on my skin, age, lifestyle, sun exposure and aftercare.",
+              "I understand the color looks darker or brighter right after the procedure, that healed color can look different from the color I chose, and that it may change over time.",
+              "I understand a touch-up appointment is usually recommended, and that both sides may not heal exactly the same.",
+              "I understand possible side effects include redness, swelling, bruising, tenderness, itching, flaking, uneven healing, pigment spreading or blurring, infection, allergic reaction and, rarely, scarring.",
+              "For lips: I understand the procedure can trigger a cold sore outbreak, and that I am responsible for speaking to my doctor about prevention.",
+              "For eyeliner: I understand my eyes may water, swell and feel irritated for a few days, and that I should not wear eye makeup or contact lenses until my artist says it's safe.",
+              "I approved the shape and color before the procedure started.",
+              "I have answered the health questions truthfully and will tell my artist about any changes before my appointment.",
+              "I received aftercare instructions and understand that following them affects my results.",
+              "I understand that correcting or removing permanent makeup can be difficult and may need additional treatments at extra cost.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Photo release (optional)",
+        blocks: [
+          {
+            kind: "checklist",
+            items: [
+              "I agree to before and after photos being used in the artist's portfolio and social media, without my name.",
+              "I do not agree to my photos being shared.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Artist use only",
+        note: "Look at the client's photo ID in person. Don't photocopy or photograph it.",
+        blocks: [
+          {
+            kind: "fields",
+            items: ["Photo ID checked (type of ID)", "Checked by", "Pigment brand, color and lot number"],
+          },
+        ],
+      },
+      {
+        heading: "Signatures",
+        blocks: [{ kind: "signatures", items: ["Client signature", "Date", "Artist signature", "Date"] }],
+      },
+    ],
+    inApp:
+      "Send this form when the client books. Clients answer the health questions and sign on their phone before they arrive, you see who hasn't signed yet, and the signed form is locked and kept with the appointment.",
+    faq: [
+      {
+        question: "Can one consent form cover brows, lips and eyeliner?",
+        answer:
+          "Yes. This template has general health questions for every client plus short sections for lips and eyeliner, so one form covers all three. Some artists prefer a separate form for each service, like our microblading and lip blush consent forms, so the questions match the procedure exactly.",
+      },
+      {
+        question: "What health answers mean a client should wait?",
+        answer:
+          "Artists commonly ask clients to reschedule or check with their doctor if they are pregnant or breastfeeding, have taken isotretinoin in the past 12 months, have a sunburn or a skin condition in the area, recently had Botox, fillers or a peel nearby, or have an active cold sore before a lip procedure. Set your own policy and follow your local rules.",
+      },
+      {
+        question: "When should the client fill out the form?",
+        answer:
+          "When they book, not on the day. You see their health answers days before the appointment, can reschedule if needed, and the appointment starts on time. Go over the form together before you start.",
+      },
+      {
+        question: "Does the client sign again for a touch-up?",
+        answer:
+          "Many artists ask clients to update their health answers and sign again at each visit, because medications, treatments and pregnancy can change between appointments.",
+      },
+      {
+        question: "Can clients sign a permanent makeup consent form online?",
+        answer: "Yes. In the US, electronic signatures generally have the same legal effect as handwritten ones under the federal E-SIGN Act and state UETA laws, but check your state and county rules for permanent makeup. With PMU Forms, clients fill in and sign on their phone before the appointment, the form is locked once it's signed, and you can print it or download it as a PDF at any time.",
+      },
+    ],
+  },
   {
     slug: "microblading-consent-form",
     title: "Microblading Consent Form Template",
@@ -152,6 +358,33 @@ export const FORM_TEMPLATES: FormTemplate[] = [
     ],
     inApp:
       "Send this form before the appointment. Clients answer the health questions and sign on their phone, you're notified when it comes in, and the signed form is kept with the client's appointment.",
+    updated: "2026-11-27",
+    faq: [
+      {
+        question: "Do I need a consent form for microblading?",
+        answer:
+          "In practice, yes. Many states and counties require permanent makeup artists to keep signed consent and client records, and insurers often expect them too. Even where it isn't required, a signed form shows that your client understood the risks, told you about their health and agreed to go ahead. Check your local health department's rules for what yours must include.",
+      },
+      {
+        question: "What should a microblading consent form include?",
+        answer:
+          "Client and emergency contact details, health questions (pregnancy, blood thinners, isotretinoin, retinoids, recent Botox or fillers, keloids, skin conditions, allergies and previous brow work), statements about the procedure and its risks for the client to initial, an optional photo release, and client and artist signatures with the date.",
+      },
+      {
+        question: "When should the client fill out the form?",
+        answer:
+          "When they book, not on the day. Health answers that mean a client should wait, such as isotretinoin in the past 12 months, pregnancy or blood thinners, then reach you days before the appointment instead of in the chair. Go over the form together before you start.",
+      },
+      {
+        question: "Does the client sign again for a touch-up?",
+        answer:
+          "Many artists ask clients to update their health answers and sign again at each visit, because medications, treatments and pregnancy can change between appointments. A fresh form for the touch-up keeps your records current.",
+      },
+      {
+        question: "Can clients sign a microblading consent form online?",
+        answer: "Yes. In the US, electronic signatures generally have the same legal effect as handwritten ones under the federal E-SIGN Act and state UETA laws, but check your state and county rules for permanent makeup. With PMU Forms, clients fill in and sign on their phone before the appointment, the form is locked once it's signed, and you can print it or download it as a PDF at any time.",
+      },
+    ],
   },
   {
     slug: "pmu-aftercare-instructions",

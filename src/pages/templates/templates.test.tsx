@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { HelmetProvider } from "react-helmet-async";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { describe, expect, it, vi } from "vitest";
@@ -61,6 +61,44 @@ describe("free template pages", () => {
     expect(PRERENDER_ROUTES).toEqual(
       expect.arrayContaining(["/templates", ...FORM_TEMPLATES.map((t) => `/templates/${t.slug}`)])
     );
+  });
+
+  it("shows a byline, an at-a-glance summary and the update date", () => {
+    renderAt("/templates/microblading-consent-form");
+    expect(screen.getByText(/By the PMU Forms team/)).toBeInTheDocument();
+    expect(screen.getByText("November 27, 2026")).toHaveAttribute("datetime", "2026-11-27");
+    const summary = screen.getByRole("complementary", { name: "At a glance" });
+    expect(within(summary).getByText(/Health questions \(12 yes\/no questions\)/)).toBeInTheDocument();
+    expect(within(summary).getByText(/About the procedure \(8 statements to initial\)/)).toBeInTheDocument();
+  });
+
+  it.each(FORM_TEMPLATES.filter((t) => t.faq?.length))(
+    "shows the $title questions and gives search engines the same text",
+    async (t) => {
+      renderAt(`/templates/${t.slug}`);
+      const faq = screen.getByRole("region", { name: "Common questions" });
+      for (const q of t.faq!) {
+        expect(within(faq).getByRole("heading", { level: 3, name: q.question })).toBeInTheDocument();
+        expect(within(faq).getByText(q.answer)).toBeInTheDocument();
+      }
+
+      await waitFor(() =>
+        expect(document.head.querySelector('script[type="application/ld+json"]')).not.toBeNull()
+      );
+      const graph = JSON.parse(
+        document.head.querySelector('script[type="application/ld+json"]')!.textContent!
+      )["@graph"] as { "@type": string; mainEntity?: { name: string; acceptedAnswer: { text: string } }[] }[];
+      const faqPage = graph.find((n) => n["@type"] === "FAQPage")!;
+      expect(faqPage.mainEntity!.map((q) => [q.name, q.acceptedAnswer.text])).toEqual(
+        t.faq!.map((q) => [q.question, q.answer])
+      );
+    }
+  );
+
+  it("has Q&A on the microblading and permanent makeup pages", () => {
+    for (const slug of ["microblading-consent-form", "permanent-makeup-consent-form"]) {
+      expect(FORM_TEMPLATES.find((t) => t.slug === slug)?.faq?.length).toBeGreaterThan(0);
+    }
   });
 
   it("makes no approval or compliance claims", () => {
